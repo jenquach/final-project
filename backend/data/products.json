@@ -1,0 +1,22 @@
+[
+  {
+    "productId": 1,
+    "productName": "Retro Embroided Denim Overalls",
+    "desc": "Classic denim overall with adjustable straps.",
+    "condition": "Very good condition",
+    "category": "top",
+    "size": "12-18M",
+    "price": 75,
+    "img": "https://example.com/directory/filename.png"
+  },
+  {
+    "productId": 2,
+    "productName": "Rain Poncho",
+    "desc": "Yellow rain poncho with a cotton lining.",
+    "condition": "Good condition",
+    "category": "Outerwear",
+    "size": "12-18M",
+    "price": 200,
+    "img": "https://example.com/directory/filename.png"
+  }
+]
