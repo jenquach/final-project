@@ -3,84 +3,94 @@ const Cart = require("../models/cart");
 
 const router = new express.Router();
 
-
-
-//get cart items
+//endpoint for getting a cart
 router.get("/cart", async (req, res) => {
 
-  const userId = null;
+  // const userId = 'rosanna';
 
-  try {
-    const cart = await Cart.findOne({ userId });
-    if (cart && cart.items.length > 0) {
-      res.status(200).send(cart);
-    } else {
-      res.send(null);
-    }
-  } catch (error) {
-    res.status(500).send();
-  }
+  // try {
+  //   const cart = await Cart.findOne({ userId });
+  //   if (cart && cart.items.length > 0) {
+  //     res.status(200).send(cart);
+  //   } else {
+  //     res.send(null);
+  //   }
+  // } catch (error) {
+  //   res.status(500).send();
+  // }
 });
+
+//endpoint for adding an item in cart
+router.post("/cart/add", async (req, res) => {
+})
+
+//endpoint for removing ONE item in cart
+router.post("/cart/removeone", async (req, res) => {
+})
+
+//endpoint for removing ALL items in cart
+router.post("/cart/removeall", async (req, res) => {
+})
 
 // //add cart
 router.post("/cart", async (req, res) => {
 
   const newCart = await Cart.create({
-            userId:'rosanna',
-            items: [{ itemId:'1', name:'ipoon', quantity:1, price:100 }],
-          });
-          return res.status(201).send(newCart);
-//   const owner = req.user._id;
-//   const { itemId, quantity } = req.body;
+    userId: 'rosanna',
+    items: [{ itemId: '1', name: 'jacket', quantity: 1, price: 100 }],
+  });
+  return res.status(201).send(newCart);
+  //   const owner = req.user._id;
+  //   const { itemId, quantity } = req.body;
 
-//   try {
-//     const cart = await Cart.findOne({ owner });
-//     const item = await Item.findOne({ _id: itemId });
+  //   try {
+  //     const cart = await Cart.findOne({ owner });
+  //     const item = await Item.findOne({ _id: itemId });
 
-//     if (!item) {
-//       res.status(404).send({ message: "item not found" });
-//       return;
-//     }
-//     const price = item.price;
-//     const name = item.name;
-//     //If cart already exists for user,
-//     if (cart) {
-//       const itemIndex = cart.items.findIndex((item) => item.itemId == itemId);
-//       //check if product exists or not
+  //     if (!item) {
+  //       res.status(404).send({ message: "item not found" });
+  //       return;
+  //     }
+  //     const price = item.price;
+  //     const name = item.name;
+  //     //If cart already exists for user,
+  //     if (cart) {
+  //       const itemIndex = cart.items.findIndex((item) => item.itemId == itemId);
+  //       //check if product exists or not
 
-//       if (itemIndex > -1) {
-//         let product = cart.items[itemIndex];
-//         product.quantity += quantity;
+  //       if (itemIndex > -1) {
+  //         let product = cart.items[itemIndex];
+  //         product.quantity += quantity;
 
-//         cart.bill = cart.items.reduce((acc, curr) => {
-//           return acc + curr.quantity * curr.price;
-//         }, 0)
+  //         cart.bill = cart.items.reduce((acc, curr) => {
+  //           return acc + curr.quantity * curr.price;
+  //         }, 0)
 
-//         cart.items[itemIndex] = product;
-//         await cart.save();
-//         res.status(200).send(cart);
-//       } else {
-//         cart.items.push({ itemId, name, quantity, price });
-//         cart.bill = cart.items.reduce((acc, curr) => {
-//           return acc + curr.quantity * curr.price;
-//         }, 0)
+  //         cart.items[itemIndex] = product;
+  //         await cart.save();
+  //         res.status(200).send(cart);
+  //       } else {
+  //         cart.items.push({ itemId, name, quantity, price });
+  //         cart.bill = cart.items.reduce((acc, curr) => {
+  //           return acc + curr.quantity * curr.price;
+  //         }, 0)
 
-//         await cart.save();
-//         res.status(200).send(cart);
-//       }
-//     } else {
-//       //no cart exists, create one
-//       const newCart = await Cart.create({
-//         owner,
-//         items: [{ itemId, name, quantity, price }],
-//         bill: quantity * price,
-//       });
-//       return res.status(201).send(newCart);
-//     }
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).send("something went wrong");
-//   }
+  //         await cart.save();
+  //         res.status(200).send(cart);
+  //       }
+  //     } else {
+  //       //no cart exists, create one
+  //       const newCart = await Cart.create({
+  //         owner,
+  //         items: [{ itemId, name, quantity, price }],
+  //         bill: quantity * price,
+  //       });
+  //       return res.status(201).send(newCart);
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //     res.status(500).send("something went wrong");
+  //   }
 });
 
 // //delete item in cart
