@@ -3,15 +3,17 @@ const Cart = require("../models/cart");
 
 const router = new express.Router();
 
+//we use cookies to store a unique cartId so the customer don't the be logged in
+
 //endpoint for getting a cart //cookies is a small database that saves data on your device (locally)
 router.get("/cart", async (req, res) => {
-  const cartId = req.cookies.cartId
+  const cartId = req.cookies.cartId //this is where I get my cartId from cookies
   if (cartId === undefined) {
     res.status(404).send("no cartId provided");
     return
   }
   try {
-    const cart = await Cart.findOne({ cartId });
+    const cart = await Cart.findOne({ cartId }); //here we wait for the asynchronous request to complete
     res.status(200).send(cart);
   } catch (error) {
     res.status(500).send();
@@ -22,20 +24,18 @@ router.get("/cart", async (req, res) => {
 router.post("/cart/add-item", async (req, res) => {
   const cartId = req.cookies.cartId
   if (cartId === undefined) {
-    res.status(404).send("no cartId provided");
+    res.status(404).send("no cartId provided"); //no cartId was found in my cookie collection
     return
   }
-
   const itemId = req.query.itemId
   if (itemId === undefined) {
     res.status(404).send("no itemId provided");
     return
   }
-
   try {
     const cart = await Cart.findOne({ cartId });
 
-    //If cart already exists for user,
+    //If cart already exists for user
     if (cart) {
       const itemIndex = cart.items.findIndex((item) => item.itemId == itemId);
 
@@ -43,7 +43,7 @@ router.post("/cart/add-item", async (req, res) => {
       if (itemIndex > -1) {
         res.status(200).send(cart)
         return
-
+        
       } else {
         cart.items.push({ itemId });
         await cart.save();
