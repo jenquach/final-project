@@ -2,7 +2,7 @@ const express = require('express')
 const cartRouter = require('./routers/cart')
 const indexRouter = require('./routers/index')//require('./db/mongoose')
 const cookieParser = require("cookie-parser");
-require('./mongo')
+require('./mongoose-settings')
 
 
 
