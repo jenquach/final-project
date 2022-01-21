@@ -1,9 +1,8 @@
-const express = require('express')
+const express = require('express') //Use require() to Include External Modules
 const cartRouter = require('./routers/cart')
 const indexRouter = require('./routers/index')//require('./db/mongoose')
 const cookieParser = require("cookie-parser");
-require('./mongoose-settings')
-
+require('./mongoose-settings') //Node.js can use this module to manipulate MongoDB databases
 
 
 // Defines the port the app will run on. Defaults to 8080, but can be 
