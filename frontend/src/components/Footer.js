@@ -3,6 +3,7 @@ import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 import Link from "@mui/material/Link"
 import styled from "styled-components"
+import { Container, Typography } from "@mui/material"
 
 
 const FooterWrapper = styled.section`
@@ -16,7 +17,7 @@ const Footer = () => {
         sx={{
         display: 'flex',
         flexDirection: { xs: 'column', sm: 'row' },
-        height: '70px',
+        height: '100px',
         alignItems: 'center',
         justifyContent: 'space-evenly',
         }}>
@@ -48,6 +49,18 @@ const Footer = () => {
               </Box>
             </Grid>
           </Grid>
+      </Box>
+      <Box
+        sx={{
+        backgroundColor: '#CFE8E0',
+        height: '60px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        }}>
+          <Typography>
+            This is a ficional webshop ...
+          </Typography>
       </Box>
     </FooterWrapper>
   )
