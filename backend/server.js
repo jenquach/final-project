@@ -1,10 +1,9 @@
-import express from 'express'
-import cors from 'cors'
-import mongoose from 'mongoose'
+const express = require('express') //Use require() to Include External Modules
+const cartRouter = require('./routers/cart')
+const indexRouter = require('./routers/index')//require('./db/mongoose')
+const cookieParser = require("cookie-parser");
+require('./mongoose-settings') //Node.js can use this module to manipulate MongoDB databases
 
-const mongoUrl = process.env.MONGO_URL || "mongodb://127.0.0.1/finalproject"
-mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
-mongoose.Promise = Promise
 
 // Defines the port the app will run on. Defaults to 8080, but can be 
 // overridden when starting the server. For example:
@@ -13,17 +12,13 @@ mongoose.Promise = Promise
 const port = process.env.PORT || 8080
 const app = express()
 
-// Add middlewares to enable cors and json body parsing
-app.use(cors())
+// // Add middlewares to enable cors and json body parsing
+// app.use(cors())
 app.use(express.json())
+app.use(cookieParser());
+app.use(indexRouter)
+app.use(cartRouter)
 
-// Start defining your routes here
-app.get('/', (req, res) => {
-  res.send('Hello world')
-})
-
-// Start the server
 app.listen(port, () => {
-  // eslint-disable-next-line
   console.log(`Server running on http://localhost:${port}`)
 })
