@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid"
 import Card from "@mui/material/Card" */
 import { makeStyles } from "@mui/styles"
 
-import ImageCard from "../components/ImageCard"
+import CategoryCard from "../components/CategoryCard"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,26 +13,38 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     display: 'flex',
     flexDirection: 'column',
+    
    /*  [theme.breakpoints.down("md")]:{
       flexDirection: 'row',
     }, */
   },
   heroImage: {
+    position: "relative",
     backgroundImage: `url(${require("../assets/toddler_choosing_clothes.jpg")})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    backgroundPosition: "center center",
     height: '80vh',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: '65px',
   },
-  featuredCategories: {
+  /* featuredCategories: {
     display: 'flex',
     flexDirection: 'row',
+    flexWrap: "wrap",
     justifyContent: 'space-evenly',
-    paddingTop: '20px',
-    paddingBottom: '40px',
+    paddingTop: '40px',
+    paddingBottom: '60px',
+  } */
+  featuredCategories: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+    gridGap: '2%',
+    paddingTop: '40px',
+    paddingBottom: '60px',
+    justifyContent: 'space-evenly',
+    justifyItems: 'center',
   }
 }))
 
@@ -46,9 +58,7 @@ const Startpage = () => {
         </h1>
       </div>
       <div className={classes.featuredCategories}>
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
+        <CategoryCard />
       </div>
     </div>
   )
