@@ -1,16 +1,21 @@
 import React from "react"
-import Box from "@mui/material/Box"
+/* import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
-import Card from "@mui/material/Card"
+import Card from "@mui/material/Card" */
 import { makeStyles } from "@mui/styles"
 
-import ImageCard from "./components/ImageCard"
+import ImageCard from "../components/ImageCard"
 
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: '90vh',
     backgroundColor: '#F9F9F9',
     color: 'white',
+    display: 'flex',
+    flexDirection: 'column',
+   /*  [theme.breakpoints.down("md")]:{
+      flexDirection: 'row',
+    }, */
   },
   heroImage: {
     backgroundImage: `url(${require("../assets/toddler_choosing_clothes.jpg")})`,
@@ -21,6 +26,13 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: '65px',
+  },
+  featuredCategories: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    paddingTop: '20px',
+    paddingBottom: '40px',
   }
 }))
 
@@ -34,6 +46,8 @@ const Startpage = () => {
         </h1>
       </div>
       <div className={classes.featuredCategories}>
+        <ImageCard />
+        <ImageCard />
         <ImageCard />
       </div>
     </div>
