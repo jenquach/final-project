@@ -16,9 +16,9 @@ router.post("/signup", async (req, res) => {
   try {
     const salt = bcrypt.genSaltSync()
 
-    // if (!email.includes("@")) {
-		// 	throw "Email must include @"
-    // }
+    if (!email.includes("@")) {
+			throw "Email must include @"
+    }
 
     if (password.length < 8) {
 			throw "Password must be at least 8 characters long"
