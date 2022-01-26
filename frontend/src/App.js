@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import Footer from "./components/Footer"
 import ResponsiveAppBar from "./components/Navbar"
+import Startpage from './pages/StartPage';
 
 
 function App() {
@@ -12,7 +12,8 @@ function App() {
   return (
     <div className="App">
     <ResponsiveAppBar />
-      <header className="App-header">
+    <Startpage />
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -25,7 +26,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
     <Footer />
     </div>
   );
