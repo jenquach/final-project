@@ -36,7 +36,7 @@ app.listen(port, () => {
 
 
 if (process.env.RESET_PRODUCT_DB) { 
-  const seedDatabase = async () => { //this is an asyncrounus function
+  const seedDatabase = async () => { //this is an asyncronous function
     await Product.deleteMany({}) //first it does this part
 
     productData.forEach(item => { //for each loop the array of books
