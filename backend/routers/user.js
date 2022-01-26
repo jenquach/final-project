@@ -1,10 +1,13 @@
 const express = require("express")
 const User = require("../models/user")
-const authenticateUser = require("../middleware/auth")
+const authenticateUser = require("../data/middleware/auth")
 const bcrypt = require("bcrypt")
-const crypto = require("crypto")
 
 const router = new express.Router()
+
+router.get("/hej", async (req, res) => {
+  res.send('Hello world')
+});
 
 //Sign up
 router.post("/signup", async (req, res) => {
@@ -13,9 +16,9 @@ router.post("/signup", async (req, res) => {
   try {
     const salt = bcrypt.genSaltSync()
 
-    if (!email.includes("@")) {
-			throw "Email must include @"
-    }
+    // if (!email.includes("@")) {
+		// 	throw "Email must include @"
+    // }
 
     if (password.length < 8) {
 			throw "Password must be at least 8 characters long"
@@ -65,7 +68,7 @@ router.post("/signin", async (req, res) => {
 	} catch (error) {
 		res.status(400).json({ response: error, success: false })
 	}
-});
+})
 
 //My pages
 router.get("/my-pages", authenticateUser)

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+const crypto = require("crypto")
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -26,3 +27,5 @@ const userSchema = new mongoose.Schema({
 
 // User model 
 const User = mongoose.model("User", userSchema)
+
+module.exports = User
