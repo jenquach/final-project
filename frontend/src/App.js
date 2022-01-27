@@ -11,8 +11,8 @@ import DummyStartPage from './components/DummyStartPage';
 function App() {
   return (
     <div className="App">
-      <ResponsiveAppBar />
       <BrowserRouter>
+      <ResponsiveAppBar />
         <Routes>
           <Route path="/" element={<DummyStartPage />} />
           <Route path="/products" element={<ProductList />} />

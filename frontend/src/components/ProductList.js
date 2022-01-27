@@ -5,12 +5,14 @@ import Grid from '@mui/material/Grid';
 
 import FixedContainer from './FixedContainer';
 
+import { API_URL } from '../utils/urls'
+
 const ProductList = () => {
   const [products, setProducts] = useState([]);
 
 
   useEffect(() => {
-    fetch('http://localhost:8080/products/') //option is needed otherwise is going to be getMetod
+    fetch ( API_URL('products')) //option is needed otherwise is going to be getMetod
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
