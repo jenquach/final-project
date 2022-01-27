@@ -12,8 +12,10 @@ import Button from "@mui/material/Button"
 import Tooltip from "@mui/material/Tooltip"
 import MenuItem from "@mui/material/MenuItem"
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag"
+import { Link } from "react-router-dom"
 
-const pages = ['All Products', 'FAQ', 'Blog']
+const pages = [{ display:'All Products',url:'/products'},{ display:'FAQ',url:'/faq'}, { display:'Blog',url:'/blog'}]
+
 const settings = ['LOG IN', 'SIGN UP']
 
 const ResponsiveAppBar = () => {
@@ -49,7 +51,7 @@ const ResponsiveAppBar = () => {
               component="div"
               sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
             >
-              A NEW FIT
+              <Link to="/">A NEW FIT</Link>
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -82,8 +84,8 @@ const ResponsiveAppBar = () => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                  <MenuItem key={page.url} onClick={handleCloseNavMenu} component={Link} to={page.url}>
+                    <Typography textAlign="center">{page.display}</Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -94,16 +96,16 @@ const ResponsiveAppBar = () => {
               component="div"
               sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
             >
-              A NEW FIT
+              <Link to="/">A NEW FIT</Link>
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page) => (
                 <Button
-                  key={page}
+                  key={page.url}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
-                  {page}
+                  {page.display}
                 </Button>
               ))}
             </Box>
