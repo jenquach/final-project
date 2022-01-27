@@ -15,7 +15,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "center center",
-    height: "120vh",
+    height: "40em",
+    /* height: "100vh", */
+    /* maxWidth: "1440px", */
+    marginTop: "50px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
