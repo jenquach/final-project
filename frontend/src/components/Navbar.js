@@ -111,7 +111,7 @@ const ResponsiveAppBar = () => {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <PersonIcon />
+                  <PersonIcon sx={{ color: '#F9F9F9' }} />
                 </IconButton>
               </Tooltip>
               <Menu
@@ -139,7 +139,7 @@ const ResponsiveAppBar = () => {
             </Box>
             <Box sx={{ flexGrow: 0 }}>
               <IconButton>
-                <ShoppingBagIcon />
+                <ShoppingBagIcon sx={{ color: '#F9F9F9' }} />
               </IconButton>
             </Box>
           </Toolbar>
