@@ -4,7 +4,7 @@ import { Provider } from "react-redux"
 import { configureStore, combineReducers } from "@reduxjs/toolkit"
 
 import Signup from './components/Signup'
-import SignInSide from './components/SignInSide'
+import Signin from './components/Signin'
 import ResponsiveAppBar from "./components/Navbar"
 import Footer from "./components/Footer"
 
