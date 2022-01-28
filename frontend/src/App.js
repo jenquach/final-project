@@ -1,4 +1,5 @@
 import React from "react"
+import { BrowserRouter, Routes, } from "react-router-dom"
 import "./App.css"
 
 import Footer from "./components/Footer"
@@ -8,7 +9,11 @@ import StartPage from "./pages/StartPage"
 function App() {
   return (
     <>
-    <ResponsiveAppBar />
+    <BrowserRouter>
+      <ResponsiveAppBar />
+        <Routes>
+        </Routes>
+    </BrowserRouter>
     <StartPage />
     <Footer />
     </>
