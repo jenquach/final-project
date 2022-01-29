@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip"
 import MenuItem from "@mui/material/MenuItem"
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag"
 import { Link } from "react-router-dom"
+import MiniCart from "./MiniCart"
 
 const pages = [{ display:'All Products',url:'/products'},{ display:'FAQ',url:'/faq'}, { display:'Blog',url:'/blog'}]
 
@@ -140,6 +141,7 @@ const ResponsiveAppBar = () => {
               </Menu>
             </Box>
             <Box sx={{ flexGrow: 0 }}>
+              <MiniCart></MiniCart>
               <IconButton>
                 <ShoppingBagIcon sx={{ color: '#F9F9F9' }} />
               </IconButton>
