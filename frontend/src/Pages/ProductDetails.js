@@ -1,91 +1,70 @@
 import React, { useEffect, useState } from "react"
-import { /* useHistory */ } from "react-router-dom"
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
+import { /* useParams */ /* useHistory */ } from "react-router-dom"
+import Box from "@mui/material/Box"
+import Card from "@mui/material/Card"
+import CardContent from "@mui/material/CardContent"
+import CardMedia from "@mui/material/CardMedia"
+import Typography from "@mui/material/Typography"
+import styled from "styled-components"
 
-import { API_URL } from "../utils/urls"
-/* import styled from "styled-components" */
-
-/* const ProductDetailsWrapper = styled.div`
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 2%;
-    padding-top: 40px;
-    padding-bottom: 60px;
-    justify-content: space-evenly;
-    justify-items: center; 
-    color: blue;
-    margin-top: 200px;
-` */
+const ProductDetailsWrapper = styled.div`
+    margin: 100px 10px 50px 10px;
+`
 
 const ProductDetails = () => {
-  const [products, setProducts] = useState([])
+  const [product, setProduct] = useState({})
+  const PRODUCT_URL = `https://final-project--api.herokuapp.com/product/1`
+  
+  /* const { productId } = useParams()
+  const PRODUCT_URL = `https://final-project--api.herokuapp.com/products/${productId}` */
+  
 
   
    useEffect(() => {
-     fetch ( API_URL('products'))
+     fetch ( PRODUCT_URL )
       .then((res) => res.json())
-      .then((data) => {
-        setProducts(data)
+      .then((json) => {
+        setProduct(json)
       })
-  }, [])
-  
-  /* let content = null
-
-  if (products.error){
-    content = <p>
-      There was an error. Please refresh or try again later.
-    </p>
-  } */
-
-  /* if(products.data){
-    content = 
-    products.data.map((product, key) =>
-    <div>{ product.productName }</div>)
-    
-  } */
+  }, [PRODUCT_URL])
 
   return(
-    <>
-    {products.map((product) => (
-      <Card sx={{ display: 'flex' }}>
+      <ProductDetailsWrapper>
+      <Card sx={{ display: "flex", minHeight: "300px"}} >
         <CardMedia
         component="img"
-        sx={{ width: 151 }}
+        sx={{ width: 151, padding: "20px", margin: "0 40px" }}
         image={ product.img1 }
-        alt="Live from space album cover"
-      />
-      <Box key={product.productId} sx={{ display: 'flex', flexDirection: 'column' }}>
-        <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography component="div" variant="h5">
-        { product.productName }
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary" component="div">
-          { product.desc }
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary" component="div">
-          { product.condition }
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary" component="div">
-          Price: £{ product.price }
-          </Typography>
+        alt={ product.productName }
+        />
+        <Box key={product.productId} sx={{ display: "flex", flexDirection: "column" }}>
+          <CardContent sx={{ flex: "1 0 auto" }}>
+            <Typography component="div" variant="h4" color="#A9CDCE">
+              { product.productName }
+            </Typography>
+            <Typography variant="h6" color="#A9CDCE" component="div" marginBottom={2}>
+              £{ product.price }.00
+            </Typography>
+            <Typography variant="subtitle1" color="text.secondary" component="div">
+              { product.desc }
+            </Typography>
+            {/* <Typography sx={{ fontWeight: 'bold' }}>
+              Condition
+            </Typography> */}
+            <Typography variant="subtitle1" color="text.secondary" component="div">
+              { product.condition }
+            </Typography>
           </CardContent>
-          </Box>
+            <button>
+              BUY
+            </button>
+            <button>
+              Go back
+            </button>
+        </Box>
       </Card>
-    ))}
-    </>
-    )}
-    
-
-    /* return( 
-    <ProductDetailsWrapper>
-    Product Details page:
-    {content}
     </ProductDetailsWrapper>
-  ) */
-
+  )
+}
 
 export default ProductDetails
