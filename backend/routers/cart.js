@@ -7,7 +7,7 @@ const router = new express.Router();
 
 //endpoint for getting a cart //cookies is a small database that saves data on your device (locally)
 router.get("/cart", async (req, res) => {
-  const cartId = req.cookies.cartId //this is where I get my cartId from cookies
+  const cartId = req.headers['cartid'] //this is where I get my cartId from cookies
   if (cartId === undefined) {
     res.status(404).send("no cartId provided");
     return
@@ -22,7 +22,7 @@ router.get("/cart", async (req, res) => {
 
 //endpoint for adding an item in cart
 router.post("/cart/add-item", async (req, res) => {
-  const cartId = req.cookies.cartId
+  const cartId = req.headers['cartid'] //this is where I get my cartId from cookies
   if (cartId === undefined) {
     res.status(404).send("no cartId provided"); //no cartId was found in my cookie collection
     return
@@ -66,7 +66,7 @@ router.post("/cart/add-item", async (req, res) => {
 
 //endpoint for removing ONE item in cart
 router.post("/cart/remove-item", async (req, res) => {
-  const cartId = req.cookies.cartId
+  const cartId = req.headers['cartid'] //this is where I get my cartId from cookies
   if (cartId === undefined) {
     res.status(404).send("no cartId provided")
     return
@@ -98,7 +98,7 @@ router.post("/cart/remove-item", async (req, res) => {
 
 //endpoint for removing ALL items in cart
 router.post("/cart/remove-all-items", async (req, res) => {
-  const cartId = req.cookies.cartId
+  const cartId = req.headers['cartid'] //this is where I get my cartId from cookies
   if (cartId === undefined) {
     res.status(404).send("no cartId provided")
     return

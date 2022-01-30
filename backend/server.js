@@ -1,4 +1,6 @@
 const express = require('express') //Use require() to Include External Modules
+var cors = require('cors')
+
 const cartRouter = require('./routers/cart')
 const productRouter = require('./routers/product')
 const indexRouter = require('./routers/index')//require('./db/mongoose')
@@ -22,7 +24,7 @@ const port = process.env.PORT || 8080
 const app = express()
 
 // // Add middlewares to enable cors and json body parsing
-// app.use(cors())
+ app.use(cors())
 app.use(express.json())
 app.use(cookieParser());
 app.use(indexRouter)
