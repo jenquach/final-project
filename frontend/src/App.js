@@ -4,9 +4,9 @@ import "./App.css"
 
 import Footer from "./components/Footer"
 import ResponsiveAppBar from "./components/Navbar"
-import StartPage from "./pages/StartPage"
+/* import StartPage from "./pages/StartPage" */
 
-/* import ProductDetails from "./pages/ProductDetails" */
+import ProductDetails from "./pages/ProductDetails"
 
 function App() {
   return (
@@ -16,7 +16,8 @@ function App() {
         <Routes>
         </Routes>
     </BrowserRouter>
-    <StartPage />
+   {/*  <StartPage /> */}
+   <ProductDetails />
     <Footer />
     </>
   )

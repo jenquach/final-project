@@ -1,4 +1,8 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
+/* import { useHistory } from "react-router-dom" */
+import axios from "axios"
+
+/* import { API_URL } from "../utils/urls" */
 import styled from "styled-components"
 
 const ProductDetailsWrapper = styled.div`
@@ -14,8 +18,52 @@ const ProductDetailsWrapper = styled.div`
 `
 
 const ProductDetails = () => {
-  return (
-    <ProductDetailsWrapper>Product Details page</ProductDetailsWrapper>
+  const url =`https://final-project--api.herokuapp.com/product/:productId`
+  const [details, setDetails] = useState({
+    data: null,
+    error: false,
+  })
+  
+   useEffect(() => {
+    setDetails({
+      data: null,
+      error: false
+    })
+    /* axios.get(API_URL${/product/:productId}) */
+    axios.get(url) 
+    .then(res => {
+      setDetails({
+        data: res.data,
+        error: false
+      })
+    })
+    .catch(() => {
+      setDetails({
+        data: null,
+      error: true
+      })
+    })
+  }, [url])
+  
+  let content = null
+
+  if (details.error){
+    content = <p>
+      There was an error. Please refresh or try again later.
+    </p>
+  }
+
+  if(details.data){
+    content = <p>
+      There are some product details data
+    </p>
+  }
+
+    return( 
+    <ProductDetailsWrapper>
+    Product Details page
+    {content}
+    </ProductDetailsWrapper>
   )
 }
 
