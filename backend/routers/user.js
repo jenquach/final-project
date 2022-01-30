@@ -17,7 +17,7 @@ router.post("/signup", async (req, res) => {
     const salt = bcrypt.genSaltSync()
 
     if (!email.includes("@")) {
-			throw "Email must include @"
+			throw "Incorrect entry"
     }
 
     if (password.length < 8) {
@@ -70,11 +70,11 @@ router.post("/signin", async (req, res) => {
 	}
 })
 
-//My pages
-router.get("/my-pages", authenticateUser)
-router.get("/my-pages", (req, res) => {
+//My profile
+router.get("/my-profile", authenticateUser)
+router.get("/my-profile", (req, res) => {
   const { name } = req.body
-  res.send(`Welcome ${name}`)
+  res.send(`Welcome ${name} \u1F44B`)
 })
 
 module.exports = router
