@@ -58,7 +58,7 @@ const Signup = () => {
 
   useEffect(() => {
     if (accessToken) {
-      navigate('/my-pages')
+      navigate('/my-profile')
     }
   }, [accessToken, navigate])
 
