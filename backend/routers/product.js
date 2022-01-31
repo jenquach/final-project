@@ -43,7 +43,7 @@ router.get("/products/:category", async (req, res) => {
         return
     }
     try {
-        const products = await Product.find({ category: category })
+        const products = await Product.find({ category: category }) //find all products where category is route parameter: "category"
         res.status(200).send(products);
     } catch (error) {
         res.status(500).send();

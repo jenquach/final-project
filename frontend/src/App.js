@@ -27,7 +27,7 @@ const store = configureStore({ reducer })
 
 function App() {
 
-  useEffect(() => {
+  useEffect(() => { //here we generate a unique cartID if it doesn't already exist - save to localStorage
     if (localStorage.getItem("cartId"))
     return
     localStorage.setItem("cartId", uuidv4());
