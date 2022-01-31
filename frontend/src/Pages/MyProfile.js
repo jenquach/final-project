@@ -10,18 +10,24 @@ import styled from "styled-components"
 const Wrapper = styled.div`
 	height: 100vh;
 	margin-top: 68px;
+	padding: 10px;
 `
 const ContainerWrapper = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 2fr;
 `
 const Container = styled.div`
+	ul{
+		padding: 10px;
+	},
 	li{
 		list-style-type: none;
 	}
 `
 const ContentContainer = styled.div`
-	margin-top: 68px;
+	display: flex;
+	justify-content: center;
+	border: 1px solid;
 `
 
 
@@ -30,9 +36,9 @@ const MyProfile = () => {
 	const [Pickup, setPickup] = useState(false)
 	const [Orders, setOrders] = useState(false)
 	const [Settings, setSettings] = useState(false)
-	const text1 = 'lalala'
-	const text2 = 'blalala'
-	const text3 = 'hahaha'
+	const text1 = 'Book a pick-up'
+	const text2 = 'Order history'
+	const text3 = 'Account settings'
 	const message = useSelector((store) => store.profile.message)
 	const accessToken = useSelector((store) => store.user.accessToken)
 	const dispatch = useDispatch()
@@ -91,7 +97,6 @@ const MyProfile = () => {
 					</ul>
 				</Container>
 					<ContentContainer>
-				
 							<div>
 							<h6>
 							{Pickup ? text1 : null}
@@ -103,12 +108,9 @@ const MyProfile = () => {
 							{Settings ? text3 : null}
 							</h6>
 							</div>
-				
 					</ContentContainer>
-	
-    </ContainerWrapper>
-			</Wrapper>
-	
+    	</ContainerWrapper>
+		</Wrapper>
 	)
 }
 

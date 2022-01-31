@@ -97,9 +97,7 @@ const Signup = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid container component="main" 
-      sx={{ height: '100vh' 
-    }}>
+      <Grid container component="main" sx={{ height: '100vh', marginTop: '30px' }}>
         <CssBaseline />
         <Grid
           item
@@ -124,8 +122,6 @@ const Signup = () => {
           elevation={6} 
           square
           sx={{
-            display: 'flex',
-            alignItems: 'center',
           }}>
           <Box
             sx={{
