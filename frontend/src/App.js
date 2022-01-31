@@ -18,6 +18,7 @@ import profile from "./reducers/profile"
 import StartPage from "./pages/StartPage"
 import { cartReducer } from './reducers/CartReducer';
 import MyProfile from "./pages/MyProfile"
+import MiniCartDrawer from "./components/MiniCartDrawer"
 
 
 
@@ -41,6 +42,7 @@ function App() {
     <Provider store={store}> 
       <BrowserRouter>
       <ResponsiveAppBar />
+      <MiniCartDrawer />
           <Routes>
             <Route path="/" element={<StartPage />} />
             <Route path="/signup" element={<Signup />} />

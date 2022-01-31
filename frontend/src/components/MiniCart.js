@@ -1,6 +1,6 @@
 import React from "react";
 import { cartReducer } from "../reducers/CartReducer";
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 
 const MiniCart = () => {
@@ -9,7 +9,6 @@ const MiniCart = () => {
     <>
       {cartItems.map((item) =>
         (<span key={item.itemId}>{item.itemId}</span>)
-
       )}
     </>
   )

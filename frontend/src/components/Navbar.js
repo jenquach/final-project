@@ -13,15 +13,23 @@ import Tooltip from "@mui/material/Tooltip"
 import MenuItem from "@mui/material/MenuItem"
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag"
 import { Link } from "react-router-dom"
-import MiniCart from "./MiniCart"
+import { useDispatch } from 'react-redux';
+import { cartReducer } from "../reducers/CartReducer"
+
 
 const pages = [{ display: 'All Products', url: '/products' }, { display: 'FAQ', url: '/faq' }, { display: 'Blog', url: '/blog' }]
 
 const settings = [<Link to="/signin">LOG IN</Link>, <Link to="/signup">SIGN UP</Link>]
 
+
+
 const ResponsiveAppBar = () => {
+  const dispatch = useDispatch();
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
+  const toggleCartDrawer = () => {
+    dispatch(cartReducer.actions.setMiniCartDrawerVisible(true))
+  }
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
@@ -143,8 +151,9 @@ const ResponsiveAppBar = () => {
             </Menu>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
-            <IconButton>
-              <MiniCart/>
+            <IconButton
+            onClick={toggleCartDrawer}
+            >
               <ShoppingBagIcon sx={{ color: '#F9F9F9' }} />
             </IconButton>
           </Box>
