@@ -16,7 +16,7 @@ function App() {
         <Routes>
         </Routes>
     </BrowserRouter>
-   {/*  <StartPage /> */}
+    {/* <StartPage /> */}
    <ProductDetails />
     <Footer />
     </>

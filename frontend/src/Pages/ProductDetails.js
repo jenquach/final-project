@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { /* useParams */ /* useHistory */ } from "react-router-dom"
+import { /* useParams */ /* useNavigate */ } from "react-router-dom"
 import Box from "@mui/material/Box"
 import Card from "@mui/material/Card"
 import CardContent from "@mui/material/CardContent"
@@ -17,7 +17,8 @@ const ProductDetails = () => {
   
   /* const { productId } = useParams()
   const PRODUCT_URL = `https://final-project--api.herokuapp.com/products/${productId}` */
-  
+
+  /* const navigate = useNavigate() */
 
   
    useEffect(() => {
@@ -27,6 +28,10 @@ const ProductDetails = () => {
         setProduct(json)
       })
   }, [PRODUCT_URL])
+
+  /* const BackToAllProducts = () => {
+		navigate('/products')
+  } */
 
   return(
       <ProductDetailsWrapper>
@@ -58,8 +63,8 @@ const ProductDetails = () => {
             <button>
               BUY
             </button>
-            <button>
-              Go back
+            <button className="back-btn" /* onClick={BackToAllProducts} */>
+              Back To All Products
             </button>
         </Box>
       </Card>
