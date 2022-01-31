@@ -3,17 +3,16 @@ const Cart = require("../models/cart");
 
 const router = new express.Router();
 
-//we use cookies to store a unique cartId so the customer don't the be logged in
 
-//endpoint for getting a cart //cookies is a small database that saves data on your device (locally)
+//endpoint for getting a cart 
 router.get("/cart", async (req, res) => {
-  const cartId = req.cookies.cartId //this is where I get my cartId from cookies
+  const cartId = req.headers['cartid'] //this is where we get our cartId: from headers
   if (cartId === undefined) {
-    res.status(404).send("no cartId provided");
+    res.status(404).send("no cartId provided"); //if there's no cartId in headers send 404 message
     return
   }
   try {
-    const cart = await Cart.findOne({ cartId }); //here we wait for the asynchronous request to complete
+    const cart = await Cart.findOne({ cartId }); //here we fint ONE cart with a specific ID
     res.status(200).send(cart);
   } catch (error) {
     res.status(500).send();
@@ -22,12 +21,12 @@ router.get("/cart", async (req, res) => {
 
 //endpoint for adding an item in cart
 router.post("/cart/add-item", async (req, res) => {
-  const cartId = req.cookies.cartId
+  const cartId = req.headers['cartid'] //this is where we get our cartId from headers
   if (cartId === undefined) {
-    res.status(404).send("no cartId provided"); //no cartId was found in my cookie collection
+    res.status(404).send("no cartId provided"); //no cartId was found in my header collection
     return
   }
-  const itemId = req.query.itemId
+  const itemId = req.query.itemId //query parameter for what product should be added in the cart
   if (itemId === undefined) {
     res.status(404).send("no itemId provided");
     return
@@ -35,23 +34,20 @@ router.post("/cart/add-item", async (req, res) => {
   try {
     const cart = await Cart.findOne({ cartId });
 
-    //If cart already exists for user
+    //If cart already exists for user 
     if (cart) {
       const itemIndex = cart.items.findIndex((item) => item.itemId == itemId);
+      if (itemIndex > -1) { //check if product exists or not in the cart
 
-      //check if product exists or not
-      if (itemIndex > -1) {
-        res.status(200).send(cart)
+        res.status(200).send(cart) //if cartItem exists return success
         return
-        
       } else {
-        cart.items.push({ itemId });
+        cart.items.push({ itemId }); //if cartItem do not exist push to array and save cart
         await cart.save();
         res.status(200).send(cart);
       }
-
     } else {
-      //no cart exists, create one
+      //no cart exists for the cartID, create new one
       const newCart = await Cart.create({
         cartId,
         items: [{ itemId }],
@@ -66,23 +62,22 @@ router.post("/cart/add-item", async (req, res) => {
 
 //endpoint for removing ONE item in cart
 router.post("/cart/remove-item", async (req, res) => {
-  const cartId = req.cookies.cartId
-  if (cartId === undefined) {
+  const cartId = req.headers['cartid']
+  if (cartId === undefined) { 
     res.status(404).send("no cartId provided")
     return
   }
-
-  const itemId = req.query.itemId
+  const itemId = req.query.itemId 
   if (itemId === undefined) {
     res.status(404).send("no itemId provided")
     return
   }
   try {
-    const cart = await Cart.findOne({ cartId })
+    const cart = await Cart.findOne({ cartId }) //if cartId found remove item with that specific Id
     if (cart) {
-      const remainingItems = cart.items.filter((item, index) => item.itemId !== itemId)
+      const remainingItems = cart.items.filter((item, index) => item.itemId !== itemId) //all cart items except the one that are removed
       cart.items = remainingItems
-      await cart.save();
+      await cart.save(); //save new cart
 
       res.status(200).send(cart);
     }
@@ -98,7 +93,7 @@ router.post("/cart/remove-item", async (req, res) => {
 
 //endpoint for removing ALL items in cart
 router.post("/cart/remove-all-items", async (req, res) => {
-  const cartId = req.cookies.cartId
+  const cartId = req.headers['cartid'] 
   if (cartId === undefined) {
     res.status(404).send("no cartId provided")
     return
@@ -106,7 +101,7 @@ router.post("/cart/remove-all-items", async (req, res) => {
   try {
     const cart = await Cart.findOne({ cartId })
     if (cart) {
-      cart.items = []
+      cart.items = [] //instead of fllitering like on line 78 - here we remove all items
       await cart.save();
       res.status(200).send(cart);
     }
