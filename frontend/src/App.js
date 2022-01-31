@@ -10,7 +10,7 @@ import {v4 as uuidv4 } from "uuid"
 import ResponsiveAppBar from "./components/Navbar"
 import Signup from "./components/Signup"
 import Signin from "./components/Signin"
-import ProductList from "./components/ProductList"
+import ProductList from "./pages/ProductList"
 import Footer from "./components/Footer"
 
 import user from "./reducers/user"

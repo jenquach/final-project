@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import ProductBox from './ProductBox';
+import ProductBox from '../components/ProductBox';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
-import FixedContainer from './FixedContainer';
+import FixedContainer from '../components/FixedContainer';
 
 import { API_URL } from '../utils/urls'
 
