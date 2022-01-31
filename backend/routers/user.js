@@ -5,10 +5,6 @@ const bcrypt = require("bcrypt")
 
 const router = new express.Router()
 
-router.get("/hej", async (req, res) => {
-  res.send('Hello world')
-});
-
 //Sign up
 router.post("/signup", async (req, res) => {
   const { name, email, password } = req.body
@@ -74,7 +70,7 @@ router.post("/signin", async (req, res) => {
 router.get("/my-profile", authenticateUser)
 router.get("/my-profile", (req, res) => {
   const { name } = req.body
-  res.send(`Welcome ${name} \u1F44B`)
+  res.send(`Welcome ${name}`)
 })
 
 module.exports = router
