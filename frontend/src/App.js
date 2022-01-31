@@ -9,6 +9,7 @@ import {v4 as uuidv4 } from 'uuid'
 
 import Signup from './components/Signup'
 import Signin from './components/Signin'
+import MyProfile from './components/MyProfile'
 import ResponsiveAppBar from "./components/Navbar"
 import Footer from "./components/Footer"
 
@@ -24,13 +25,14 @@ const reducer = combineReducers({
 
 const store = configureStore({ reducer })
 
-useEffect(() => {
-  if (localStorage.getItem("cartId"))
-  return
-  localStorage.setItem("cartId", uuidv4());
-  }, []);
+function App() {
 
-export const App = () => {
+  useEffect(() => {
+    if (localStorage.getItem("cartId"))
+    return
+    localStorage.setItem("cartId", uuidv4());
+    }, []);
+
   return (
     <Provider store={store}> 
       <BrowserRouter>
@@ -39,7 +41,7 @@ export const App = () => {
             <Route path="/" element={<StartPage />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/signin" element={<Signin />} />
-            {/* <Route path="/my-profile" element={<MyProfile />} /> */}
+            <Route path="/my-profile" element={<MyProfile />} />
             <Route path="/products" element={<ProductList />} />
           </Routes>
       </BrowserRouter>
@@ -48,4 +50,4 @@ export const App = () => {
   )
 }
 
-export default App;
+export default App
