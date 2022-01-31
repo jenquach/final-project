@@ -1,11 +1,9 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Provider } from "react-redux"
 import { configureStore, combineReducers } from "@reduxjs/toolkit"
 
 import "./App.css"
-
-import {v4 as uuidv4 } from "uuid"
 
 import ResponsiveAppBar from "./components/Navbar"
 import Signup from "./components/Signup"
@@ -31,12 +29,6 @@ const reducer = combineReducers({
 const store = configureStore({ reducer })
 
 function App() {
-
-  useEffect(() => { //here we generate a unique cartID if it doesn't already exist - save to localStorage
-    if (localStorage.getItem("cartId"))
-    return
-    localStorage.setItem("cartId", uuidv4());
-    }, []);
 
   return (
     <Provider store={store}> 
