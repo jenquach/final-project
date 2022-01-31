@@ -9,8 +9,6 @@ import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import CssBaseline from '@mui/material/CssBaseline'
 import TextField from '@mui/material/TextField'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import Checkbox from '@mui/material/Checkbox'
 import Link from '@mui/material/Link'
 import Paper from '@mui/material/Paper'
 import Box from '@mui/material/Box'
@@ -99,9 +97,7 @@ const Signup = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid container component="main" 
-      sx={{ height: '100vh' 
-    }}>
+      <Grid container component="main" sx={{ height: '100vh', marginTop: '30px' }}>
         <CssBaseline />
         <Grid
           item
@@ -126,8 +122,6 @@ const Signup = () => {
           elevation={6} 
           square
           sx={{
-            display: 'flex',
-            alignItems: 'center',
           }}>
           <Box
             sx={{

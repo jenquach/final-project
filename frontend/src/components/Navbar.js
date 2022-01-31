@@ -16,7 +16,7 @@ import { Link } from "react-router-dom"
 
 const pages = [{ display:'All Products',url:'/products'},{ display:'FAQ',url:'/faq'}, { display:'Blog',url:'/blog'}]
 
-const settings = ['LOG IN', 'SIGN UP']
+const settings = [<Link to="/signin">LOG IN</Link>, <Link to="/signup">SIGN UP</Link>]
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null)
