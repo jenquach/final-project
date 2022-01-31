@@ -5,18 +5,18 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit"
 
 import "./App.css"
 
-import {v4 as uuidv4 } from 'uuid'
+import {v4 as uuidv4 } from "uuid"
 
-import Signup from './components/Signup'
-import Signin from './components/Signin'
-import MyProfile from './components/MyProfile'
 import ResponsiveAppBar from "./components/Navbar"
+import Signup from "./components/Signup"
+import Signin from "./components/Signin"
+import ProductList from "./components/ProductList"
 import Footer from "./components/Footer"
 
 import user from "./reducers/user"
 import profile from "./reducers/profile"
 import StartPage from "./pages/StartPage"
-import ProductList from './components/ProductList';
+import MyProfile from "./pages/MyProfile"
 
 const reducer = combineReducers({
 	user: user.reducer,
