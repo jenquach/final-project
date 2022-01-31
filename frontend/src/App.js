@@ -14,13 +14,13 @@ import ProductList from "./components/ProductList"
 import Footer from "./components/Footer"
 
 import user from "./reducers/user"
-// import profile from "./reducers/profile"
+import profile from "./reducers/profile"
 import StartPage from "./pages/StartPage"
 import MyProfile from "./pages/MyProfile"
 
 const reducer = combineReducers({
 	user: user.reducer,
-	// profile: profile.reducer,
+	profile: profile.reducer,
 })
 
 const store = configureStore({ reducer })
