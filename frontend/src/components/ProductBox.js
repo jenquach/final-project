@@ -18,7 +18,7 @@ console.log(event)
 const options = {
     method: 'POST',
     headers: {
-        cartId: localStorage.getItem("cartId"),
+        cartId: localStorage.getItem("cartId"), //here we fetch cartID from localStorage
     },
 };
 

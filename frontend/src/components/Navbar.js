@@ -15,9 +15,9 @@ import ShoppingBagIcon from "@mui/icons-material/ShoppingBag"
 import { Link } from "react-router-dom"
 import MiniCart from "./MiniCart"
 
-const pages = [{ display:'All Products',url:'/products'},{ display:'FAQ',url:'/faq'}, { display:'Blog',url:'/blog'}]
+const pages = [{ display: 'All Products', url: '/products' }, { display: 'FAQ', url: '/faq' }, { display: 'Blog', url: '/blog' }]
 
-const settings = ['LOG IN', 'SIGN UP']
+const settings = [<Link to="/signin">LOG IN</Link>, <Link to="/signup">SIGN UP</Link>]
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null)
@@ -40,115 +40,116 @@ const ResponsiveAppBar = () => {
 
 
   return (
-      <AppBar 
-        position="fixed"
-        sx={{ background: '#A9CDCE' }}
-      >
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-            >
-              <Link to="/">A NEW FIT</Link>
-            </Typography>
+    <AppBar
+      position="fixed"
+      sx={{ background: '#A9CDCE' }}
+    >
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+          >
+            <Link to="/">A NEW FIT</Link>
+          </Typography>
 
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: 'block', md: 'none' },
-                }}
-              >
-                {pages.map((page) => (
-                  <MenuItem key={page.url} onClick={handleCloseNavMenu} component={Link} to={page.url}>
-                    <Typography textAlign="center">{page.display}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
             >
-              <Link to="/">A NEW FIT</Link>
-            </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
               {pages.map((page) => (
-                <Button
-                  key={page.url}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
-                >
-                  {page.display}
-                </Button>
+                <MenuItem key={page.url} onClick={handleCloseNavMenu} component={Link} to={page.url}>
+                  <Typography textAlign="center">{page.display}</Typography>
+                </MenuItem>
               ))}
-            </Box>
-
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <PersonIcon sx={{ color: '#F9F9F9' }} />
-                </IconButton>
-              </Tooltip>
-              <Menu
-                sx={{ mt: '45px' }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
+            </Menu>
+          </Box>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+          >
+            <Link to="/">A NEW FIT</Link>
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page) => (
+              <Button
+                key={page.url}
+                onClick={handleCloseNavMenu}
+                component={Link}
+                to={page.url}
+                sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-            <Box sx={{ flexGrow: 0 }}>
-              <MiniCart></MiniCart>
-              <IconButton>
-                <ShoppingBagIcon sx={{ color: '#F9F9F9' }} />
+                {page.display}
+              </Button>
+            ))}
+          </Box>
+
+          <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Open settings">
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                <PersonIcon sx={{ color: '#F9F9F9' }} />
               </IconButton>
-            </Box>
-          </Toolbar>
-        </Container>
-      </AppBar>
+            </Tooltip>
+            <Menu
+              sx={{ mt: '45px' }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {settings.map((setting) => (
+                <MenuItem key={setting.props.to} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{setting}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+          <Box sx={{ flexGrow: 0 }}>
+            <IconButton>
+              <ShoppingBagIcon sx={{ color: '#F9F9F9' }} />
+            </IconButton>
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
   )
 }
 
