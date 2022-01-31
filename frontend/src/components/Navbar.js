@@ -144,6 +144,7 @@ const ResponsiveAppBar = () => {
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <IconButton>
+              <MiniCart/>
               <ShoppingBagIcon sx={{ color: '#F9F9F9' }} />
             </IconButton>
           </Box>
