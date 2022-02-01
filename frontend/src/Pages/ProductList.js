@@ -15,7 +15,6 @@ const ProductList = () => {
     fetch ( API_URL('products')) //option is needed otherwise is going to be getMetod
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setProducts(data);
       });
   }, []);

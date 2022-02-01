@@ -15,27 +15,25 @@ const CartItem = (props) => {
     fetch(API_URL('product/' + props.itemId)) //option is needed otherwise is going to be getMetod
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setProduct(data);
       });
   }, []);
 
   const handleRemoveItem = (event) => {
-    console.log(event)
-    
+    //TODO: move to cartReducer.js
     const options = {
-        method: 'POST',
-        headers: {
-            cartId: cartId, 
-        },
+      method: 'POST',
+      headers: {
+        cartId: cartId,
+      },
     };
-    
-    fetch ( API_URL('cart/remove-item?itemId=' + product.productId),options) //option is needed otherwise is going to be getMetod
-          .then((res) => res.json())
-          .then((data) => {
-            dispatch(cartReducer.actions.setItems(data.items))
-          });
-    }
+
+    fetch(API_URL('cart/remove-item?itemId=' + product.productId), options) //option is needed otherwise is going to be getMetod
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch(cartReducer.actions.setItems(data.items))
+      });
+  }
 
   return (
     <>
@@ -45,14 +43,14 @@ const CartItem = (props) => {
             <img src={product.img1} height={80} alt="product"></img>
             {product.productName}
             £{product.price}
-            <Button 
-        variant="filled" 
-        color="primary" 
-        endIcon={<RemoveCircleIcon />}
-        onClick={()=> handleRemoveItem(product)}
-        >
-        Remove
-      </Button>
+            <Button
+              variant="filled"
+              color="primary"
+              endIcon={<RemoveCircleIcon />}
+              onClick={() => handleRemoveItem(product)}
+            >
+              Remove
+            </Button>
           </>
         )}
     </>

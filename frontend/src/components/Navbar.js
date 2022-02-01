@@ -3,6 +3,8 @@ import AppBar from "@mui/material/AppBar"
 import Box from "@mui/material/Box"
 import Toolbar from "@mui/material/Toolbar"
 import IconButton from "@mui/material/IconButton"
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
 import Typography from "@mui/material/Typography"
 import Menu from "@mui/material/Menu"
 import MenuIcon from "@mui/icons-material/Menu"
@@ -13,20 +15,33 @@ import Tooltip from "@mui/material/Tooltip"
 import MenuItem from "@mui/material/MenuItem"
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag"
 import { Link } from "react-router-dom"
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { cartReducer } from "../reducers/CartReducer"
-
+import Badge from '@mui/material/Badge';
+import { styled } from '@mui/material/styles';
 
 const pages = [{ display: 'All Products', url: '/products' }, { display: 'FAQ', url: '/faq' }, { display: 'Blog', url: '/blog' }]
 
 const settings = [<Link to="/signin">LOG IN</Link>, <Link to="/signup">SIGN UP</Link>]
 
-
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+  },
+}));
 
 const ResponsiveAppBar = () => {
   const dispatch = useDispatch();
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
+
+  const cartItems = useSelector(store => store.cartReducer.items)
+  const cartIconBadgeText = cartItems.length === 0 ? '' : cartItems.length
+  const cartIsEmpty = cartItems.length === 0
+
   const toggleCartDrawer = () => {
     dispatch(cartReducer.actions.setMiniCartDrawerVisible(true))
   }
@@ -151,11 +166,29 @@ const ResponsiveAppBar = () => {
             </Menu>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
-            <IconButton
-            onClick={toggleCartDrawer}
+            {!cartIsEmpty && (
+              <IconButton
+                aria-label="cart"
+                onClick={toggleCartDrawer}>
+                <StyledBadge badgeContent={cartIconBadgeText} color="secondary">
+                  <ShoppingBagIcon sx={{ color: '#F9F9F9' }} />
+                </StyledBadge>
+              </IconButton>
+            )}
+            {cartIsEmpty && (
+              <IconButton
+                aria-label="cart"
+                onClick={toggleCartDrawer}>
+                <ShoppingBagIcon sx={{ color: '#F9F9F9' }} />
+              </IconButton>
+            )}
+
+
+            {/* <IconButton
+              onClick={toggleCartDrawer}
             >
               <ShoppingBagIcon sx={{ color: '#F9F9F9' }} />
-            </IconButton>
+            </IconButton> */}
           </Box>
         </Toolbar>
       </Container>
