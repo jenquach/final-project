@@ -1,8 +1,9 @@
-import React from "react";
-import Button from '@mui/material/Button';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import React from "react"
+import { Link } from "react-router-dom"
+import Button from "@mui/material/Button"
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart"
 
-import { API_URL } from '../utils/urls'
+import { API_URL } from "../utils/urls"
 
 
 const ProductBox = ({ product }) => {
@@ -24,7 +25,7 @@ fetch ( API_URL('cart/add-item?itemId=' + product.productId),options) //option i
 }
 
     return (<>
-        <img src={product.img1} height={300} alt="product"></img>
+        <Link to={`/product/${product.productId}`}><img src={product.img1} height={300} alt="product"></img></Link>
         <br />
         {product.productName} £{product.price}
         <br></br>

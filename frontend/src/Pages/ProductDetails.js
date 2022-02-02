@@ -1,74 +1,130 @@
 import React, { useEffect, useState } from "react"
-import { /* useParams */ /* useNavigate */ } from "react-router-dom"
-import Box from "@mui/material/Box"
-import Card from "@mui/material/Card"
-import CardContent from "@mui/material/CardContent"
-import CardMedia from "@mui/material/CardMedia"
+import { useParams, useNavigate } from "react-router-dom"
 import Typography from "@mui/material/Typography"
 import styled from "styled-components"
 
+import { API_URL } from '../utils/urls'
+
 const ProductDetailsWrapper = styled.div`
-    margin: 100px 10px 50px 10px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+  align-items: center;
+`
+const Image = styled.img`
+  width: 100%;
+  max-width: 400px;
+  min-width: 290px;
+  padding: 40px;
+  object-fit: cover;
+`
+
+const Details = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+`
+const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`
+const ThumbImage = styled.img`
+  width: 60px;
+  height: auto;
+  margin: 7px 5px 30px 0;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  object-fit: cover;
+  border-radius: 5px;
 `
 
 const ProductDetails = () => {
+  const { productId } = useParams()
   const [product, setProduct] = useState({})
-  const PRODUCT_URL = `https://final-project--api.herokuapp.com/product/1`
-  
-  /* const { productId } = useParams()
-  const PRODUCT_URL = `https://final-project--api.herokuapp.com/products/${productId}` */
+ 
+  const navigate = useNavigate()
 
-  /* const navigate = useNavigate() */
-
-  
-   useEffect(() => {
-     fetch ( PRODUCT_URL )
+  useEffect(() => {
+    fetch (API_URL(`product/${productId}`))
       .then((res) => res.json())
       .then((json) => {
         setProduct(json)
       })
-  }, [PRODUCT_URL])
+}, )
 
-  /* const BackToAllProducts = () => {
-		navigate('/products')
-  } */
+const BackToAllProducts = () => {
+  navigate('/products')
+}
 
   return(
-      <ProductDetailsWrapper>
-      <Card sx={{ display: "flex", minHeight: "300px"}} >
-        <CardMedia
+  <ProductDetailsWrapper>
+    <Image src={ product.img1 } alt={ product.productName } />
+    <Details>
+    <Typography variant="h6" color="text.secondary" component="div">
+          { product.category }
+        </Typography>
+    <Typography component="div" variant="h4" color="#A9CDCE" textTransform="uppercase">
+          { product.productName }
+        </Typography>
+        <Typography variant="h6" color="#A9CDCE" component="div" marginBottom={2} fontWeight="bold">
+          £{ product.price }.00
+        </Typography>
+        <Typography variant="subtitle1" color="text.secondary" component="div">
+          { product.desc }
+        </Typography>
+        <Typography variant="subtitle1" color="text.secondary" component="div">
+          { product.condition }
+        </Typography>
+        <Typography variant="subtitle1" color="text.secondary" component="div">
+          Size: { product.size }
+        </Typography>
+        <FlexContainer>
+        <ThumbImage src={ product.img1 } alt={ product.productName } />
+        <ThumbImage src={ product.img2 } alt={ product.productName } />
+        </FlexContainer>
+        <FlexContainer>
+        <button>
+            BUY
+          </button>
+          <button className="back-btn" onClick={BackToAllProducts}>
+            Back To All Products
+          </button>
+          </FlexContainer>
+    </Details>
+  {/*   <Card sx={{ display: "flex", alignItems: "center", minHeight: "300px"}} >
+      <CardMedia
         component="img"
         sx={{ width: 151, padding: "20px", margin: "0 40px" }}
         image={ product.img1 }
         alt={ product.productName }
-        />
-        <Box key={product.productId} sx={{ display: "flex", flexDirection: "column" }}>
-          <CardContent sx={{ flex: "1 0 auto" }}>
-            <Typography component="div" variant="h4" color="#A9CDCE">
-              { product.productName }
-            </Typography>
-            <Typography variant="h6" color="#A9CDCE" component="div" marginBottom={2}>
-              £{ product.price }.00
-            </Typography>
-            <Typography variant="subtitle1" color="text.secondary" component="div">
-              { product.desc }
-            </Typography>
-            {/* <Typography sx={{ fontWeight: 'bold' }}>
-              Condition
-            </Typography> */}
-            <Typography variant="subtitle1" color="text.secondary" component="div">
-              { product.condition }
-            </Typography>
-          </CardContent>
-            <button>
-              BUY
-            </button>
-            <button className="back-btn" /* onClick={BackToAllProducts} */>
-              Back To All Products
-            </button>
+      />
+      <Box key={product.productId} sx={{ display: "flex", flexDirection: "column" }}>
+        <CardContent sx={{ flex: "1 0 auto" }}>
+        <Typography component="div" variant="h4" color="#A9CDCE">
+          { product.productName }
+        </Typography>
+        <Typography variant="h6" color="#A9CDCE" component="div" marginBottom={2}>
+          £{ product.price }.00
+        </Typography>
+        <Typography variant="subtitle1" color="text.secondary" component="div">
+          { product.desc }
+        </Typography>
+        <Typography variant="subtitle1" color="text.secondary" component="div">
+          { product.condition }
+        </Typography>
+        </CardContent>
+          <button>
+            BUY
+          </button>
+          <button className="back-btn" onClick={BackToAllProducts}>
+            Back To All Products
+          </button>
         </Box>
-      </Card>
-    </ProductDetailsWrapper>
+    </Card> */}
+  </ProductDetailsWrapper>
   )
 }
 
