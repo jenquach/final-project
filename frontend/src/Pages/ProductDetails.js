@@ -6,7 +6,7 @@ import styled from "styled-components"
 import { API_URL } from '../utils/urls'
 
 const ProductDetailsWrapper = styled.div`
-  margin: 100px auto;
+  margin: 50px auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -33,13 +33,13 @@ const FlexContainer = styled.div`
 `
 const ThumbImage = styled.img`
   width: 60px;
-  height: 100%;
+  height: auto;
   margin: 7px 5px 30px 0;
   cursor: pointer;
   border: 1px solid #ddd;
   object-fit: cover;
+  border-radius: 5px;
 `
-
 
 const ProductDetails = () => {
   const { productId } = useParams()
