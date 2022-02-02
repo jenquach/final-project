@@ -7,6 +7,8 @@ import CardMedia from "@mui/material/CardMedia"
 import Typography from "@mui/material/Typography"
 import styled from "styled-components"
 
+import { API_URL } from '../utils/urls'
+
 const ProductDetailsWrapper = styled.div`
   margin: 100px 10px 50px 10px;
 `
@@ -14,20 +16,16 @@ const ProductDetailsWrapper = styled.div`
 const ProductDetails = () => {
   const { productId } = useParams()
   const [product, setProduct] = useState({})
-  /* const PRODUCT_URL = `https://final-project--api.herokuapp.com/product/1` */
-
-  const PRODUCT_URL = `https://final-project—api.herokuapp.com/product/${productId}`
-
-
+ 
   /* const navigate = useNavigate() */
 
   useEffect(() => {
-    fetch (PRODUCT_URL)
+    fetch (API_URL(`product/${productId}`))
       .then((res) => res.json())
       .then((json) => {
         setProduct(json)
       })
-}, [PRODUCT_URL])
+}, )
 
 /* const BackToAllProducts = () => {
     navigate('/products')
