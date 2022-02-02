@@ -14,8 +14,8 @@ const ProductDetailsWrapper = styled.div`
   align-items: center;
 `
 const Image = styled.img`
-  width: 60%;
-  max-width: 500px;
+  width: 100%;
+  max-width: 400px;
   min-width: 290px;
   padding: 40px;
   object-fit: cover;
@@ -32,8 +32,12 @@ const FlexContainer = styled.div`
   align-items: center;
 `
 const ThumbImage = styled.img`
-  width: 10%;
-  padding: 5px;
+  width: 60px;
+  height: 100%;
+  margin: 7px 5px 30px 0;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  object-fit: cover;
 `
 
 
@@ -62,10 +66,10 @@ const BackToAllProducts = () => {
     <Typography variant="h6" color="text.secondary" component="div">
           { product.category }
         </Typography>
-    <Typography component="div" variant="h4" color="#A9CDCE">
+    <Typography component="div" variant="h4" color="#A9CDCE" textTransform="uppercase">
           { product.productName }
         </Typography>
-        <Typography variant="h6" color="#A9CDCE" component="div" marginBottom={2}>
+        <Typography variant="h6" color="#A9CDCE" component="div" marginBottom={2} fontWeight="bold">
           £{ product.price }.00
         </Typography>
         <Typography variant="subtitle1" color="text.secondary" component="div">
@@ -73,6 +77,9 @@ const BackToAllProducts = () => {
         </Typography>
         <Typography variant="subtitle1" color="text.secondary" component="div">
           { product.condition }
+        </Typography>
+        <Typography variant="subtitle1" color="text.secondary" component="div">
+          Size: { product.size }
         </Typography>
         <FlexContainer>
         <ThumbImage src={ product.img1 } alt={ product.productName } />
