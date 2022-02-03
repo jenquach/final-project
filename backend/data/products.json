@@ -14,7 +14,7 @@
     "productId": 2,
     "productName": "Teddy Winter Suite",
     "desc": "Comfy and warm teddy suite, zips from ankle to chin.",
-    "condition": "Excellent",
+    "condition": "Excellent condition",
     "category": "Outerwear",
     "size": "0-3M",
     "price": 10,
@@ -60,7 +60,7 @@
     "desc": "Blue-gray shoes with a subtle sparkle.",
     "condition": "Excellent condition",
     "category": "Footwear",
-    "size": "2T",
+    "size": "22",
     "price": 10,
     "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769286/Webshop%20product%20img/6a_dgpz7m.jpg",
     "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769284/Webshop%20product%20img/6b_diffdd.jpg"
@@ -104,7 +104,7 @@
     "desc": "Sporty shoes with straps for a customize fit.",
     "condition": "Excellent condition",
     "category": "Footwear",
-    "size": "12-18M",
+    "size": "26",
     "price": 10,
     "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769286/Webshop%20product%20img/10a_wqi4eb.jpg",
     "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769284/Webshop%20product%20img/10b_jcwx62.jpg"
@@ -126,7 +126,7 @@
     "desc": "The ideal first walking shoes for growing feet.",
     "condition": "Very good condition",
     "category": "Footwear",
-    "size": "6-12M",
+    "size": "19",
     "price": 9,
     "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769284/Webshop%20product%20img/12_y3sxpz.jpg",
     "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769284/Webshop%20product%20img/12c_isluhr.jpg"
@@ -236,7 +236,7 @@
     "desc": "Warm and comfy boot-style shoes with velcro strap.",
     "condition": "Very good condition",
     "category": "Footwear",
-    "size": "0-3M",
+    "size": "18",
     "price": 8,
     "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769285/Webshop%20product%20img/22a_hrwlpg.jpg",
     "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769285/Webshop%20product%20img/22b_kbh8nv.jpg"
@@ -269,7 +269,7 @@
     "desc": "Fun printed rain boots for heavy duty play.",
     "condition": "Good condition",
     "category": "Footwear",
-    "size": "2T",
+    "size": "26",
     "price": 9,
     "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769287/Webshop%20product%20img/25a_bxjhzu.jpg",
     "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769287/Webshop%20product%20img/25b_f5s21v.jpg"
