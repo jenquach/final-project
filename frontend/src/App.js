@@ -6,9 +6,11 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit"
 import "./App.css"
 
 import ResponsiveAppBar from "./components/Navbar"
+
 import Signup from "./components/Signup"
 import Signin from "./components/Signin"
 import ProductList from "./pages/ProductList"
+import ProductDetails from "./pages/ProductDetails"
 import Footer from "./components/Footer"
 
 import user from "./reducers/user"
@@ -41,6 +43,7 @@ function App() {
             <Route path="/signin" element={<Signin />} />
             <Route path="/my-profile" element={<MyProfile />} />
             <Route path="/products" element={<ProductList />} />
+            <Route path="/product/:productId" element={<ProductDetails />} />
           </Routes>
       </BrowserRouter>
       <Footer />

@@ -25,6 +25,7 @@ const Footer = () => {
         paddingTop: "40px",
         paddingBottom: "20px",
         justifyContent: "space-evenly",
+        textAlign: "center",
         textTransform: "uppercase",
         fontWeight: "normal",
         padding: "10px, 0",

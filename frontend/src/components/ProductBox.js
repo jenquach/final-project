@@ -1,9 +1,9 @@
-import React from "react";
-import Button from '@mui/material/Button';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import { cartReducer } from "../reducers/CartReducer";
-import { useDispatch, useSelector } from 'react-redux';
-import { API_URL } from '../utils/urls'
+import React from "react"
+import { Link } from "react-router-dom"
+import Button from "@mui/material/Button"
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart"
+
+import { API_URL } from "../utils/urls"
 
 const ProductBox = ({ product }) => {
 
@@ -25,22 +25,22 @@ const ProductBox = ({ product }) => {
       .then((data) => {
         dispatch(cartReducer.actions.setItems(data.items))
       });
-  }
+}
 
-  return (<>
-    <img src={product.img1} height={300} alt="product"></img>
-    <br />
-    {product.productName} £{product.price}
-    <br></br>
-    <Button
-      variant="outlined"
-      color="primary"
-      endIcon={<AddShoppingCartIcon />}
-      onClick={() => handleAddToCartClick(product)}
-    >
-      Buy
-    </Button>
-  </>);
+    return (<>
+        <Link to={`/product/${product.productId}`}><img src={product.img1} height={300} alt="product"></img></Link>
+        <br />
+        {product.productName} £{product.price}
+        <br></br>
+        <Button 
+        variant="outlined" 
+        color="primary" 
+        endIcon={<AddShoppingCartIcon />}
+        onClick={()=> handleAddToCartClick(product)}
+        >
+        Buy
+      </Button>
+    </>);
 
 };
 
