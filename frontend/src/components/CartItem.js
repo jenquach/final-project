@@ -20,12 +20,14 @@ span {
 }
 `
 
-
 const StyledRemoveButton = styled(Button)`
   color: #A9CDCE;
   font-size: 1.2em;
   justify-content: center;
   font-family: 'Nunito Sans', sans-serif;
+  &:hover {
+    background-color: transparent;
+  }
 `
 
 const CartItem = (props) => {
@@ -74,6 +76,7 @@ const CartItem = (props) => {
             <StyledRemoveButton
               endIcon={<DeleteIcon />}
               onClick={() => handleRemoveItem(product)}
+              size="large"
             >
             </StyledRemoveButton>
          
