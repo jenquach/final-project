@@ -23,8 +23,8 @@ import MiniCartDrawer from "./components/MiniCartDrawer"
 
 
 const reducer = combineReducers({
-	user: user.reducer,
-	profile: profile.reducer,
+  user: user.reducer,
+  profile: profile.reducer,
   cartReducer: cartReducer.reducer
 })
 
@@ -33,18 +33,20 @@ const store = configureStore({ reducer })
 function App() {
 
   return (
-    <Provider store={store}> 
+    <Provider store={store}>
       <BrowserRouter>
-      <ResponsiveAppBar />
-      <MiniCartDrawer />
-          <Routes>
-            <Route path="/" element={<StartPage />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/signin" element={<Signin />} />
-            <Route path="/my-profile" element={<MyProfile />} />
-            <Route path="/products" element={<ProductList />} />
-            <Route path="/product/:productId" element={<ProductDetails />} />
-          </Routes>
+        <ResponsiveAppBar />
+        <MiniCartDrawer />
+        <Routes>
+          <Route path="/" element={<StartPage />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/my-profile" element={<MyProfile />} />
+          <Route path="/products" element={<ProductList />} >
+            <Route path=":category" element={<ProductList />} />
+          </Route>
+          <Route path="/product/:productId" element={<ProductDetails />} />
+        </Routes>
       </BrowserRouter>
       <Footer />
     </Provider>

@@ -7,9 +7,6 @@ import styled from "styled-components"
 
 import { API_URL } from "../utils/urls"
 
-const ProductListWrapper = styled.div`
-  margin-top: 100px;
-`
 
 const StyledBuyButton = styled(Button)`
   background-color: #A9CDCE;
@@ -51,7 +48,7 @@ const ProductBox = ({ product }) => {
 }
 
     return (
-    <ProductListWrapper>
+      <>
         <Link to={`/product/${product.productId}`}><img src={product.img1} height={250} alt="product"></img></Link>
         <br />
         {product.productName} £{product.price}
@@ -62,7 +59,7 @@ const ProductBox = ({ product }) => {
         >
         Buy
       </StyledBuyButton>
-      </ProductListWrapper>
+      </>
     );
 };
 
