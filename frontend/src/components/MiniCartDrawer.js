@@ -8,7 +8,6 @@ import styled from "styled-components"
 
 const DrawerSection = styled.div`
 width: 500px;
-background-color: red;
 `
 
 

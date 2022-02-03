@@ -1,11 +1,32 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import Button from "@mui/material/Button"
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart"
 import { useDispatch, useSelector } from 'react-redux';
 import { cartReducer } from "../reducers/CartReducer";
+import styled from "styled-components"
 
 import { API_URL } from "../utils/urls"
+
+const ProductListWrapper = styled.div`
+  margin-top: 100px;
+`
+
+const StyledBuyButton = styled(Button)`
+  background-color: #A9CDCE;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  max-width: 130px; 
+  font-size: large;
+  &:hover {
+    background-color: #CFE8E0;
+  }
+  &:focus {
+    background-color: #CFE8E0;
+  }
+  @media (max-width: 667px) {
+    max-width: 280px;
+}
+`
 
 const ProductBox = ({ product }) => {
 
@@ -29,21 +50,20 @@ const ProductBox = ({ product }) => {
       });
 }
 
-    return (<>
-        <Link to={`/product/${product.productId}`}><img src={product.img1} height={300} alt="product"></img></Link>
+    return (
+    <ProductListWrapper>
+        <Link to={`/product/${product.productId}`}><img src={product.img1} height={250} alt="product"></img></Link>
         <br />
         {product.productName} £{product.price}
         <br></br>
-        <Button 
-        variant="outlined" 
-        color="primary" 
-        endIcon={<AddShoppingCartIcon />}
+        <StyledBuyButton 
+       variant="contained" sx={{ maxWidth: "130px", fontSize:"large" }}
         onClick={()=> handleAddToCartClick(product)}
         >
         Buy
-      </Button>
-    </>);
-
+      </StyledBuyButton>
+      </ProductListWrapper>
+    );
 };
 
 export default ProductBox;
