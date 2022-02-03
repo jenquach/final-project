@@ -33,34 +33,11 @@ const ContentContainer = styled.div`
 
 
 const MyProfile = () => {
-	const [Pickup, setPickup] = useState(false)
-	const [Orders, setOrders] = useState(false)
-	const [Settings, setSettings] = useState(false)
-	const text1 = 'Book a pick-up'
-	const text2 = 'Order history'
-	const text3 = 'Account settings'
+	const [selected, setSelected] = useState(0)
 	const message = useSelector((store) => store.profile.message)
 	const accessToken = useSelector((store) => store.user.accessToken)
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
-
-	const togglePickup = () => {
-		setPickup(true)
-		setOrders(false)
-		setSettings(false)
-	}
-
-	const toggleOrders = () => {
-		setPickup(false)
-		setOrders(true)
-		setSettings(false)
-	}
-
-	const toggleSettings = () => {
-		setPickup(false)
-		setOrders(false)
-		setSettings(true)
-	}
 
 	useEffect(() => {
 		if (!accessToken) {
@@ -91,23 +68,15 @@ const MyProfile = () => {
     <ContainerWrapper>
 				<Container>
 					<ul>
-						<li><a onClick={() => togglePickup()}>Book a pick-up</a></li>
-						<li><a onClick={() => toggleOrders()}>Order history</a></li>
-						<li><a onClick={() => toggleSettings()}>Account settings</a></li>
+						<li><a onClick={() => setSelected(0)}>Book a pick-up</a></li>
+						<li><a onClick={() => setSelected(1)}>Order history</a></li>
+						<li><a onClick={() => setSelected(2)}>Account settings</a></li>
 					</ul>
 				</Container>
 					<ContentContainer>
-							<div>
-							<h6>
-							{Pickup ? text1 : null}
-							</h6>
-							<h6>
-							{Orders ? text2 : null}
-							</h6>
-							<h6>
-							{Settings ? text3 : null}
-							</h6>
-							</div>
+						{(selected === 0) && <div>Book a pickup</div>}
+            {(selected === 1) && <div>Edit profile</div>}
+            {(selected === 2) && <div> Order history</div>}
 					</ContentContainer>
     	</ContainerWrapper>
 		</Wrapper>
