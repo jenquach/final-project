@@ -169,7 +169,7 @@ const ResponsiveAppBar = () => {
               <IconButton
                 aria-label="cart"
                 onClick={toggleCartDrawer}>
-                <StyledBadge badgeContent={cartIconBadgeText} color="secondary">
+                <StyledBadge badgeContent={cartIconBadgeText}>
                   <ShoppingBagIcon sx={{ color: '#F9F9F9' }} />
                 </StyledBadge>
               </IconButton>
@@ -182,12 +182,6 @@ const ResponsiveAppBar = () => {
               </IconButton>
             )}
 
-
-            {/* <IconButton
-              onClick={toggleCartDrawer}
-            >
-              <ShoppingBagIcon sx={{ color: '#F9F9F9' }} />
-            </IconButton> */}
           </Box>
         </Toolbar>
       </Container>
