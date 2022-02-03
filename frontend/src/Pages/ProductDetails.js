@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom"
 import { Typography, Button } from "@mui/material"
 import ArrowBackIcon from "@mui/icons-material/ArrowBack"
 import styled from "styled-components"
-import { API_URL } from '../utils/urls'
+import { API_URL } from "../utils/urls"
 
 const ProductDetailsWrapper = styled.div`
   background: #f0f0f0;
@@ -130,7 +130,7 @@ const BackToAllProducts = () => {
           <ThumbImage src={ product.img2 } alt={ product.productName } />
         </FlexContainer>
         <ButtonContainer>
-          <StyledButton variant="contained" sx={{ maxWidth: "130px", fontSize:"large" }}>
+          <StyledButton variant="contained" sx={{ maxWidth: "130px", fontSize:"large" }} /* onClick={handleAddToCartClick} */>
             BUY
           </StyledButton>
           <BackButton className="back-btn" variant="text" size="small" onClick={BackToAllProducts}>
