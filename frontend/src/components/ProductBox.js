@@ -4,8 +4,17 @@ import Button from "@mui/material/Button"
 import { useDispatch, useSelector } from 'react-redux';
 import { cartReducer } from "../reducers/CartReducer";
 import styled from "styled-components"
+import { Grid } from "@mui/material";
 
 import { API_URL } from "../utils/urls"
+
+const ProductTextWrapper = styled.div`
+position: absolute;
+bottom:0;
+span{
+width: 100%;
+}
+`
 
 
 const StyledBuyButton = styled(Button)`
@@ -14,6 +23,7 @@ const StyledBuyButton = styled(Button)`
   margin-bottom: 20px;
   max-width: 130px; 
   font-size: large;
+  font-family: 'Nunito Sans', sans-serif;
   &:hover {
     background-color: #CFE8E0;
   }
@@ -49,16 +59,18 @@ const ProductBox = ({ product }) => {
 
     return (
       <>
-        <Link to={`/product/${product.productId}`}><img src={product.img1} height={250} alt="product"></img></Link>
-        <br />
-        {product.productName} £{product.price}
-        <br></br>
+       <Grid item xs={1} sm={1} md={1} key={product.productId} paddingTop={0} height='400px' style={{ position: 'relative'}}>
+        <Link to={`/product/${product.productId}`}><img src={product.img1} style={{ width: '100%', maxHeight: '400px' }} alt="product"></img></Link>
+        <ProductTextWrapper>
+        <span>{product.productName}</span> £{product.price}
         <StyledBuyButton 
        variant="contained" sx={{ maxWidth: "130px", fontSize:"large" }}
         onClick={()=> handleAddToCartClick(product)}
         >
         Buy
       </StyledBuyButton>
+      </ProductTextWrapper>
+      </Grid>
       </>
     );
 };

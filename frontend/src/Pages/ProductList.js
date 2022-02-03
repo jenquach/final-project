@@ -37,10 +37,10 @@ const ProductList = () => {
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 1, sm: 2, md: 4 }}>
             {products.map((product) => (
-              <Grid item xs={1} sm={1} md={1} key={product.productId} paddingTop={0}>
+              // <Grid item xs={1} sm={1} md={1} key={product.productId} paddingTop={0}>
                 <ProductBox key={product.productId} product={product}></ProductBox>
 
-              </Grid>
+              // </Grid>
             ))}
           </Grid>
         </Box>

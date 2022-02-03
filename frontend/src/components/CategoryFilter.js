@@ -11,8 +11,10 @@ const CategoryFilterButton = styled(Button)`
   background-color: #A9CDCE;
   border-radius: 2px;
   margin-bottom: 20px;
+  margin-left:5px; 
   max-width: 200px; 
   font-size: large;
+  font-family: 'Nunito Sans', sans-serif;
   &:hover {
     background-color: #CFE8E0;
   }
@@ -30,9 +32,9 @@ const CategoryFilter = () => {
       <CategoryFilterButton component={Link} to={'/products'}>All products</CategoryFilterButton>
       <CategoryFilterButton component={Link} to={'/products/Bottoms'}>Bottoms</CategoryFilterButton>
       <CategoryFilterButton component={Link} to={'/products/Tops'}>Tops</CategoryFilterButton>
-      <CategoryFilterButton component={Link} to={'/products/Footwear'}>Footwear</CategoryFilterButton>
-      <CategoryFilterButton component={Link} to={'/products/Outerwear'}>Outerwear</CategoryFilterButton>
       <CategoryFilterButton component={Link} to={'/products/One piece'}>One piece</CategoryFilterButton>
+      <CategoryFilterButton component={Link} to={'/products/Outerwear'}>Outerwear</CategoryFilterButton>
+      <CategoryFilterButton component={Link} to={'/products/Footwear'}>Footwear</CategoryFilterButton>
     </CategoryWrapper>
   )
 }
