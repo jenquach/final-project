@@ -3,9 +3,38 @@ import { cartReducer } from "../reducers/CartReducer";
 import { useDispatch, useSelector } from 'react-redux';
 import { ListItem, List, Box } from "@mui/material";
 import CartItem from "./CartItem";
-import RemoveCircleIcon from '@mui/icons-material/RemoveCircle'
+import DeleteIcon from '@mui/icons-material/Delete';
 import { API_URL } from '../utils/urls';
 import { Button } from '@mui/material';
+import styled from "styled-components"
+
+
+const EmptyCartText = styled.h3`
+  font-size: 1.5em;
+  text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
+`;
+
+const StyledRemoveAllButton = styled(Button)`
+  margin-left: 45px;
+  background-color: #A9CDCE;
+  border-radius: 2px;
+  margin-top: 30px;
+  max-width: 300px; 
+  font-size: 1em;
+  justify-content: center;
+  font-family: 'Nunito Sans', sans-serif;
+  &:hover {
+    background-color: #CFE8E0;
+  }
+  &:focus {
+    background-color: #CFE8E0;
+  }
+  @media (max-width: 667px) {
+    max-width: 280px;
+}
+`
 
 
 const MiniCart = () => {
@@ -32,7 +61,10 @@ const MiniCart = () => {
   }
 
   return (
-    <Box>
+    <Box
+    height="30%"
+    width={300}
+            >
       <List>
         {!cartIsEmpty && cartItems.map((item) =>
         (
@@ -42,17 +74,16 @@ const MiniCart = () => {
         ))
         }
         {!cartIsEmpty && (
-          <Button
-            variant="filled"
-            color="primary"
-            endIcon={<RemoveCircleIcon />}
-            onClick={() => handleClearCart()}
-          >
-            Remove all items
-          </Button>
+           <StyledRemoveAllButton 
+           variant="contained" 
+           sx={{ maxWidth: "300px" }} 
+           endIcon={<DeleteIcon />} 
+           onClick={() => handleClearCart()}>
+           Remove all items
+         </StyledRemoveAllButton>
         )}
         {cartIsEmpty && (
-          <span>Your cart is empty</span>
+          <EmptyCartText>Your cart is empty</EmptyCartText>
         )}
       </List>
 

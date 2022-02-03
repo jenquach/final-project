@@ -4,6 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import MiniCart from "./MiniCart";
 import { cartReducer, fetchCart } from "../reducers/CartReducer";
 import { v4 as uuidv4 } from "uuid"
+import styled from "styled-components"
+
+const DrawerSection = styled.div`
+width: 500px;
+background-color: red;
+`
+
 
 
 const MiniCartDrawer = () => {
@@ -34,7 +41,9 @@ const MiniCartDrawer = () => {
   }, [ShowCartDrawer]);
 
   return (
+    <DrawerSection>
     <SwipeableDrawer
+     maxWidth= '200px'
       open={ShowCartDrawer}
       anchor={'right'}
       onClose={toggle(false)}
@@ -44,6 +53,7 @@ const MiniCartDrawer = () => {
 
       </MiniCart>
     </SwipeableDrawer>
+    </DrawerSection>
 
   )
 }

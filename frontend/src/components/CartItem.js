@@ -1,9 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { API_URL } from '../utils/urls';
-import RemoveCircleIcon from '@mui/icons-material/RemoveCircle'
+import DeleteIcon from '@mui/icons-material/Delete';
 import { Button } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import { cartReducer } from '../reducers/CartReducer';
+import styled from "styled-components"
+import ProductBox from './ProductBox';
+
+const ProductImageCart = styled.div`
+justify-content: center;
+left: 50%;
+  `
+const ProductTextCart = styled.text`
+font-size: 0.85em;
+font-family: 'Nunito Sans', sans-serif;
+justify-content: center;
+span {
+  font-weight:700;
+}
+`
+
+
+const StyledRemoveButton = styled(Button)`
+  color: #A9CDCE;
+  font-size: 1.2em;
+  justify-content: center;
+  font-family: 'Nunito Sans', sans-serif;
+`
 
 const CartItem = (props) => {
   const [product, setProduct] = useState(null)
@@ -40,17 +63,20 @@ const CartItem = (props) => {
       {product &&
         (
           <>
-            <img src={product.img1} height={80} alt="product"></img>
-            {product.productName}
-            £{product.price}
-            <Button
-              variant="filled"
-              color="primary"
-              endIcon={<RemoveCircleIcon />}
+          <ProductImageCart>
+            <img src={product.img1} height={100} alt="product"></img>
+            </ProductImageCart>
+            <ProductTextCart>
+            {product.productName} <span>£{product.price}</span>
+            </ProductTextCart>
+            <div>
+            </div>
+            <StyledRemoveButton
+              endIcon={<DeleteIcon />}
               onClick={() => handleRemoveItem(product)}
             >
-              Remove
-            </Button>
+            </StyledRemoveButton>
+         
           </>
         )}
     </>

@@ -2,6 +2,8 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Button from "@mui/material/Button"
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart"
+import { useDispatch, useSelector } from 'react-redux';
+import { cartReducer } from "../reducers/CartReducer";
 
 import { API_URL } from "../utils/urls"
 
