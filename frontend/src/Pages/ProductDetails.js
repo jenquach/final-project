@@ -6,7 +6,8 @@ import styled from "styled-components"
 import { API_URL } from '../utils/urls'
 
 const ProductDetailsWrapper = styled.div`
-  margin: 50px auto;
+  background: #f0f0f0;
+  margin: 50px auto 0 auto;
   padding: 40px;
   display: flex;
   flex-direction: row;
@@ -19,10 +20,12 @@ const ProductDetailsWrapper = styled.div`
 `
 const Image = styled.img`
   width: 60%;
-  padding: 40px;
+  margin: 30px 60px 40px 40px;
   max-width: 380px;
   min-width: 280px;
+  border: 1px solid #ddd;
   object-fit: cover;
+  border-radius: 5px;
 
   @media (max-width: 667px) {
     max-width: 280px;

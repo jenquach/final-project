@@ -4,7 +4,7 @@ import styled from "styled-components"
 import img from "../assets/toddler_choosing_clothes.jpg"
 
 const StartPageWrapper = styled.section`
-  background: #F9F9F9;
+  background: #f0f0f0;
   display: flex;
   flex-direction: column;
 `
