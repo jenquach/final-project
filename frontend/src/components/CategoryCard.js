@@ -8,7 +8,7 @@ import Link from "@mui/material/Link"
 const CategoryCard = () => {
   return (
     <>
-    <Card sx={{ maxWidth: 250 }}>
+    <Card sx={{ maxWidth: 250, textAlign: "center" }}>
         <CardMedia
           component="img"
           height="300"
@@ -23,7 +23,7 @@ const CategoryCard = () => {
           </Link>
         </CardContent>
     </Card>
-    <Card sx={{ maxWidth: 250 }}>
+    <Card sx={{ maxWidth: 250, textAlign: "center" }}>
      <CardMedia
        component="img"
        height="300"
@@ -38,7 +38,7 @@ const CategoryCard = () => {
        </Link>
      </CardContent>
     </Card>
-    <Card sx={{ maxWidth: 250 }}>
+    <Card sx={{ maxWidth: 250, textAlign: "center" }}>
       <CardMedia
         component="img"
         height="300"
