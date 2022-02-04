@@ -4,7 +4,6 @@ import Button from "@mui/material/Button"
 import { useDispatch, useSelector } from 'react-redux';
 import { cartReducer } from "../reducers/CartReducer";
 import styled from "styled-components"
-import { Grid } from "@mui/material";
 import HoverImage from "react-hover-image";
 
 import { API_URL } from "../utils/urls"
@@ -36,6 +35,7 @@ const StyledBuyButton = styled(Button)`
   background-color: #A9CDCE;
   border-radius: 2px;
   margin-bottom: 20px;
+  margin-top: 10px;
   width: 80%; 
   font-size: 1em;
   font-family: 'Nunito Sans', sans-serif;
@@ -89,7 +89,7 @@ const ProductBox = ({ product }) => {
         <StyledBuyButton
           variant="contained" 
           onClick={() => handleAddToCartClick(product)}
-        >
+>
           Buy
         </StyledBuyButton>
       </ProductContainer>

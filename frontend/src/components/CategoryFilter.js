@@ -2,11 +2,16 @@ import React from "react"
 import { Button } from "@mui/material"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import FixedContainer from "./FixedContainer"
 
 
 const CategoryWrapper = styled.section`
-padding-bottom: 55px;
+display: grid;
+grid-template-columns: repeat(12, 1fr);
+grid-column: span 12;
+@media (min-width: 767px) {
+  grid-column-start: 2;
+  grid-column-end: 12;
+  }
 `
 
 const StyledLink = styled(Link)`
@@ -22,7 +27,7 @@ const CategoryFilterButton = styled(Button)`
   background-color: #CFE8E0;
   border-radius: 2px;
   margin-bottom: 20px;
-  margin-inline: 30px;
+  grid-column: span 2;
   max-width: 200px; 
   font-size: 1em;
   font-family: 'Nunito Sans', sans-serif;
@@ -39,7 +44,6 @@ const CategoryFilterButton = styled(Button)`
 
 const CategoryFilter = () => {
   return (
-    <FixedContainer>
     <CategoryWrapper>
       <CategoryFilterButton component={StyledLink} to={'/products'}>All products</CategoryFilterButton>
       <CategoryFilterButton component={StyledLink} to={'/products/Bottoms'}>Bottoms</CategoryFilterButton>
@@ -48,7 +52,6 @@ const CategoryFilter = () => {
       <CategoryFilterButton component={StyledLink} to={'/products/Outerwear'}>Outerwear</CategoryFilterButton>
       <CategoryFilterButton component={StyledLink} to={'/products/Footwear'}>Footwear</CategoryFilterButton>
     </CategoryWrapper>
-    </FixedContainer>
   )
 }
 

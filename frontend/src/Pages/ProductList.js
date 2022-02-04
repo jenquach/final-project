@@ -28,14 +28,6 @@ display: grid;
   }
 `
 
-
-const ProductListWrapper = styled.div`
-padding-top: 100px;
-background: #f0f0f0;
-height: 1000px;
-`
-
-
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const params = useParams();
@@ -53,22 +45,13 @@ const ProductList = () => {
   return (
     <>
     <MainProductGrid>
+    <CategoryFilter></CategoryFilter>
       <Container>
       {products.map((product) => (
         <ProductBox key={product.productId} product={product}></ProductBox>
           ))}
     </Container>
     </MainProductGrid>
-      {/* <ProductListWrapper>
-        <CategoryFilter></CategoryFilter>
-        <FixedContainer>
-          <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 1, sm: 2, md: 4 }}>
-             
-            </Grid>
-          </Box>
-        </FixedContainer>
-      </ProductListWrapper> */}
     </>
   );
 }
