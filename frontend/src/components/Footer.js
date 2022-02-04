@@ -21,7 +21,7 @@ const Footer = () => {
         sx={{
         display: "flex",
         flexDirection: { xs: "column", sm: "row" },
-        height: "120px",
+        height: "100px",
         paddingTop: "40px",
         paddingBottom: "20px",
         justifyContent: "space-evenly",
@@ -29,38 +29,39 @@ const Footer = () => {
         textTransform: "uppercase",
         fontWeight: "normal",
         padding: "10px, 0",
+        fontFamily: "Nunito",
         }}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={10}>
               <Box>
-                <Link href="/" color="inherit" underline="none">About us</Link>
+                <Link href="/about-us" color="inherit" underline="none">About us</Link>
               </Box>
             </Grid>
           </Grid>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={10}>
               <Box>
-                <Link href="/" color="inherit" underline="none">Terms and conditions</Link>
+                <Link href="/about-us" color="inherit" underline="none">Terms and conditions</Link>
               </Box>
             </Grid>
           </Grid>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={10}>
               <Box>
-                <Link href="/" color="inherit" underline="none">Customer Service</Link>
+                <Link href="/about-us" color="inherit" underline="none">Customer Service</Link>
               </Box>
             </Grid>
           </Grid>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={10}>
               <Box>
-                <Link href="/" color="inherit" underline="none">Contact</Link>
+                <Link href="/about-us" color="inherit" underline="none">Contact</Link>
                 <Box sx={{
-                      padding: '10px',
+                      padding: "10px",
                     }}>
-                  <MailOutlineIcon />
-                  <FacebookIcon />
-                  <InstagramIcon />
+                  <MailOutlineIcon sx={{ fontSize: 30 }}/>
+                  <FacebookIcon sx={{ fontSize: 30 }}/>
+                  <InstagramIcon sx={{ fontSize: 30 }}/>
                 </Box>
               </Box>
             </Grid>
@@ -73,9 +74,11 @@ const Footer = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        textAlign: "center",
         padding: "10px, 0",
+        fontFamily: "Nunito",
         }}>
-          <Typography variant="subtitle1">
+          <Typography variant="subtitle1" >
             This is a fictional webshop made by students at Technigo Bootcamp
           </Typography>
       </Box>

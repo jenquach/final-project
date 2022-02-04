@@ -49,7 +49,7 @@ const ResponsiveAppBar = () => {
             variant="h6"
             noWrap
             component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+            sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, fontFamily: 'Nunito' }}
           >
             <Link to="/">A NEW FIT</Link>
           </Typography>
@@ -94,7 +94,7 @@ const ResponsiveAppBar = () => {
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', fontFamily: 'Nunito' } }}
           >
             <Link to="/">A NEW FIT</Link>
           </Typography>
@@ -105,7 +105,7 @@ const ResponsiveAppBar = () => {
                 onClick={handleCloseNavMenu}
                 component={Link}
                 to={page.url}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'Nunito' }}
               >
                 {page.display}
               </Button>
@@ -114,7 +114,7 @@ const ResponsiveAppBar = () => {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, fontFamily: 'Nunito' }}>
                 <PersonIcon sx={{ color: '#F9F9F9' }} />
               </IconButton>
             </Tooltip>
