@@ -5,23 +5,33 @@ import { useDispatch, useSelector } from 'react-redux';
 import { cartReducer } from "../reducers/CartReducer";
 import styled from "styled-components"
 import { Grid } from "@mui/material";
+import HoverImage from "react-hover-image";
 
 import { API_URL } from "../utils/urls"
+
+
+
+const ProduxtText = styled.text`
+font-size: 1.2em;
+font-family: 'Nunito Sans', sans-serif;
+span {
+  color: #A9CDCE;
+  font-size: 1em;
+  font-weight:700;
+}
+`
 
 const ProductTextWrapper = styled.div`
 position: absolute;
 bottom:0;
-span{
-width: 100%;
-}
+text-align: center;
 `
-
 
 const StyledBuyButton = styled(Button)`
   background-color: #A9CDCE;
   border-radius: 2px;
   margin-bottom: 20px;
-  max-width: 130px; 
+  width: 270px; 
   font-size: large;
   font-family: 'Nunito Sans', sans-serif;
   &:hover {
@@ -59,12 +69,13 @@ const ProductBox = ({ product }) => {
 
     return (
       <>
-       <Grid item xs={1} sm={1} md={1} key={product.productId} paddingTop={0} height='400px' style={{ position: 'relative'}}>
-        <Link to={`/product/${product.productId}`}><img src={product.img1} style={{ width: '100%', maxHeight: '400px' }} alt="product"></img></Link>
+       <Grid item xs={1} sm={1} md={1} key={product.productId} paddingTop={0} height='450px' style={{ position: 'relative'}}>
+        <Link to={`/product/${product.productId}`}> <HoverImage src={product.img1} hoverSrc={product.img2} style={{ width: '100%', maxHeight: '320px' }} alt="product"/></Link>
         <ProductTextWrapper>
-        <span>{product.productName}</span> £{product.price}
+        <ProduxtText>{product.productName} <span>£{product.price}</span></ProduxtText>
+       
         <StyledBuyButton 
-       variant="contained" sx={{ maxWidth: "130px", fontSize:"large" }}
+       variant="contained" sx={{ maxWidth: "270px", fontSize:"large" }}
         onClick={()=> handleAddToCartClick(product)}
         >
         Buy

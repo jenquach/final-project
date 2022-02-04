@@ -1,22 +1,32 @@
 import React from "react"
 import { Button } from "@mui/material"
-import { Link } from "react-router-dom"
 import styled from "styled-components"
+import { Link } from "react-router-dom"
+
 
 const CategoryWrapper = styled.section`
 padding-bottom: 16px;
 `
 
+const Link = styled(Link)`
+color: grey;
+text-decoration: none;
+font-family: 'Nunito Sans', sans-serif;
+font-weight: 700;
+text-transform: capitalize; 
+`
+
 const CategoryFilterButton = styled(Button)`
-  background-color: #A9CDCE;
+  align-items: center;
+  background-color: #CFE8E0;
   border-radius: 2px;
   margin-bottom: 20px;
-  margin-left:5px; 
+  margin-left:100px; 
   max-width: 200px; 
-  font-size: large;
+  font-size: 1em;
   font-family: 'Nunito Sans', sans-serif;
   &:hover {
-    background-color: #CFE8E0;
+    background-color: #A9CDCE;
   }
   &:focus {
     background-color: #CFE8E0;
