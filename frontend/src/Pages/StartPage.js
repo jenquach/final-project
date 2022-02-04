@@ -29,6 +29,7 @@ const HeroImgText = styled.h1`
   padding: 15px;  
   backdrop-filter: blur(10px);
   text-transform: uppercase;
+  font-family: 'Nunito', sans-serif;
 
 @media (min-width: 1440px) {
   font-size: 2rem;

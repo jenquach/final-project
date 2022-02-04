@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom"
 import { Typography, Button } from "@mui/material"
 import ArrowBackIcon from "@mui/icons-material/ArrowBack"
 import styled from "styled-components"
-import { API_URL } from '../utils/urls'
+import { API_URL } from "../utils/urls"
 
 const ProductDetailsWrapper = styled.div`
   background: #f0f0f0;
@@ -97,7 +97,8 @@ const ProductDetails = () => {
       .then((json) => {
         setProduct(json)
       })
-  }, [setProduct])
+}, [setProduct])
+
 
   const BackToAllProducts = () => {
     navigate('/products')
