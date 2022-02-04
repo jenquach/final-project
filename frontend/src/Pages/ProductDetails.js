@@ -87,59 +87,63 @@ const BackButton = styled(Button)`
 
 const ProductDetails = () => {
   const { productId } = useParams()
-  const [product, setProduct] = useState({})
- 
+  const [product, setProduct] = useState(null)
+
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch (API_URL(`product/${productId}`))
+    fetch(API_URL(`product/${productId}`))
       .then((res) => res.json())
       .then((json) => {
         setProduct(json)
       })
-}, )
+  }, [setProduct])
 
-const BackToAllProducts = () => {
-  navigate('/products')
-}
+  const BackToAllProducts = () => {
+    navigate('/products')
+  }
 
-  return(
-  <ProductDetailsWrapper>
-    <Image src={ product.img1 } alt={ product.productName } />
-    <Details>
-    <Typography variant="h6" color="text.secondary" component="div">
-          { product.category }
-        </Typography>
-    <Typography component="div" variant="h5" color="#A9CDCE" textTransform="uppercase">
-          { product.productName }
-        </Typography>
-        <Typography variant="h6" color="#A9CDCE" component="div" marginBottom={2} fontWeight="bold">
-          £{ product.price }.00
-        </Typography>
-        <Typography variant="subtitle1" color="text.secondary" component="div">
-          { product.desc }
-        </Typography>
-        <Typography variant="subtitle1" color="text.secondary" component="div">
-          { product.condition }
-        </Typography>
-        <Typography variant="subtitle1" color="text.secondary" component="div">
-          Size: { product.size }
-        </Typography>
-        <FlexContainer>
-          <ThumbImage src={ product.img1 } alt={ product.productName } />
-          <ThumbImage src={ product.img2 } alt={ product.productName } />
-        </FlexContainer>
-        <ButtonContainer>
-          <StyledButton variant="contained" sx={{ maxWidth: "130px", fontSize:"large" }}>
-            BUY
-          </StyledButton>
-          <BackButton className="back-btn" variant="text" size="small" onClick={BackToAllProducts}>
-            <ArrowBackIcon fontSize="small" sx={{ marginRight: "7px" }}></ArrowBackIcon>
-              ALL PRODUCTS
-            </BackButton>
-        </ButtonContainer>
-    </Details>
-  </ProductDetailsWrapper>
+  return (
+    <>
+      {product && (
+        <ProductDetailsWrapper>
+          <Image src={product.img1} alt={product.productName} />
+          <Details>
+            <Typography variant="h6" color="text.secondary" component="div">
+              {product.category}
+            </Typography>
+            <Typography component="div" variant="h5" color="#A9CDCE" textTransform="uppercase">
+              {product.productName}
+            </Typography>
+            <Typography variant="h6" color="#A9CDCE" component="div" marginBottom={2} fontWeight="bold">
+              £{product.price}.00
+            </Typography>
+            <Typography variant="subtitle1" color="text.secondary" component="div">
+              {product.desc}
+            </Typography>
+            <Typography variant="subtitle1" color="text.secondary" component="div">
+              {product.condition}
+            </Typography>
+            <Typography variant="subtitle1" color="text.secondary" component="div">
+              Size: {product.size}
+            </Typography>
+            <FlexContainer>
+              <ThumbImage src={product.img1} alt={product.productName} />
+              <ThumbImage src={product.img2} alt={product.productName} />
+            </FlexContainer>
+            <ButtonContainer> 
+              <StyledButton variant="contained" sx={{ maxWidth: "130px", fontSize: "large" }}>
+                BUY
+              </StyledButton>
+              <BackButton className="back-btn" variant="text" size="small" onClick={BackToAllProducts}>
+                <ArrowBackIcon fontSize="small" sx={{ marginRight: "7px" }}></ArrowBackIcon>
+                ALL PRODUCTS
+              </BackButton>
+            </ButtonContainer>
+          </Details>
+        </ProductDetailsWrapper>
+      )}
+    </>
   )
 }
 
