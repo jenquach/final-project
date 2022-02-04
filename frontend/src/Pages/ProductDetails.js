@@ -131,7 +131,7 @@ const ProductDetails = () => {
               <ThumbImage src={product.img1} alt={product.productName} />
               <ThumbImage src={product.img2} alt={product.productName} />
             </FlexContainer>
-            <ButtonContainer>
+            <ButtonContainer> 
               <StyledButton variant="contained" sx={{ maxWidth: "130px", fontSize: "large" }}>
                 BUY
               </StyledButton>

@@ -9,30 +9,35 @@ import HoverImage from "react-hover-image";
 
 import { API_URL } from "../utils/urls"
 
-
-
-const ProduxtText = styled.text`
-font-size: 1.2em;
-font-family: 'Nunito Sans', sans-serif;
-span {
-  color: #A9CDCE;
-  font-size: 1em;
-  font-weight:700;
+const ProductContainer = styled.div`
+margin-bottom: 25px;
+background-color: white;
+grid-column: span 1;
+text-align: center;
+  @media (min-width: 767px) {
+  grid-column: span 1;
 }
 `
 
-const ProductTextWrapper = styled.div`
-position: absolute;
-bottom:0;
+const ProductText = styled.text`
+font-size: 1.1em;
+font-family: 'Nunito Sans', sans-serif;
 text-align: center;
+`
+
+const ProductPrice = styled.text`
+padding-left: 10px;
+color: #A9CDCE;
+font-size: 1em;
+font-weight:700;
 `
 
 const StyledBuyButton = styled(Button)`
   background-color: #A9CDCE;
   border-radius: 2px;
   margin-bottom: 20px;
-  width: 270px; 
-  font-size: large;
+  width: 80%; 
+  font-size: 1em;
   font-family: 'Nunito Sans', sans-serif;
   &:hover {
     background-color: #CFE8E0;
@@ -41,7 +46,8 @@ const StyledBuyButton = styled(Button)`
     background-color: #CFE8E0;
   }
   @media (max-width: 667px) {
-    max-width: 280px;
+    max-width: 100%;
+    margin-top: 20px;
 }
 `
 
@@ -65,25 +71,30 @@ const ProductBox = ({ product }) => {
       .then((data) => {
         dispatch(cartReducer.actions.setItems(data.items))
       });
-}
+  }
 
-    return (
-      <>
-       <Grid item xs={1} sm={1} md={1} key={product.productId} paddingTop={0} height='450px' style={{ position: 'relative'}}>
-        <Link to={`/product/${product.productId}`}> <HoverImage src={product.img1} hoverSrc={product.img2} style={{ width: '100%', maxHeight: '320px' }} alt="product"/></Link>
-        <ProductTextWrapper>
-        <ProduxtText>{product.productName} <span>£{product.price}</span></ProduxtText>
-       
-        <StyledBuyButton 
-       variant="contained" sx={{ maxWidth: "270px", fontSize:"large" }}
-        onClick={()=> handleAddToCartClick(product)}
+  return (
+    <>
+
+      <ProductContainer>
+        <Link to={`/product/${product.productId}`}>
+          <HoverImage src={product.img1} hoverSrc={product.img2} style={{ width: '100%' }} alt="product" />
+        </Link>
+        <ProductText>
+          {product.productName}
+        </ProductText>
+        <ProductPrice>
+          £{product.price}
+        </ProductPrice>
+        <StyledBuyButton
+          variant="contained" 
+          onClick={() => handleAddToCartClick(product)}
         >
-        Buy
-      </StyledBuyButton>
-      </ProductTextWrapper>
-      </Grid>
-      </>
-    );
+          Buy
+        </StyledBuyButton>
+      </ProductContainer>
+    </>
+  );
 };
 
 export default ProductBox;

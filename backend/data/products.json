@@ -7,8 +7,8 @@
     "category": "One piece",
     "size": "6-12M",
     "price": 6,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769263/Webshop%20product%20img/1a_u1muys.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769263/Webshop%20product%20img/1b_ryqoio.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769263/Webshop%20product%20img/1a_u1muys.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769263/Webshop%20product%20img/1b_ryqoio.jpg"
   },
   {
     "productId": 2,
@@ -18,8 +18,8 @@
     "category": "Outerwear",
     "size": "0-3M",
     "price": 10,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769284/Webshop%20product%20img/2a_rtnc0v.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769284/Webshop%20product%20img/2b_z0ao3i.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769284/Webshop%20product%20img/2a_rtnc0v.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769284/Webshop%20product%20img/2b_z0ao3i.jpg"
   },
   {
     "productId": 3,
@@ -29,19 +29,19 @@
     "category": "Tops",
     "size": "3T",
     "price": 12,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769287/Webshop%20product%20img/3a_goo044.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769286/Webshop%20product%20img/3b_vryfos.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769287/Webshop%20product%20img/3a_goo044.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769286/Webshop%20product%20img/3b_vryfos.jpg"
   },
   {
     "productId": 4,
-    "productName": "Retro Embroided Denim Overalls",
+    "productName": "Retro Denim Overalls",
     "desc": "Classic denim overall with adjustable straps.",
     "condition": "Very good condition",
     "category": "One piece",
     "size": "12-18M",
     "price": 10,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769287/Webshop%20product%20img/4a_jovtek.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769288/Webshop%20product%20img/4b_rly8vm.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769287/Webshop%20product%20img/4a_jovtek.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769288/Webshop%20product%20img/4b_rly8vm.jpg"
   },
   {
     "productId": 5,
@@ -51,8 +51,8 @@
     "category": "Outerwear",
     "size": "3T",
     "price": 13,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769285/Webshop%20product%20img/5a_arac6v.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769284/Webshop%20product%20img/5b_p8jgkr.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769285/Webshop%20product%20img/5a_arac6v.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769284/Webshop%20product%20img/5b_p8jgkr.jpg"
   },
   {
     "productId": 6,
@@ -62,8 +62,8 @@
     "category": "Footwear",
     "size": "22",
     "price": 10,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769286/Webshop%20product%20img/6a_dgpz7m.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769284/Webshop%20product%20img/6b_diffdd.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769286/Webshop%20product%20img/6a_dgpz7m.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769284/Webshop%20product%20img/6b_diffdd.jpg"
   },
   {
     "productId": 7,
@@ -73,8 +73,8 @@
     "category": "Bottoms",
     "size": "6-12M",
     "price": 7,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769284/Webshop%20product%20img/7a_nlqxew.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769286/Webshop%20product%20img/7b_xxd8d3.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769284/Webshop%20product%20img/7a_nlqxew.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769286/Webshop%20product%20img/7b_xxd8d3.jpg"
   },
   {
     "productId": 8,
@@ -84,8 +84,8 @@
     "category": "Outerwear",
     "size": "2T",
     "price": 4,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769284/Webshop%20product%20img/8a_sfbjod.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769284/Webshop%20product%20img/8b_mu77ul.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769284/Webshop%20product%20img/8a_sfbjod.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769284/Webshop%20product%20img/8b_mu77ul.jpg"
   },
   {
     "productId": 9,
@@ -95,8 +95,8 @@
     "category": "Tops",
     "size": "12-18M",
     "price": 6,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769284/Webshop%20product%20img/9a_fp39ni.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769284/Webshop%20product%20img/9b_ojlc9p.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769284/Webshop%20product%20img/9a_fp39ni.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769284/Webshop%20product%20img/9b_ojlc9p.jpg"
   },
   {
     "productId": 10,
@@ -106,8 +106,8 @@
     "category": "Footwear",
     "size": "26",
     "price": 10,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769286/Webshop%20product%20img/10a_wqi4eb.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769284/Webshop%20product%20img/10b_jcwx62.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769286/Webshop%20product%20img/10a_wqi4eb.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769284/Webshop%20product%20img/10b_jcwx62.jpg"
   },
   {
     "productId": 11,
@@ -117,8 +117,8 @@
     "category": "Bottoms",
     "size": "2T",
     "price": 5,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769286/Webshop%20product%20img/11a_ofdolw.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769286/Webshop%20product%20img/11b_rkvgpw.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769286/Webshop%20product%20img/11a_ofdolw.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769286/Webshop%20product%20img/11b_rkvgpw.jpg"
   },
   {
     "productId": 12,
@@ -128,8 +128,8 @@
     "category": "Footwear",
     "size": "19",
     "price": 9,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769284/Webshop%20product%20img/12_y3sxpz.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769284/Webshop%20product%20img/12c_isluhr.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769284/Webshop%20product%20img/12_y3sxpz.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769284/Webshop%20product%20img/12c_isluhr.jpg"
   },
   {
     "productId": 13,
@@ -139,8 +139,8 @@
     "category": "One piece",
     "size": "3-6M",
     "price": 8,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769286/Webshop%20product%20img/13a_hggkcp.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769285/Webshop%20product%20img/13b_wqdlj6.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769286/Webshop%20product%20img/13a_hggkcp.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769285/Webshop%20product%20img/13b_wqdlj6.jpg"
   },
   {
     "productId": 14,
@@ -150,8 +150,8 @@
     "category": "Bottoms",
     "size": "3T",
     "price": 7,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769287/Webshop%20product%20img/14a_xl96ir.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769286/Webshop%20product%20img/14b_dslkjo.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769287/Webshop%20product%20img/14a_xl96ir.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769286/Webshop%20product%20img/14b_dslkjo.jpg"
   },
   {
     "productId": 15,
@@ -161,8 +161,8 @@
     "category": "Bottoms",
     "size": "0-3M",
     "price": 5,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769285/Webshop%20product%20img/15a_nidqcx.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769285/Webshop%20product%20img/15b_vjh2fl.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769285/Webshop%20product%20img/15a_nidqcx.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769285/Webshop%20product%20img/15b_vjh2fl.jpg"
   },
   {
     "productId": 16,
@@ -172,8 +172,8 @@
     "category": "Outerwear",
     "size": "3T",
     "price": 25,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769285/Webshop%20product%20img/16_lesfd0.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769286/Webshop%20product%20img/16c_clffb5.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769285/Webshop%20product%20img/16_lesfd0.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769286/Webshop%20product%20img/16c_clffb5.jpg"
   },
   {
     "productId": 17,
@@ -183,8 +183,8 @@
     "category": "One piece",
     "size": "0-3M",
     "price": 6,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769286/Webshop%20product%20img/17a_jvmmhp.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769287/Webshop%20product%20img/17b_op2hwy.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769286/Webshop%20product%20img/17a_jvmmhp.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769287/Webshop%20product%20img/17b_op2hwy.jpg"
   },
   {
     "productId": 18,
@@ -194,8 +194,8 @@
     "category": "Tops",
     "size": "3-6M",
     "price": 7,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769287/Webshop%20product%20img/18a_i6cpra.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769286/Webshop%20product%20img/18b_tqbwze.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769287/Webshop%20product%20img/18a_i6cpra.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769286/Webshop%20product%20img/18b_tqbwze.jpg"
   },
   {
     "productId": 19,
@@ -205,8 +205,8 @@
     "category": "Bottoms",
     "size": "6-12M",
     "price": 5,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769285/Webshop%20product%20img/19a_hhwgu6.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769285/Webshop%20product%20img/19b_zqsebu.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769285/Webshop%20product%20img/19a_hhwgu6.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769285/Webshop%20product%20img/19b_zqsebu.jpg"
   },
   {
     "productId": 20,
@@ -216,8 +216,8 @@
     "category": "One piece",
     "size": "0-3M",
     "price": 6,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769285/Webshop%20product%20img/20a_ucp2nx.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769287/Webshop%20product%20img/20b_onyank.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769285/Webshop%20product%20img/20a_ucp2nx.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769287/Webshop%20product%20img/20b_onyank.jpg"
   },
   {
     "productId": 21,
@@ -227,8 +227,8 @@
     "category": "Outerwear",
     "size": "2T",
     "price": 16,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769285/Webshop%20product%20img/21a_m33xga.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769285/Webshop%20product%20img/21b_lc5t5u.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769285/Webshop%20product%20img/21a_m33xga.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769285/Webshop%20product%20img/21b_lc5t5u.jpg"
   },
   {
     "productId": 22,
@@ -238,8 +238,8 @@
     "category": "Footwear",
     "size": "18",
     "price": 8,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769285/Webshop%20product%20img/22a_hrwlpg.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769285/Webshop%20product%20img/22b_kbh8nv.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769285/Webshop%20product%20img/22a_hrwlpg.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769285/Webshop%20product%20img/22b_kbh8nv.jpg"
   },
   {
     "productId": 23,
@@ -249,8 +249,8 @@
     "category": "Tops",
     "size": "3T",
     "price": 9,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769285/Webshop%20product%20img/23a_hussib.webp",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769284/Webshop%20product%20img/23b_idvlk5.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769285/Webshop%20product%20img/23a_hussib.webp",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769284/Webshop%20product%20img/23b_idvlk5.jpg"
   },
   {
     "productId": 24,
@@ -260,8 +260,8 @@
     "category": "Tops",
     "size": "12-18M",
     "price": 16,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769287/Webshop%20product%20img/24_n8tbth.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769286/Webshop%20product%20img/24c_ak1rjn.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769287/Webshop%20product%20img/24_n8tbth.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769286/Webshop%20product%20img/24c_ak1rjn.jpg"
   },
   {
     "productId": 25,
@@ -271,7 +271,7 @@
     "category": "Footwear",
     "size": "26",
     "price": 9,
-    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769287/Webshop%20product%20img/25a_bxjhzu.jpg",
-    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/v1642769287/Webshop%20product%20img/25b_f5s21v.jpg"
+    "img1": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769287/Webshop%20product%20img/25a_bxjhzu.jpg",
+    "img2": "https://res.cloudinary.com/denrrpqab/image/upload/c_pad,h_650,w_500/v1642769287/Webshop%20product%20img/25b_f5s21v.jpg"
   }
 ]
