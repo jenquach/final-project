@@ -30,37 +30,12 @@ const ContentContainer = styled.div`
 	border: 1px solid;
 `
 
-
-
 const MyProfile = () => {
-	const [Pickup, setPickup] = useState(false)
-	const [Orders, setOrders] = useState(false)
-	const [Settings, setSettings] = useState(false)
-	const text1 = 'Book a pick-up'
-	const text2 = 'Order history'
-	const text3 = 'Account settings'
+	const [selected, setSelected] = useState('Pickup')
 	const message = useSelector((store) => store.profile.message)
 	const accessToken = useSelector((store) => store.user.accessToken)
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
-
-	const togglePickup = () => {
-		setPickup(true)
-		setOrders(false)
-		setSettings(false)
-	}
-
-	const toggleOrders = () => {
-		setPickup(false)
-		setOrders(true)
-		setSettings(false)
-	}
-
-	const toggleSettings = () => {
-		setPickup(false)
-		setOrders(false)
-		setSettings(true)
-	}
 
 	useEffect(() => {
 		if (!accessToken) {
@@ -84,30 +59,21 @@ const MyProfile = () => {
 			})
 	}, [accessToken, dispatch])
 
-
 	return (
     <Wrapper>
 			<h1>Welcome &#x1F44B; {message}</h1>
     <ContainerWrapper>
 				<Container>
 					<ul>
-						<li><a onClick={() => togglePickup()}>Book a pick-up</a></li>
-						<li><a onClick={() => toggleOrders()}>Order history</a></li>
-						<li><a onClick={() => toggleSettings()}>Account settings</a></li>
+						<li><a onClick={() => setSelected('Pickup')}>Book a pick-up</a></li>
+						<li><a onClick={() => setSelected('Orders')}>Order history</a></li>
+						<li><a onClick={() => setSelected('EditProfile')}>Edit profile</a></li>
 					</ul>
 				</Container>
 					<ContentContainer>
-							<div>
-							<h6>
-							{Pickup ? text1 : null}
-							</h6>
-							<h6>
-							{Orders ? text2 : null}
-							</h6>
-							<h6>
-							{Settings ? text3 : null}
-							</h6>
-							</div>
+						{(selected === 'Pickup') && <div>Book a pickup</div>}
+            {(selected === 'Orders') && <div>Order history</div>}
+            {(selected === 'EditProfile') && <div>Edit Profile</div>}
 					</ContentContainer>
     	</ContainerWrapper>
 		</Wrapper>
