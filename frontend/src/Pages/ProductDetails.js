@@ -87,7 +87,7 @@ const BackButton = styled(Button)`
 
 const ProductDetails = () => {
   const { productId } = useParams()
-  const [product, setProduct] = useState({})
+  const [product, setProduct] = useState(null)
  
   const navigate = useNavigate()
 
@@ -97,7 +97,7 @@ const ProductDetails = () => {
       .then((json) => {
         setProduct(json)
       })
-}, )
+}, [setProduct])
 
 const BackToAllProducts = () => {
   navigate('/products')

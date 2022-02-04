@@ -13,6 +13,7 @@ import Signup from "./components/Signup"
 import Signin from "./components/Signin"
 import ProductList from "./pages/ProductList"
 import ProductDetails from "./pages/ProductDetails"
+import AboutUs from "./pages/AboutUs"
 import Footer from "./components/Footer"
 
 import user from "./reducers/user"
@@ -46,6 +47,7 @@ function App() {
             <Route path="/my-profile" element={<MyProfile />} />
             <Route path="/products" element={<ProductList />} />
             <Route path="/product/:productId" element={<ProductDetails />} />
+            <Route path="/about-us" element={<AboutUs />} />
           </Routes>
       </BrowserRouter>
       <Footer />
