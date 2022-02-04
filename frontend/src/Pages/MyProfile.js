@@ -30,10 +30,8 @@ const ContentContainer = styled.div`
 	border: 1px solid;
 `
 
-
-
 const MyProfile = () => {
-	const [selected, setSelected] = useState(0)
+	const [selected, setSelected] = useState('Pickup')
 	const message = useSelector((store) => store.profile.message)
 	const accessToken = useSelector((store) => store.user.accessToken)
 	const dispatch = useDispatch()
@@ -61,22 +59,21 @@ const MyProfile = () => {
 			})
 	}, [accessToken, dispatch])
 
-
 	return (
     <Wrapper>
 			<h1>Welcome &#x1F44B; {message}</h1>
     <ContainerWrapper>
 				<Container>
 					<ul>
-						<li><a onClick={() => setSelected(0)}>Book a pick-up</a></li>
-						<li><a onClick={() => setSelected(1)}>Order history</a></li>
-						<li><a onClick={() => setSelected(2)}>Account settings</a></li>
+						<li><a onClick={() => setSelected('Pickup')}>Book a pick-up</a></li>
+						<li><a onClick={() => setSelected('Orders')}>Order history</a></li>
+						<li><a onClick={() => setSelected('EditProfile')}>Edit profile</a></li>
 					</ul>
 				</Container>
 					<ContentContainer>
-						{(selected === 0) && <div>Book a pickup</div>}
-            {(selected === 1) && <div>Edit profile</div>}
-            {(selected === 2) && <div> Order history</div>}
+						{(selected === 'Pickup') && <div>Book a pickup</div>}
+            {(selected === 'Orders') && <div>Order history</div>}
+            {(selected === 'EditProfile') && <div>Edit Profile</div>}
 					</ContentContainer>
     	</ContainerWrapper>
 		</Wrapper>
