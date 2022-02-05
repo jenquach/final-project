@@ -20,6 +20,7 @@ import { cartReducer } from "./reducers/CartReducer"
 import MyProfile from "./pages/MyProfile"
 import MiniCartDrawer from "./components/MiniCartDrawer"
 import FaqAccordion from "./pages/Faq"
+import Checkout from "./pages/Checkout"
 
 
 const Wrapper = styled.div`
@@ -52,6 +53,7 @@ function App() {
             </Route>
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/faq" element={<FaqAccordion />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/product/:productId" element={<ProductDetails />} />
           </Routes>
         </Wrapper>
