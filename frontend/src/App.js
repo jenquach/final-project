@@ -16,10 +16,10 @@ import Footer from "./components/Footer"
 import user from "./reducers/user"
 import profile from "./reducers/profile"
 import StartPage from "./pages/StartPage"
-import { cartReducer } from './reducers/CartReducer';
+import { cartReducer } from "./reducers/CartReducer"
 import MyProfile from "./pages/MyProfile"
 import MiniCartDrawer from "./components/MiniCartDrawer"
-
+import FaqAccordion from "./pages/Faq"
 
 
 const Wrapper = styled.div`
@@ -51,6 +51,7 @@ function App() {
               <Route path=":category" element={<ProductList />} />
             </Route>
             <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/faq" element={<FaqAccordion />} />
             <Route path="/product/:productId" element={<ProductDetails />} />
           </Routes>
         </Wrapper>

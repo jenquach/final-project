@@ -103,7 +103,6 @@ const Signin = () => {
           sm={4}
           md={7}
           sx={{
-            /* backgroundImage: 'url(https://source.unsplash.com/random)', */
             backgroundImage: 'url(https://res.cloudinary.com/denrrpqab/image/upload/v1644065894/kids_playing_kl1evn.jpg)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
