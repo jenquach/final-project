@@ -34,7 +34,7 @@ const AboutUs = () => {
         <h1>ABOUT US</h1>
         <p>
           A NEW FIT is a fictional marketplace for pre-loved children's clothes.
-          The project was made by <span className="highlight">Jenny Quach, Rosanna Dahlberg</span> and <span className="highlight">Karoline Mann</span> - students at Technigo Frontend Developer Bootcamp, class HT21.
+          The project was made by <span className="highlight">Karoline Mann, Jenny Quach,</span> and <span className="highlight">Rosanna Dahlberg</span> - students at Technigo Frontend Developer Bootcamp, class HT21.
           By building an e-commerce website as our final project we got to use most of the skills that we had learnt during the Bootcamp. We decided that our e-commerce would be a type of website that the three of us would love to use ourselves - a marketplace for pre-loved children's clothes. We hope you enjoy trying it out!
         </p>
         <h3>TECH USED</h3>
