@@ -16,7 +16,6 @@ const HeroImg = styled.div`
   object-fit: cover;
   background-position: center center;
   height: 100vh;
-  margin-top: 68px;
   display: flex;
   justify-content: center;
   align-items: center;
