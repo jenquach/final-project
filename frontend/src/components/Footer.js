@@ -21,7 +21,7 @@ const Footer = () => {
         sx={{
         display: "flex",
         flexDirection: { xs: "column", sm: "row" },
-        height: "100px",
+        height: "80px",
         paddingTop: "40px",
         paddingBottom: "20px",
         justifyContent: "space-evenly",
@@ -70,7 +70,7 @@ const Footer = () => {
       <Box
         sx={{
         backgroundColor: "#CFE8E0",
-        height: "80px",
+        height: "60px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
