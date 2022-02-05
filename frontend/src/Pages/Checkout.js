@@ -21,7 +21,6 @@ const CheckoutContainer = styled.div`
 padding-top: 70px;
 grid-template-columns: repeat(12, 1fr);
 grid-column: span 12;
-background: coral;
 display: grid;
   @media (min-width: 767px) {
   grid-column-start: 2;
