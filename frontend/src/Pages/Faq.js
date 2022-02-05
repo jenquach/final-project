@@ -80,7 +80,7 @@ const FaqAccordion = () => {
           aria-controls="panel4bh-content"
           id="panel4bh-header"
         >
-          <Typography sx={{ width: '66%', flexShrink: 0 }}>Donut candy canes gingerbread lollipop tiramisu halvah.?</Typography>
+          <Typography sx={{ width: '66%', flexShrink: 0 }}>Donut candy canes gingerbread lollipop tiramisu halvah?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
