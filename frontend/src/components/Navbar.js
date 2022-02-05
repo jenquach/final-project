@@ -3,7 +3,6 @@ import AppBar from "@mui/material/AppBar"
 import Box from "@mui/material/Box"
 import Toolbar from "@mui/material/Toolbar"
 import IconButton from "@mui/material/IconButton"
-
 import Typography from "@mui/material/Typography"
 import Menu from "@mui/material/Menu"
 import MenuIcon from "@mui/icons-material/Menu"
@@ -18,6 +17,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { cartReducer } from "../reducers/CartReducer"
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
+/* import Logo from "../assets/A_New_Fit_4.png" */
+/* import styled from "styled-components"
+
+const StyledLogo = styled.png`
+max-width: 50px;
+height: auto;
+` */
 
 const pages = [{ display: 'All Products', url: '/products' }, { display: 'About us', url: '/about-us' }, { display: 'FAQ', url: '/faq' }]
 
@@ -68,13 +74,16 @@ const ResponsiveAppBar = () => {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+        {/* <Logo /> */}
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, fontFamily: 'Nunito' }}
           >
-            <Link to="/">A NEW FIT</Link>
+            <Link to="/">
+              A NEW FIT
+              </Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

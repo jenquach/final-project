@@ -5,6 +5,7 @@ import CardMedia from "@mui/material/CardMedia"
 import Typography from "@mui/material/Typography"
 import Link from "@mui/material/Link"
 
+
 const CategoryCard = () => {
   return (
     <>
@@ -28,7 +29,7 @@ const CategoryCard = () => {
        component="img"
        height="300"
        image={require("../assets/bottoms.jpg")}
-       alt="girl with dotted top"
+       alt="trousers with playful pattern"
      />
      <CardContent>
      <Link href="/" color="inherit" underline="none">
@@ -43,7 +44,7 @@ const CategoryCard = () => {
         component="img"
         height="300"
         image={require("../assets/outerwear.jpg")}
-        alt="girl with dotted top"
+        alt="toddler in the forest"
       />
       <CardContent>
       <Link href="/" color="inherit" underline="none">
