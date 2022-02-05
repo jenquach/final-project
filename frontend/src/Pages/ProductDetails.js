@@ -4,6 +4,8 @@ import { Typography, Button } from "@mui/material"
 import ArrowBackIcon from "@mui/icons-material/ArrowBack"
 import styled from "styled-components"
 import { API_URL } from "../utils/urls"
+import { addToCart } from "../reducers/CartReducer"
+import { useDispatch, useSelector } from "react-redux"
 
 const ProductDetailsWrapper = styled.div`
   background: #f0f0f0;
@@ -86,8 +88,12 @@ const BackButton = styled(Button)`
 `
 
 const ProductDetails = () => {
+  const dispatch = useDispatch();
+  const cartId = useSelector(store => store.cartReducer.cartId)
+
   const { productId } = useParams()
   const [product, setProduct] = useState(null)
+  const [productImage, setProductImage] = useState({})
 
   const navigate = useNavigate()
 
@@ -96,19 +102,24 @@ const ProductDetails = () => {
       .then((res) => res.json())
       .then((json) => {
         setProduct(json)
+        setProductImage(json.img1)
       })
-}, [setProduct])
+  }, [setProduct, setProductImage])
 
 
   const BackToAllProducts = () => {
     navigate('/products')
   }
 
+  const handleAddToCartClick = (product) => addToCart(dispatch, cartId, product)
+
+  const setImage = (imageUrl) => setProductImage(imageUrl)
+
   return (
     <>
       {product && (
         <ProductDetailsWrapper>
-          <Image src={product.img1} alt={product.productName} />
+          <Image src={productImage} alt={product.productName} />
           <Details>
             <Typography variant="h6" color="text.secondary" component="div">
               {product.category}
@@ -129,11 +140,11 @@ const ProductDetails = () => {
               Size: {product.size}
             </Typography>
             <FlexContainer>
-              <ThumbImage src={product.img1} alt={product.productName} />
-              <ThumbImage src={product.img2} alt={product.productName} />
+              <ThumbImage onClick={() => setImage(product.img1)} src={product.img1} alt={product.productName} />
+              <ThumbImage onClick={() => setImage(product.img2)} src={product.img2} alt={product.productName} />
             </FlexContainer>
-            <ButtonContainer> 
-              <StyledButton variant="contained" sx={{ maxWidth: "130px", fontSize: "large" }}>
+            <ButtonContainer>
+              <StyledButton onClick={() => handleAddToCartClick(product)} variant="contained" sx={{ maxWidth: "130px", fontSize: "large" }}>
                 BUY
               </StyledButton>
               <BackButton className="back-btn" variant="text" size="small" onClick={BackToAllProducts}>

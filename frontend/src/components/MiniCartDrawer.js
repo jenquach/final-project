@@ -42,7 +42,7 @@ const MiniCartDrawer = () => {
   return (
     <DrawerSection>
     <SwipeableDrawer
-     maxWidth= '200px'
+     style={{ 'maxWidth': '200px'}}
       open={ShowCartDrawer}
       anchor={'right'}
       onClose={toggle(false)}

@@ -11,7 +11,7 @@ const ProductImageCart = styled.div`
 justify-content: center;
 left: 50%;
   `
-const ProductTextCart = styled.text`
+const ProductTextCart = styled.span`
 font-size: 0.85em;
 font-family: 'Nunito Sans', sans-serif;
 justify-content: center;

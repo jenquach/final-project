@@ -42,3 +42,18 @@ export const fetchCart = () => {
     }
 }
 
+export const addToCart = (dispatch, cartId, product) => {
+    const options = {
+        method: 'POST',
+        headers: {
+            cartId: cartId
+        },
+    };
+
+    fetch(API_URL('cart/add-item?itemId=' + product.productId), options) //option is needed otherwise is going to be getMetod
+        .then((res) => res.json())
+        .then((data) => {
+            dispatch(cartReducer.actions.setItems(data.items))
+        });
+}
+

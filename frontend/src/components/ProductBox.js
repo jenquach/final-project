@@ -1,11 +1,9 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import Button from "@mui/material/Button"
 import { useDispatch, useSelector } from 'react-redux';
-import { cartReducer } from "../reducers/CartReducer";
+import { addToCart, cartReducer } from "../reducers/CartReducer";
 import styled from "styled-components"
 import HoverImage from "react-hover-image";
-
 import { API_URL } from "../utils/urls"
 
 const ProductContainer = styled.div`
@@ -18,20 +16,20 @@ text-align: center;
 }
 `
 
-const ProductText = styled.text`
+const ProductText = styled.span`
 font-size: 1.1em;
 font-family: 'Nunito Sans', sans-serif;
 text-align: center;
 `
 
-const ProductPrice = styled.text`
+const ProductPrice = styled.span`
 padding-left: 10px;
 color: #A9CDCE;
 font-size: 1em;
 font-weight:700;
 `
 
-const StyledBuyButton = styled(Button)`
+const StyledBuyButton = styled.button`
   background-color: #A9CDCE;
   border-radius: 2px;
   margin-bottom: 20px;
@@ -56,22 +54,7 @@ const ProductBox = ({ product }) => {
   const dispatch = useDispatch();
   const cartId = useSelector(store => store.cartReducer.cartId)
 
-  const handleAddToCartClick = (event) => {
-    //TODO: move to cartReducer.js
-
-    const options = {
-      method: 'POST',
-      headers: {
-        cartId: cartId
-      },
-    };
-
-    fetch(API_URL('cart/add-item?itemId=' + product.productId), options) //option is needed otherwise is going to be getMetod
-      .then((res) => res.json())
-      .then((data) => {
-        dispatch(cartReducer.actions.setItems(data.items))
-      });
-  }
+  const handleAddToCartClick = (product) => addToCart(dispatch, cartId, product);
 
   return (
     <>
@@ -87,9 +70,9 @@ const ProductBox = ({ product }) => {
           £{product.price}
         </ProductPrice>
         <StyledBuyButton
-          variant="contained" 
+          variant="contained"
           onClick={() => handleAddToCartClick(product)}
->
+        >
           Buy
         </StyledBuyButton>
       </ProductContainer>

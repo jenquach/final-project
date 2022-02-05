@@ -39,21 +39,21 @@ function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-    <Wrapper>
-        <ResponsiveAppBar />
-        <MiniCartDrawer />
-        <Routes>
-          <Route path="/" element={<StartPage />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/signin" element={<Signin />} />
-          <Route path="/my-profile" element={<MyProfile />} />
-          <Route path="/products" element={<ProductList />} >
-          <Route path=":category" element={<ProductList />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/product/:productId" element={<ProductDetails />} />
-          </Route>
-        </Routes>
-      </Wrapper>
+        <Wrapper>
+          <ResponsiveAppBar />
+          <MiniCartDrawer />
+          <Routes>
+            <Route path="/" element={<StartPage />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/signin" element={<Signin />} />
+            <Route path="/my-profile" element={<MyProfile />} />
+            <Route path="/products" element={<ProductList />} >
+              <Route path=":category" element={<ProductList />} />
+            </Route>
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/product/:productId" element={<ProductDetails />} />
+          </Routes>
+        </Wrapper>
       </BrowserRouter>
       <Footer />
     </Provider>
