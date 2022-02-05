@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import MomentUtils from "@date-io/moment"
+import { alpha } from '@material-ui/core/styles'
 import {
   MuiPickersUtilsProvider,
   TimePicker,
@@ -7,7 +8,9 @@ import {
 } from "@material-ui/pickers"
 
 const BookPickup = () => {
-  const [date, setDate] = useState(null)
+  const [selectedDate, setSelectedDate] = useState(null)
+
+  const onChange = (date) => {setSelectedDate(date)}
 
   return (
     <>
@@ -16,14 +19,19 @@ const BookPickup = () => {
       <DatePicker
         placeholder="YYYY/MM/DD"
         format={"YYYY/MM/DD"}
-        mask={[]}
-        value={date}
-        disableOpenOnEnter
+        value={selectedDate}
         animateYearScrolling={false}
         autoOk={true}
-        clearable
-        onChange={setDate}
+        onChange = {onChange}
       />
+      {/* <TimePicker
+        placeholder="HH:MM"
+        margin="normal"
+        value={selectedDate}
+        onChange={onChange}
+      /> */}
+      {/* <button onClick = {() => setSelectedDate()}>Confirm</button> */}
+      <p>{JSON.stringify(selectedDate)}</p>
     </MuiPickersUtilsProvider>
     </>
  
