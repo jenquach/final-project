@@ -26,8 +26,8 @@ const FaqAccordion = () => {
   return (
     <AccordionWrapper>
       <Typography variant="h5" color="#A9CDCE" textTransform="uppercase" textAlign="center">
-            Frequently asked questions
-          </Typography>
+        Frequently asked questions
+      </Typography>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} sx={{ maxWidth: '700px', marginTop: '20px' }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -35,13 +35,12 @@ const FaqAccordion = () => {
           id="panel1bh-header"
         >
           <Typography sx={{ width: '66%', flexShrink: 0 }}>
-          Lorem ipsum dolor sit amet?
+            Chocolate chupa chups brownie marshmallow?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
-            Aliquam eget maximus est, id dignissim quam.
+            Chocolate chupa chups brownie marshmallow lemon drops fruitcake oat cake pastry pastry. Bear claw marzipan powder croissant dragée fruitcake cotton candy muffin danish. Biscuit dragée brownie cake candy. Chupa chups shortbread cupcake danish cookie oat cake.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -51,13 +50,11 @@ const FaqAccordion = () => {
           aria-controls="panel2bh-content"
           id="panel2bh-header"
         >
-          <Typography sx={{ width: '66%', flexShrink: 0 }}>Vestibulum elementum luctus euismod?</Typography>
+          <Typography sx={{ width: '66%', flexShrink: 0 }}>Powder tart chocolate oat cake gummies?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus,
-            varius pulvinar diam eros in elit. Pellentesque convallis laoreet
-            laoreet.
+          Powder tart chocolate oat cake gummies pudding chocolate pastry danish. Jujubes marshmallow tootsie roll soufflé topping sugar plum tiramisu sweet roll sesame snaps. Bear claw lollipop soufflé chupa chups cheesecake jelly cupcake.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -68,13 +65,12 @@ const FaqAccordion = () => {
           id="panel3bh-header"
         >
           <Typography sx={{ width: '66%', flexShrink: 0 }}>
-          Neque porro quisquam est qui dolorem?
+          Cotton candy biscuit lemon drops fruitcake wafer?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-            amet egestas eros, vitae egestas augue. Duis vel est augue.
+          Pudding bonbon macaroon chupa chups candy canes caramels candy cotton candy marshmallow.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -84,12 +80,11 @@ const FaqAccordion = () => {
           aria-controls="panel4bh-content"
           id="panel4bh-header"
         >
-          <Typography sx={{ width: '66%', flexShrink: 0 }}>Cras augue risus, semper eget ante imperdiet?</Typography>
+          <Typography sx={{ width: '66%', flexShrink: 0 }}>Donut candy canes gingerbread lollipop tiramisu halvah.?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-            amet egestas eros, vitae egestas augue. Duis vel est augue.
+          Dragée tiramisu candy lollipop chupa chups marzipan apple pie gummies candy canes. Bear claw fruitcake sesame snaps cake sweet roll.
           </Typography>
         </AccordionDetails>
       </Accordion>
