@@ -1,10 +1,9 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, cartReducer } from "../reducers/CartReducer";
+import { addToCart } from "../reducers/CartReducer";
 import styled from "styled-components"
 import HoverImage from "react-hover-image";
-import { API_URL } from "../utils/urls"
 
 const ProductContainer = styled.div`
 margin-bottom: 25px;
