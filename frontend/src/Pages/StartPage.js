@@ -68,8 +68,8 @@ const StartPage = () => {
       <CategoryCardWrapper>
         <CategoryCard />
       </CategoryCardWrapper>
-      <Ticker end={100} wrapperClass="MoneyTicker"></Ticker>
       </CardSection>
+      <Ticker start={0} end={1000000} ></Ticker>
     </StartPageWrapper>
   )
 }
