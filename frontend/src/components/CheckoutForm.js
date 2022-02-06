@@ -64,12 +64,28 @@ const Input = styled.input`
 
 
 const CheckoutButton = styled.button`
+  margin-top: 20px;
+  padding: 5px;
+  border: none;
   background-color: #A9CDCE;
   border-radius: 2px;
   margin-bottom: 20px;
-  max-width: 130px; 
+  width: 100%; 
   font-size: large;
+  cursor: pointer;
   grid-column: 2/3;
+  font-size: 1em;
+  font-family: 'Nunito Sans', sans-serif;
+  &:hover {
+    background-color: #CFE8E0;
+  }
+  &:focus {
+    background-color: #CFE8E0;
+  }
+  @media (max-width: 667px) {
+    max-width: 100%;
+    margin-top: 20px;
+}
 `
 const Row = styled.div`
 display: grid;
