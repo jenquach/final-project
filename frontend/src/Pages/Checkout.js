@@ -14,11 +14,11 @@ const CheckoutPageGrid = styled.div`
 display: grid;
 grid-template-columns: repeat(12, 1fr);
 background: #f0f0f0;
-height: 100vh;
+//height: 100vh;
 `
 
 const CheckoutContainer = styled.div`
-padding-top: 70px;
+padding-top: 50px;
 grid-template-columns: repeat(12, 1fr);
 grid-column: span 12;
 display: grid;
@@ -28,31 +28,18 @@ display: grid;
   }
 `
 
-const CheckoutButton = styled.button`
-  background-color: #A9CDCE;
-  border-radius: 2px;
-  margin-bottom: 20px;
-  max-width: 130px; 
-  font-size: large;
-  grid-column: 2/3;
-`
-const Row = styled.div`
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-column: span 12;
-align-items: center;
-`
 
 const Checkout = () => {
     const cartItems = useSelector(store => store.cartReducer.items)
     const cartIsEmpty = cartItems.length === 0
     const cartId = useSelector(store => store.cartReducer.cartId)
-
     const dispatch = useDispatch()
-    dispatch(cartReducer.actions.setMiniCartDrawerVisible(false))
+
+    let formValues = {};
 
     useEffect(() => {
         dispatch(fetchCart())
+        dispatch(cartReducer.actions.setMiniCartDrawerVisible(false))
     }, []);
 
 
@@ -60,10 +47,7 @@ const Checkout = () => {
         <CheckoutPageGrid>
             <CheckoutContainer>
                 <CheckoutCart cartItems={cartItems}></CheckoutCart>
-                <CheckoutForm></CheckoutForm>
-                <Row>
-                    <CheckoutButton>Confirm order</CheckoutButton>
-                </Row>
+                <CheckoutForm cartId={cartId}></CheckoutForm>
             </CheckoutContainer>
         </CheckoutPageGrid>
 

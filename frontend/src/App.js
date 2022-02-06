@@ -21,6 +21,7 @@ import MyProfile from "./pages/MyProfile"
 import MiniCartDrawer from "./components/MiniCartDrawer"
 import FaqAccordion from "./pages/Faq"
 import Checkout from "./pages/Checkout"
+import OrderConfirmed from "./pages/OrderConfirmed"
 
 
 const Wrapper = styled.div`
@@ -55,6 +56,7 @@ function App() {
             <Route path="/faq" element={<FaqAccordion />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/product/:productId" element={<ProductDetails />} />
+            <Route path="/orders/:orderId" element={<OrderConfirmed />} />
           </Routes>
         </Wrapper>
       </BrowserRouter>
