@@ -2,6 +2,7 @@ import React from "react"
 import CategoryCard from "../components/CategoryCard"
 import styled from "styled-components"
 import img from "../assets/toddler_choosing_clothes.jpg"
+import Ticker from "../components/Ticker"
 
 const StartPageWrapper = styled.section`
   background: #f0f0f0;
@@ -55,6 +56,7 @@ const StartPage = () => {
       <CategoryCardWrapper>
         <CategoryCard />
       </CategoryCardWrapper>
+      <Ticker end={100} wrapperClass="MoneyTicker"></Ticker>
     </StartPageWrapper>
   )
 }
