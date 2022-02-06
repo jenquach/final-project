@@ -98,7 +98,6 @@ const CheckoutForm = (props) => {
 
   let navigate = useNavigate();
 
-
   const cartId = props.cartId;
   const [isPosting, setIsPosting] = useState(false);
   const [name, setName] = useState('');

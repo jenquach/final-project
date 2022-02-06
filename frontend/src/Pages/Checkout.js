@@ -27,16 +27,15 @@ display: grid;
 
 
 const Checkout = () => {
-  const cartItems = useSelector(store => store.cartReducer.items)
-  const cartId = useSelector(store => store.cartReducer.cartId)
   const dispatch = useDispatch()
-
-  let formValues = {};
 
   useEffect(() => {
     dispatch(fetchCart())
     dispatch(cartReducer.actions.setMiniCartDrawerVisible(false))
   }, []);
+
+  const cartItems = useSelector(store => store.cartReducer.items)
+  const cartId = useSelector(store => store.cartReducer.cartId)
 
 
   return (
