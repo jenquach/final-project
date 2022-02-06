@@ -6,6 +6,7 @@ const productRouter = require('./routers/product')
 const indexRouter = require('./routers/index')//require('./db/mongoose')
 const userRouter = require('./routers/user')
 const cookieParser = require("cookie-parser");
+const orderRouter = require('./routers/order')
 
 const productData = require('./data/products.json') 
 const Product = require("./models/product");
@@ -31,6 +32,7 @@ app.use(indexRouter)
 app.use(cartRouter)
 app.use(productRouter)
 app.use(userRouter)
+app.use(orderRouter)
 
 
 app.listen(port, () => {

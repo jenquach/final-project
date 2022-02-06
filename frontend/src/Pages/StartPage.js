@@ -21,6 +21,9 @@ const HeroImg = styled.div`
   justify-content: center;
   align-items: center;
 `
+const HeroImgTextWrapper = styled.div`
+text-align: center;
+`
 const HeroImgText = styled.h1`
   font-size: 1.25rem;
   color: #F9F9F9;
@@ -35,28 +38,38 @@ const HeroImgText = styled.h1`
   font-size: 2rem;
 }
 `
+const CardSection = styled.section`
+align-items: center;
+`
+
 const CategoryCardWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 2%;
+    grid-gap: 20px;
     padding-top: 40px;
     padding-bottom: 60px;
     justify-content: space-evenly;
     justify-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
 `
 
 const StartPage = () => {
   return (
     <StartPageWrapper>
       <HeroImg>
-        <HeroImgText>
-          Pre-loved clothes for the little ones
-        </HeroImgText>
+        <HeroImgTextWrapper>
+          <HeroImgText>
+           Pre-loved clothes for the little ones
+          </HeroImgText>
+        </HeroImgTextWrapper>
       </HeroImg>
+      <CardSection>
       <CategoryCardWrapper>
         <CategoryCard />
       </CategoryCardWrapper>
       <Ticker end={100} wrapperClass="MoneyTicker"></Ticker>
+      </CardSection>
     </StartPageWrapper>
   )
 }
