@@ -21,8 +21,8 @@ const Footer = () => {
         sx={{
         display: "flex",
         flexDirection: { xs: "column", sm: "row" },
-        height: "80px",
-        paddingTop: "40px",
+        height: "50px",
+        paddingTop: "30px",
         paddingBottom: "20px",
         justifyContent: "space-evenly",
         textAlign: "center",
@@ -48,20 +48,13 @@ const Footer = () => {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={10}>
               <Box>
-                <Link href="/about-us" color="inherit" underline="none">Customer Service</Link>
-              </Box>
-            </Grid>
-          </Grid>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={10}>
-              <Box>
                 <Link href="/about-us" color="inherit" underline="none">Contact</Link>
                 <Box sx={{
                       padding: "10px",
                     }}>
-                  <MailOutlineIcon sx={{ fontSize: 30 }}/>
-                  <FacebookIcon sx={{ fontSize: 30 }}/>
-                  <InstagramIcon sx={{ fontSize: 30 }}/>
+                  <MailOutlineIcon sx={{ fontSize: 20 }}/>
+                  <FacebookIcon sx={{ fontSize: 20 }}/>
+                  <InstagramIcon sx={{ fontSize: 20 }}/>
                 </Box>
               </Box>
             </Grid>
