@@ -1,40 +1,33 @@
 import React, { useState } from "react"
-import MomentUtils from "@date-io/moment"
-import { alpha } from '@material-ui/core/styles'
-import {
-  MuiPickersUtilsProvider,
-  TimePicker,
-  DatePicker
-} from "@material-ui/pickers"
+import moment from "moment"
+import DatePicker from "react-datepicker"
+import addMonths from '@jsbits/add-months'
+
+import "react-datepicker/dist/react-datepicker.css"
 
 const BookPickup = () => {
-  const [selectedDate, setSelectedDate] = useState(null)
+  const [selectedDate, setSelectedDate] = useState(new Date())
+
+  // const [showModal, setShowModal] = useState(false)
+
+  const formattedDate = moment(selectedDate).format('YYYY-MM-DD')
 
   const onChange = (date) => {setSelectedDate(date)}
 
   return (
-    <>
+    <div>
     <h3>Book a pickup!</h3>
-    <MuiPickersUtilsProvider utils={MomentUtils}>
       <DatePicker
-        placeholder="YYYY/MM/DD"
         format={"YYYY/MM/DD"}
-        value={selectedDate}
-        animateYearScrolling={false}
-        autoOk={true}
-        onChange = {onChange}
-      />
-      {/* <TimePicker
-        placeholder="HH:MM"
-        margin="normal"
-        value={selectedDate}
+        selected={selectedDate}
         onChange={onChange}
-      /> */}
-      {/* <button onClick = {() => setSelectedDate()}>Confirm</button> */}
-      <p>{JSON.stringify(selectedDate)}</p>
-    </MuiPickersUtilsProvider>
-    </>
- 
+        minDate={new Date()}
+        maxDate={addMonths(new Date(), 1)}
+        showDisabledMonthNavigation
+      />
+      <button onClick = {() => setSelectedDate()}>Confirm</button>
+      <p>{JSON.stringify(formattedDate)}</p>
+    </div>
   )
 }
 
