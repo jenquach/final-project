@@ -3,7 +3,6 @@ import AppBar from "@mui/material/AppBar"
 import Box from "@mui/material/Box"
 import Toolbar from "@mui/material/Toolbar"
 import IconButton from "@mui/material/IconButton"
-
 import Typography from "@mui/material/Typography"
 import Menu from "@mui/material/Menu"
 import MenuIcon from "@mui/icons-material/Menu"
@@ -16,8 +15,10 @@ import ShoppingBagIcon from "@mui/icons-material/ShoppingBag"
 import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux';
 import { cartReducer } from "../reducers/CartReducer"
-import Badge from '@mui/material/Badge';
-import { styled } from '@mui/material/styles';
+import Badge from "@mui/material/Badge"
+import { styled } from "@mui/material/styles"
+import logo from "../assets/A_New_Fit_2.png"
+
 
 const pages = [{ display: 'All Products', url: '/products' }, { display: 'About us', url: '/about-us' }, { display: 'FAQ', url: '/faq' }]
 
@@ -64,6 +65,7 @@ const ResponsiveAppBar = () => {
   return (
     <AppBar
       position="fixed"
+      elevation={0}
       sx={{ background: '#A9CDCE' }}
     >
       <Container maxWidth="xl">
@@ -74,7 +76,9 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, fontFamily: 'Nunito' }}
           >
-            <Link to="/">A NEW FIT</Link>
+            <Link to="/">
+              <img src={logo} alt="A New Fit" width="200px" height="auto" />
+            </Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -119,7 +123,7 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', fontFamily: 'Nunito' } }}
           >
-            <Link to="/">A NEW FIT</Link>
+            <Link to="/"><img src={logo} alt="A New Fit" width="200px" height="auto" /></Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
