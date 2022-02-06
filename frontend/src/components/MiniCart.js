@@ -7,6 +7,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { API_URL } from '../utils/urls';
 import { Button } from '@mui/material';
 import styled from "styled-components"
+import { Link } from "react-router-dom";
 
 
 const EmptyCartText = styled.h3`
@@ -21,6 +22,26 @@ const StyledRemoveAllButton = styled(Button)`
   background-color: #A9CDCE;
   border-radius: 2px;
   margin-top: 30px;
+  max-width: 300px; 
+  font-size: 1em;
+  justify-content: center;
+  font-family: 'Nunito Sans', sans-serif;
+  &:hover {
+    background-color: #CFE8E0;
+  }
+  &:focus {
+    background-color: #CFE8E0;
+  }
+  @media (max-width: 667px) {
+    max-width: 280px;
+}
+`
+
+const StyledGoToCheckoutButton = styled(Button)`
+  margin-left: 45px;
+  background-color: #A9CDCE;
+  border-radius: 2px;
+  margin-top: 60px;
   max-width: 300px; 
   font-size: 1em;
   justify-content: center;
@@ -74,6 +95,7 @@ const MiniCart = () => {
         ))
         }
         {!cartIsEmpty && (
+          <>
            <StyledRemoveAllButton 
            variant="contained" 
            sx={{ maxWidth: "300px" }} 
@@ -81,7 +103,15 @@ const MiniCart = () => {
            onClick={() => handleClearCart()}>
            Remove all items
          </StyledRemoveAllButton>
+         <StyledGoToCheckoutButton 
+           variant="contained" 
+           sx={{ maxWidth: "300px" }} 
+           component={Link} to="/checkout">
+           Go to checkout
+         </StyledGoToCheckoutButton>
+         </>
         )}
+        
         {cartIsEmpty && (
           <EmptyCartText>Your cart is empty</EmptyCartText>
         )}

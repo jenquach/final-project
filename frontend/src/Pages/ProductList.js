@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ProductBox from '../components/ProductBox';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 import { useParams } from "react-router-dom";
 
-import FixedContainer from '../components/FixedContainer';
 import CategoryFilter from '../components/CategoryFilter';
 
 import { API_URL } from '../utils/urls'
