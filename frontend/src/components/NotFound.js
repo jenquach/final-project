@@ -19,14 +19,14 @@ const NotFound = () => {
   }
 
 return (
-  <div>
-    <div className="wrapper-404">
+  <>
+    <Wrapper404>
     <h2 className="404-text">404 - Not Found!</h2>
     <button className="back-btn-404" onClick={BackToAllProducts}> 
-      Go back to all products Let's go back and pop some popcorn
+      Go back to all products
     </button>  
-  </div>
-  </div>
+    </Wrapper404>
+  </>
 )
 }
 
