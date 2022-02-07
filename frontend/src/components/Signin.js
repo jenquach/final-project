@@ -49,9 +49,6 @@ const theme = createTheme({
 const Signin = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [rememberMe, setRememberMe] = useState(false)
-
-  // localStorage.setItem('credentialsInLocalStorage') || ''
   const [mode, setMode] = useState('signin')
 
   const accessToken = useSelector((store) => store.user.accessToken)
@@ -64,11 +61,6 @@ const Signin = () => {
       navigate('/my-profile')
     }
   }, [accessToken, navigate])
-
-  // const onChange = (event) => {
-  //   const input = event.target
-  //   const value = input.type === 'checkbox' ? input.checked : input.value
-  // }
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -85,7 +77,7 @@ const Signin = () => {
   .then((res) => res.json())
   .then((data) => {
     if (data.success) {
-      batch(() => { //instead of updating store for each dispatch it will only update ones for all with batch
+      batch(() => { //instead of updating store for each dispatch it will only update once for all with batch
         dispatch(user.actions.setUserId(data.response.userId))
         dispatch(user.actions.setEmail(data.response.email))
         dispatch(user.actions.setAccessToken(data.response.accessToken))
