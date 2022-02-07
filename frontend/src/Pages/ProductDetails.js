@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import { Typography, Button } from "@mui/material"
-import ArrowBackIcon from "@mui/icons-material/ArrowBack"
+import { Typography } from "@mui/material"
 import styled from "styled-components"
 import { API_URL } from "../utils/urls"
 import { addToCart } from "../reducers/CartReducer"
 import { useDispatch, useSelector } from "react-redux"
+import NotFound from "../components/NotFound"
+import Loader from "../components/Loader"
 
 const ProductDetailsWrapper = styled.div`
   background: #f0f0f0;
-  height: 100vh;
+  min-height: 100vh;
   margin: 50px auto 0 auto;
   padding: 40px;
   display: flex;
@@ -41,7 +42,6 @@ const Details = styled.div`
 
   @media (max-width: 667px) {
     max-width: 280px;
-    padding-top: 40px;
 }
 `
 const FlexContainer = styled.div`
@@ -62,12 +62,17 @@ const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
 `
-const StyledButton = styled(Button)`
+const BuyButton = styled.button`
   background-color: #A9CDCE;
+  height: 40px;
   border-radius: 2px;
   margin-bottom: 20px;
   max-width: 130px; 
   font-size: large;
+  border: none;
+  color: white;
+  font-family: 'Short Stack', cursive;
+  cursor: pointer;
   &:hover {
     background-color: #CFE8E0;
   }
@@ -78,14 +83,24 @@ const StyledButton = styled(Button)`
     max-width: 280px;
 }
 `
-const BackButton = styled(Button)`
-  max-width: "240px"; 
-  padding: "40px";
-  border: 1px solid;
-  border-radius: "5px";
+const BackButton = styled.button`
+  max-width: 280px; 
+  height: 30px;
   color: grey;
-  cursor: "pointer";
-  font-size: "small";
+  border: 1px solid;
+  border-radius: 5px;
+  color: grey;
+  cursor: pointer;
+  font-size: small;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Nunito';
+  &:hover {
+    background-color: #e0e0e0;
+  }
+  &:focus {
+    background-color: #e0e0e0;
+  }
 `
 
 const ProductDetails = () => {
@@ -95,16 +110,25 @@ const ProductDetails = () => {
   const { productId } = useParams()
   const [product, setProduct] = useState(null)
   const [productImage, setProductImage] = useState({})
+  const [error, setError] = useState(false);
+	const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate()
 
   useEffect(() => {
+    setLoading(true)
     fetch(API_URL(`product/${productId}`))
       .then((res) => res.json())
       .then((json) => {
-        setProduct(json)
-        setProductImage(json.img1)
+        if (json) {
+          setProduct(json)
+          setProductImage(json.img1)
+        }
+        else {
+          setError(true)
+        }
       })
+      .finally(() => setLoading(false))
   }, [setProduct, setProductImage])
 
 
@@ -116,28 +140,33 @@ const ProductDetails = () => {
 
   const setImage = (imageUrl) => setProductImage(imageUrl)
 
+  if (error) {
+      return <NotFound />
+    }
+
   return (
     <>
+    {loading && <Loader />}
       {product && (
         <ProductDetailsWrapper>
           <Image src={productImage} alt={product.productName} />
           <Details>
-            <Typography variant="h6" color="text.secondary" component="div">
+            <Typography variant="h5" color="text.secondary" component="div" fontFamily="nunito">
               {product.category}
             </Typography>
-            <Typography component="div" variant="h5" color="#A9CDCE" textTransform="uppercase">
+            <Typography component="div" variant="h5" color="#A9CDCE" textTransform="uppercase" fontWeight="bold" fontFamily="nunito">
               {product.productName}
             </Typography>
-            <Typography variant="h6" color="#A9CDCE" component="div" marginBottom={2} fontWeight="bold">
+            <Typography variant="h6" color="#A9CDCE" component="div" marginBottom={2} fontWeight="bold" fontFamily="nunito">
               £{product.price}.00
             </Typography>
-            <Typography variant="subtitle1" color="text.secondary" component="div">
+            <Typography variant="subtitle1" color="text.secondary" component="div" fontFamily="nunito">
               {product.desc}
             </Typography>
-            <Typography variant="subtitle1" color="text.secondary" component="div">
+            <Typography variant="subtitle1" color="text.secondary" component="div" fontFamily="nunito">
               {product.condition}
             </Typography>
-            <Typography variant="subtitle1" color="text.secondary" component="div">
+            <Typography variant="subtitle1" color="text.secondary" component="div" fontFamily="nunito">
               Size: {product.size}
             </Typography>
             <FlexContainer>
@@ -145,12 +174,11 @@ const ProductDetails = () => {
               <ThumbImage onClick={() => setImage(product.img2)} src={product.img2} alt={product.productName} />
             </FlexContainer>
             <ButtonContainer>
-              <StyledButton onClick={() => handleAddToCartClick(product)} variant="contained" sx={{ maxWidth: "130px", fontSize: "large" }}>
+              <BuyButton onClick={() => handleAddToCartClick(product)} variant="contained" sx={{ maxWidth: "130px", fontSize: "large" }}>
                 BUY
-              </StyledButton>
+              </BuyButton>
               <BackButton className="back-btn" variant="text" size="small" onClick={BackToAllProducts}>
-                <ArrowBackIcon fontSize="small" sx={{ marginRight: "7px" }}></ArrowBackIcon>
-                ALL PRODUCTS
+                BACK TO ALL PRODUCTS
               </BackButton>
             </ButtonContainer>
           </Details>
