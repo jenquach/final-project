@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { API_URL } from '../utils/urls';
-import DeleteIcon from '@mui/icons-material/Delete';
-import { Button } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import { cartReducer } from '../reducers/CartReducer';
 import styled from "styled-components"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+
 
 const ProductImageCart = styled.div`
 justify-content: center;
@@ -19,15 +20,19 @@ span {
 }
 `
 
-const StyledRemoveButton = styled(Button)`
-  color: #A9CDCE;
+const TrashButton = styled.button`
+background-color: transparent;
+  border-radius: 2px;
+  max-width: 130px; 
+  font-size: large;
   font-size: 1.2em;
   justify-content: center;
-  font-family: 'Nunito Sans', sans-serif;
-  &:hover {
-    background-color: transparent;
-  }
+  border: none;
+  color: white;
+  font-family: 'Short Stack', cursive;
+  cursor: pointer;
 `
+
 
 const CartItem = (props) => {
   const [product, setProduct] = useState(null)
@@ -44,7 +49,6 @@ const CartItem = (props) => {
   }, []);
 
   const handleRemoveItem = (event) => {
-    //TODO: move to cartReducer.js
     const options = {
       method: 'POST',
       headers: {
@@ -72,13 +76,10 @@ const CartItem = (props) => {
             </ProductTextCart>
             <div>
             </div>
-            <StyledRemoveButton
-              endIcon={<DeleteIcon />}
-              onClick={() => handleRemoveItem(product)}
-              size="large"
-            >
-            </StyledRemoveButton>
-         
+            <TrashButton
+            onClick={() => handleRemoveItem(product)}>
+              <FontAwesomeIcon icon={faTrash} color="#A9CDCE"/>
+          </TrashButton>       
           </>
         )}
     </>
