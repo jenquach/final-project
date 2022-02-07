@@ -48,13 +48,6 @@ const Footer = () => {
           <Grid container spacing={1}>
             <Grid item xs={12} sm={10}>
               <Box>
-                <Link href="/about-us" color="inherit" underline="none">Terms and conditions</Link>
-              </Box>
-            </Grid>
-          </Grid>
-          <Grid container spacing={1}>
-            <Grid item xs={12} sm={10}>
-              <Box>
                 <Link href="/about-us" color="inherit" underline="none">Contact</Link>
                 <Box sx={{
                       padding: "10px",
