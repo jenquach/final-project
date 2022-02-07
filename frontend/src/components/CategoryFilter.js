@@ -19,7 +19,7 @@ text-decoration: none;
 font-weight: 700;
 align-items: center;
 background-color: #CFE8E0;
-padding: 10px;
+padding: 10px 5px 10px 5px;
 border-radius: 2px;
 margin-bottom: 20px;
 grid-column: span 2;
