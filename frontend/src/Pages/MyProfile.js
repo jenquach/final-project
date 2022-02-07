@@ -7,32 +7,57 @@ import profile from "../reducers/profile"
 
 import styled from "styled-components"
 
-const Wrapper = styled.div`
-	height: 100vh;
-	margin-top: 68px;
-	padding: 10px;
+const MyProfileWrapper = styled.div`
+	min-height: 20vh;
+	font-family: 'Nunito',sans-serif;
+	margin-top: 68px;	
+	background: #fff;
 `
+
+const TopBanner = styled.div`
+	display: flex;
+	align-items: center;
+	height: 100px;
+	background: #f0f0f0;
+	h1 {
+		font-size: 26px;
+		font-weight: 400;
+		margin: 0;
+		padding: 24px;
+	}
+`
+
+
 const ContainerWrapper = styled.div`
-	display: grid;
-	grid-template-columns: 1fr 2fr;
+	display: flex;
+	flex-direction: column;
+	
 `
 const Container = styled.div`
-	ul{
-		padding: 10px;
-	},
-	li{
-		list-style-type: none;
-	}
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid;
+		a{
+			cursor: pointer;
+			margin: 15px 30px;
+			:focus{
+				text-decoration: underline;
+			}
+		}	
+	},	
+		
 `
 const ContentContainer = styled.div`
 	display: flex;
 	justify-content: center;
-	border: 1px solid;
+	margin-top: 30px;
+
 `
 
 const MyProfile = () => {
 	const [selected, setSelected] = useState('Pickup')
-	const message = useSelector((store) => store.profile.message)
+	const message = useSelector((store) => store.user.email)
 	const accessToken = useSelector((store) => store.user.accessToken)
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
@@ -60,23 +85,26 @@ const MyProfile = () => {
 	}, [accessToken, dispatch])
 
 	return (
-    <Wrapper>
-			<h1>Welcome &#x1F44B; {message}</h1>
+    <MyProfileWrapper>
+			<TopBanner>
+				<h1>Welcome {message}!</h1>
+			</TopBanner>
+			
     <ContainerWrapper>
 				<Container>
-					<ul>
-						<li><a onClick={() => setSelected('Pickup')}>Book a pick-up</a></li>
-						<li><a onClick={() => setSelected('Orders')}>Order history</a></li>
-						<li><a onClick={() => setSelected('EditProfile')}>Edit profile</a></li>
-					</ul>
+					
+						<a onClick={() => setSelected('Pickup')}>Book a pick-up</a>
+						<a onClick={() => setSelected('Orders')}>Order history</a>
+						<a onClick={() => setSelected('EditProfile')}>Edit profile</a>
+				
 				</Container>
 					<ContentContainer>
-						{(selected === 'Pickup') && <div>Book a pickup</div>}
-            {(selected === 'Orders') && <div>Order history</div>}
-            {(selected === 'EditProfile') && <div>Edit Profile</div>}
+						{(selected === 'Pickup') && <div><h3>Book a pickup</h3></div>}
+            {(selected === 'Orders') && <div><h3>Order history</h3></div>}
+            {(selected === 'EditProfile') && <div><h3>Edit Profile</h3></div>}
 					</ContentContainer>
     	</ContainerWrapper>
-		</Wrapper>
+		</MyProfileWrapper>
 	)
 }
 
