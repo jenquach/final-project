@@ -5,7 +5,6 @@ import { Button } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import { cartReducer } from '../reducers/CartReducer';
 import styled from "styled-components"
-import ProductBox from './ProductBox';
 
 const ProductImageCart = styled.div`
 justify-content: center;
