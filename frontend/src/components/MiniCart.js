@@ -54,9 +54,6 @@ font-size: 1em;
 border: none;
 color: #00838f;
 font-family: 'Short Stack', cursive;
-  @media (max-width: 667px) {
-    max-width: 280px;
-}
 `
 
 
@@ -106,7 +103,6 @@ const MiniCart = () => {
           <br></br>
          <GoToCheckoutButton 
            variant="contained" 
-           sx={{ maxWidth: "300px" }} 
            component={Link} to="/checkout">
            GO TO CHECKOUT
          </GoToCheckoutButton>

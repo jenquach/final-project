@@ -7,19 +7,24 @@ const CategoryWrapper = styled.section`
 display: grid;
 grid-template-columns: repeat(12, 1fr);
 grid-column: span 12;
+grid-gap: 10px;
 @media (min-width: 767px) {
   grid-column-start: 2;
   grid-column-end: 12;
   }
+  @media (max-width: 767px) {
+
+  }
 `
 
 const StyledLink = styled(Link)`
+display: grid;
 text-align: center;
 text-decoration: none;
 font-weight: 700;
 align-items: center;
 background-color: #CFE8E0;
-padding: 10px 5px 10px 5px;
+padding: 10px 2px 10px 2px;
 border-radius: 2px;
 margin-bottom: 20px;
 grid-column: span 2;
@@ -34,9 +39,9 @@ font-family: 'Short Stack', cursive;
   &:focus {
     background-color: #A9CDCE;
   }
-  @media (max-width: 667px) {
-    max-width: 280px;
-}
+  @media (max-width: 767) {
+
+  }
 `
 
 
