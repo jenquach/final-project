@@ -18,10 +18,8 @@ import Grid from '@mui/material/Grid'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import Typography from '@mui/material/Typography'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
-import { lightBlue, pink } from '@material-ui/core/colors'
 
-
-function Copyright(props) {
+const Copyright = (props) => {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
@@ -43,7 +41,7 @@ const theme = createTheme({
       contrastText: '#fff',
     },
     secondary: {
-      main: pink[400],
+      main: '#5e7e93',
     }
   }
 })
