@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux"
 
 const ProductDetailsWrapper = styled.div`
   background: #f0f0f0;
+  height: 100vh;
   margin: 50px auto 0 auto;
   padding: 40px;
   display: flex;
