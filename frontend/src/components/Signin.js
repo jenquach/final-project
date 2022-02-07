@@ -37,7 +37,10 @@ function Copyright(props) {
 const theme = createTheme({
   palette: {
     primary: {
-      main: lightBlue[500],
+      light:'#dbffff', 
+      main: '#8DADC3',
+      dark: '#5e7e93',
+      contrastText: '#fff',
     },
     secondary: {
       main: pink[400],
@@ -48,6 +51,9 @@ const theme = createTheme({
 const Signin = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [rememberMe, setRememberMe] = useState(false)
+
+  // localStorage.setItem('credentialsInLocalStorage') || ''
   const [mode, setMode] = useState('signin')
 
   const accessToken = useSelector((store) => store.user.accessToken)
@@ -60,6 +66,11 @@ const Signin = () => {
       navigate('/my-profile')
     }
   }, [accessToken, navigate])
+
+  // const onChange = (event) => {
+  //   const input = event.target
+  //   const value = input.type === 'checkbox' ? input.checked : input.value
+  // }
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -95,7 +106,7 @@ const Signin = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '100vh', marginTop: '30px' }}>
+      <Grid container component="dark" sx={{ height: '100vh', marginTop: '30px' }}>
         <CssBaseline />
         <Grid
           item
@@ -121,7 +132,7 @@ const Signin = () => {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'pink.main' }}>
+            <Avatar sx={{ m: 1 }}>
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
@@ -150,6 +161,7 @@ const Signin = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <FormControlLabel
+              // onChange={(e)}
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />
