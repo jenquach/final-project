@@ -22,7 +22,7 @@ import logo from "../assets/A_New_Fit_2.png"
 
 const pages = [{ display: 'All Products', url: '/products' }, { display: 'About us', url: '/about-us' }, { display: 'FAQ', url: '/faq' }]
 
-const settings = [<Link to="/signin">LOG IN</Link>, <Link to="/signup">SIGN UP</Link>]
+const settings = [<Link to="/signup">SIGN UP</Link>, <Link to="/signin">LOG IN</Link>]
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import { Typography, Button } from "@mui/material"
-import ArrowBackIcon from "@mui/icons-material/ArrowBack"
+import { Typography } from "@mui/material"
 import styled from "styled-components"
 import { API_URL } from "../utils/urls"
 import { addToCart } from "../reducers/CartReducer"
@@ -18,7 +17,6 @@ const ProductDetailsWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-family: "Nunito";
 
   @media (max-width: 667px) {
   flex-direction: column;
@@ -44,7 +42,6 @@ const Details = styled.div`
 
   @media (max-width: 667px) {
     max-width: 280px;
-    padding-top: 40px;
 }
 `
 const FlexContainer = styled.div`
@@ -65,12 +62,16 @@ const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
 `
-const StyledButton = styled(Button)`
+const BuyButton = styled.button`
   background-color: #A9CDCE;
+  height: 40px;
   border-radius: 2px;
   margin-bottom: 20px;
   max-width: 130px; 
   font-size: large;
+  border: none;
+  color: white;
+  cursor: pointer;
   &:hover {
     background-color: #CFE8E0;
   }
@@ -81,14 +82,23 @@ const StyledButton = styled(Button)`
     max-width: 280px;
 }
 `
-const BackButton = styled(Button)`
-  max-width: "240px"; 
-  padding: "40px";
-  border: 1px solid;
-  border-radius: "5px";
+const BackButton = styled.button`
+  max-width: 240px; 
+  height: 30px;
   color: grey;
-  cursor: "pointer";
-  font-size: "small";
+  border: 1px solid;
+  border-radius: 5px;
+  color: grey;
+  cursor: pointer;
+  font-size: small;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: #e0e0e0;
+  }
+  &:focus {
+    background-color: #e0e0e0;
+  }
 `
 
 const ProductDetails = () => {
@@ -162,12 +172,11 @@ const ProductDetails = () => {
               <ThumbImage onClick={() => setImage(product.img2)} src={product.img2} alt={product.productName} />
             </FlexContainer>
             <ButtonContainer>
-              <StyledButton onClick={() => handleAddToCartClick(product)} variant="contained" sx={{ maxWidth: "130px", fontSize: "large" }}>
+              <BuyButton onClick={() => handleAddToCartClick(product)} variant="contained" sx={{ maxWidth: "130px", fontSize: "large" }}>
                 BUY
-              </StyledButton>
+              </BuyButton>
               <BackButton className="back-btn" variant="text" size="small" onClick={BackToAllProducts}>
-                <ArrowBackIcon fontSize="small" sx={{ marginRight: "7px" }}></ArrowBackIcon>
-                ALL PRODUCTS
+                BACK TO ALL PRODUCTS
               </BackButton>
             </ButtonContainer>
           </Details>
