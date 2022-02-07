@@ -10,7 +10,7 @@ import Loader from "../components/Loader"
 
 const ProductDetailsWrapper = styled.div`
   background: #f0f0f0;
-  height: 100vh;
+  min-height: 100vh;
   margin: 50px auto 0 auto;
   padding: 40px;
   display: flex;
@@ -71,6 +71,7 @@ const BuyButton = styled.button`
   font-size: large;
   border: none;
   color: white;
+  font-family: 'Short Stack', cursive;
   cursor: pointer;
   &:hover {
     background-color: #CFE8E0;
@@ -83,7 +84,7 @@ const BuyButton = styled.button`
 }
 `
 const BackButton = styled.button`
-  max-width: 240px; 
+  max-width: 280px; 
   height: 30px;
   color: grey;
   border: 1px solid;
@@ -93,6 +94,7 @@ const BackButton = styled.button`
   font-size: small;
   justify-content: center;
   align-items: center;
+  font-family: 'Nunito';
   &:hover {
     background-color: #e0e0e0;
   }
@@ -149,22 +151,22 @@ const ProductDetails = () => {
         <ProductDetailsWrapper>
           <Image src={productImage} alt={product.productName} />
           <Details>
-            <Typography variant="h6" color="text.secondary" component="div">
+            <Typography variant="h5" color="text.secondary" component="div" fontFamily="nunito">
               {product.category}
             </Typography>
-            <Typography component="div" variant="h5" color="#A9CDCE" textTransform="uppercase">
+            <Typography component="div" variant="h5" color="#A9CDCE" textTransform="uppercase" fontWeight="bold" fontFamily="nunito">
               {product.productName}
             </Typography>
-            <Typography variant="h6" color="#A9CDCE" component="div" marginBottom={2} fontWeight="bold">
+            <Typography variant="h6" color="#A9CDCE" component="div" marginBottom={2} fontWeight="bold" fontFamily="nunito">
               £{product.price}.00
             </Typography>
-            <Typography variant="subtitle1" color="text.secondary" component="div">
+            <Typography variant="subtitle1" color="text.secondary" component="div" fontFamily="nunito">
               {product.desc}
             </Typography>
-            <Typography variant="subtitle1" color="text.secondary" component="div">
+            <Typography variant="subtitle1" color="text.secondary" component="div" fontFamily="nunito">
               {product.condition}
             </Typography>
-            <Typography variant="subtitle1" color="text.secondary" component="div">
+            <Typography variant="subtitle1" color="text.secondary" component="div" fontFamily="nunito">
               Size: {product.size}
             </Typography>
             <FlexContainer>

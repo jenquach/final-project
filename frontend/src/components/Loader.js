@@ -26,8 +26,8 @@ const spinner = keyframes`
 `
 
 const LoadingSpinner = styled.div`
-  width: 60px;
-	height: 60px;
+  width: 40px;
+	height: 40px;
 	border: 8px solid grey;
 	border-radius: 50%;
 	border-left: 5px solid lightgrey;
