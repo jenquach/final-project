@@ -2,12 +2,13 @@ import React from "react"
 import styled, { keyframes } from "styled-components"
 
 const LoadingOverlay = styled.div`
+  height: 100vh;
+  background: #f0f0f0;  
   position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: #000;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -25,8 +26,8 @@ const spinner = keyframes`
 `
 
 const LoadingSpinner = styled.div`
-  width: 80px;
-	height: 80px;
+  width: 40px;
+	height: 40px;
 	border: 8px solid grey;
 	border-radius: 50%;
 	border-left: 5px solid lightgrey;
