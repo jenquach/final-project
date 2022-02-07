@@ -6,7 +6,7 @@ const TickerWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-gap: 20px;
-    padding-top: 40px;
+    padding-top: 20px;
     padding-bottom: 60px;
     padding-left: 20px;
     padding-right: 20px;
@@ -26,7 +26,7 @@ const TickerWrapper = styled.div`
   align-items: initial;
   background-color: #C3CBC3;
   h4 {
-  padding: 0px 10px 0px 10px;
+  padding: 0px 15px 0px 15px;
   font-size: 16px;
   text-align: center;  }
   @media (max-width: 767px) {
@@ -52,7 +52,7 @@ h3 {
   text-align: center;
 }
 h4 {
-  padding: 0px 10px 0px 10px;
+  padding: 0px 15px 0px 15px;
   font-family: 'Short Stack', cursive;
   font-size: 1em;
   text-align: center;
