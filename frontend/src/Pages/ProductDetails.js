@@ -6,6 +6,8 @@ import styled from "styled-components"
 import { API_URL } from "../utils/urls"
 import { addToCart } from "../reducers/CartReducer"
 import { useDispatch, useSelector } from "react-redux"
+import NotFound from "../components/NotFound"
+import Loader from "../components/Loader"
 
 const ProductDetailsWrapper = styled.div`
   background: #f0f0f0;
@@ -16,6 +18,7 @@ const ProductDetailsWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  font-family: "Nunito";
 
   @media (max-width: 667px) {
   flex-direction: column;
@@ -95,16 +98,25 @@ const ProductDetails = () => {
   const { productId } = useParams()
   const [product, setProduct] = useState(null)
   const [productImage, setProductImage] = useState({})
+  const [error, setError] = useState(false);
+	const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate()
 
   useEffect(() => {
+    setLoading(true)
     fetch(API_URL(`product/${productId}`))
       .then((res) => res.json())
       .then((json) => {
-        setProduct(json)
-        setProductImage(json.img1)
+        if (json) {
+          setProduct(json)
+          setProductImage(json.img1)
+        }
+        else {
+          setError(true)
+        }
       })
+      .finally(() => setLoading(false))
   }, [setProduct, setProductImage])
 
 
@@ -116,8 +128,13 @@ const ProductDetails = () => {
 
   const setImage = (imageUrl) => setProductImage(imageUrl)
 
+  if (error) {
+      return <NotFound />
+    }
+
   return (
     <>
+    {loading && <Loader />}
       {product && (
         <ProductDetailsWrapper>
           <Image src={productImage} alt={product.productName} />
