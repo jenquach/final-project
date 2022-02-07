@@ -49,7 +49,6 @@ const MiniCartDrawer = () => {
       onOpen={toggle(true)}
     >
       <MiniCart>
-
       </MiniCart>
     </SwipeableDrawer>
     </DrawerSection>
