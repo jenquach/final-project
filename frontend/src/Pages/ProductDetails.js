@@ -5,7 +5,6 @@ import styled from "styled-components"
 import { API_URL } from "../utils/urls"
 import { addToCart } from "../reducers/CartReducer"
 import { useDispatch, useSelector } from "react-redux"
-import NotFound from "../components/NotFound"
 import Loader from "../components/Loader"
 
 const ProductDetailsWrapper = styled.div`
@@ -104,14 +103,13 @@ const BackButton = styled.button`
 `
 
 const ProductDetails = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const cartId = useSelector(store => store.cartReducer.cartId)
 
   const { productId } = useParams()
   const [product, setProduct] = useState(null)
   const [productImage, setProductImage] = useState({})
-  const [error, setError] = useState(false);
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(false)
 
   const navigate = useNavigate()
 
@@ -120,14 +118,9 @@ const ProductDetails = () => {
     fetch(API_URL(`product/${productId}`))
       .then((res) => res.json())
       .then((json) => {
-        if (json) {
           setProduct(json)
           setProductImage(json.img1)
-        }
-        else {
-          setError(true)
-        }
-      })
+        })
       .finally(() => setLoading(false))
   }, [setProduct, setProductImage])
 
@@ -140,9 +133,6 @@ const ProductDetails = () => {
 
   const setImage = (imageUrl) => setProductImage(imageUrl)
 
-  if (error) {
-      return <NotFound />
-    }
 
   return (
     <>
