@@ -51,6 +51,7 @@ const Signup = () => {
   const [mode, setMode] = useState('signup')
 
   const accessToken = useSelector((store) => store.user.accessToken)
+  const errorMessage = useSelector((store) => store.user.error)
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -63,6 +64,8 @@ const Signup = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
+
+    dispatch(user.actions.setError(null))
 
     const options = {
       method: 'POST',
@@ -171,6 +174,7 @@ const Signup = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
+                            {errorMessage }
               <Button
                 type="submit"
                 fullWidth
