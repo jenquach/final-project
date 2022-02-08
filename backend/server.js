@@ -5,7 +5,6 @@ const cartRouter = require('./routers/cart')
 const productRouter = require('./routers/product')
 const indexRouter = require('./routers/index')//require('./db/mongoose')
 const userRouter = require('./routers/user')
-const cookieParser = require("cookie-parser");
 const orderRouter = require('./routers/order')
 
 const productData = require('./data/products.json') 
@@ -27,7 +26,6 @@ const app = express()
 // // Add middlewares to enable cors and json body parsing
  app.use(cors())
 app.use(express.json())
-app.use(cookieParser());
 app.use(indexRouter)
 app.use(cartRouter)
 app.use(productRouter)

@@ -62,6 +62,7 @@ const MyProfile = () => {
 	const accessToken = useSelector((store) => store.user.accessToken)
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
+	const name = useSelector((store ) => store.user.name)
 
 	useEffect(() => {
 		if (!accessToken) {

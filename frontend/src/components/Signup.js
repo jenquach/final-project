@@ -16,6 +16,11 @@ import Grid from '@mui/material/Grid'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import Typography from '@mui/material/Typography'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
+import styled from 'styled-components'
+
+const ErrorMessageSignUp = styled.div`
+color:red;
+`
 
 const Copyright = (props) => {
   return (
@@ -139,11 +144,12 @@ const Signup = () => {
             <Avatar sx={{ m: 1 }}>
               <LockOutlinedIcon />
             </Avatar>
-            <Typography component="h1" variant="h5">
+            <Typography component="h1" variant="h5" fontFamily="nunito">
               Sign up
             </Typography>
             <Box component="form" noValidate onSubmit={onFormSubmit} sx={{ mt: 1 }}>
               <TextField
+              fontFamily="nunito"
                 margin="normal"
                 required
                 fullWidth
@@ -154,6 +160,7 @@ const Signup = () => {
                 onChange={(e) => setName(e.target.value)}
               />
               <TextField
+              fontFamily="nunito"
                 margin="normal"
                 required
                 fullWidth
@@ -164,6 +171,7 @@ const Signup = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <TextField
+              fontFamily="nunito"
                 margin="normal"
                 required
                 fullWidth
@@ -174,8 +182,11 @@ const Signup = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-                            {errorMessage }
+                <ErrorMessageSignUp fontFamily="nunito">
+                 {errorMessage }
+                 </ErrorMessageSignUp>
               <Button
+              fontFamily="nunito"
                 type="submit"
                 fullWidth
                 variant="contained"
@@ -187,7 +198,7 @@ const Signup = () => {
                 <Grid item xs>
                 </Grid>
                 <Grid item>
-                  <Link href="/signin" variant="body2">
+                  <Link href="/signin" variant="body2" fontFamily="nunito">
                     {"Already have an account? Sign In"}
                   </Link>
                 </Grid>

@@ -18,6 +18,12 @@ import Grid from '@mui/material/Grid'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import Typography from '@mui/material/Typography'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
+import styled from 'styled-components'
+
+const ErrorMessage = styled.div`
+color: red;
+`
+
 
 const Copyright = (props) => {
   return (
@@ -84,6 +90,7 @@ const Signin = () => {
         dispatch(user.actions.setEmail(data.response.email))
         dispatch(user.actions.setAccessToken(data.response.accessToken))
         dispatch(user.actions.setError(null))
+        dispatch(user.actions.setName(data.response.name))
       })
     } else {
       batch(() => {
@@ -127,11 +134,12 @@ const Signin = () => {
             <Avatar sx={{ m: 1 }}>
               <LockOutlinedIcon />
             </Avatar>
-            <Typography component="h1" variant="h5">
+            <Typography component="h1" variant="h5" fontFamily="nunito">
               Sign in
             </Typography>
-            <Box component="form" noValidate onSubmit={onFormSubmit} sx={{ mt: 1 }}>
+            <Box component="form" noValidate onSubmit={onFormSubmit} sx={{ mt: 1 }} fontFamily="nunito">
               <TextField
+              fontFamily="nunito"
                 margin="normal"
                 required
                 fullWidth
@@ -142,6 +150,7 @@ const Signin = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <TextField
+              fontFamily="nunito"
                 margin="normal"
                 required
                 fullWidth
@@ -154,26 +163,29 @@ const Signin = () => {
               />
               <FormControlLabel
               // onChange={(e)}
-                control={<Checkbox value="remember" color="primary" />}
+                control={<Checkbox value="remember" color="primary" fontFamily="nunito"/>}
                 label="Remember me"
               />
-              {errorMessage }
+              <ErrorMessage fontFamily="nunito">
+              {errorMessage}
+              </ErrorMessage>
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                fontFamily="nunito"
               >
                 Sign In
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="/password" variant="body2">
+                  <Link href="/password" variant="body2" fontFamily="nunito">
                     Forgot password?
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="/signup" variant="body2">
+                  <Link href="/signup" variant="body2" fontFamily="nunito">
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
