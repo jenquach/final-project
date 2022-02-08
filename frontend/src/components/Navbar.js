@@ -18,11 +18,15 @@ import { cartReducer } from "../reducers/CartReducer"
 import Badge from "@mui/material/Badge"
 import { styled } from "@mui/material/styles"
 import logo from "../assets/A_New_Fit_2.png"
+import user from "../reducers/user"
+import { useNavigate } from "react-router-dom"
 
 
 const pages = [{ display: 'All Products', url: '/products' }, { display: 'About us', url: '/about-us' }, { display: 'FAQ', url: '/faq' }]
 
 const settings = [<Link to="/signup">SIGN UP</Link>, <Link to="/signin">LOG IN</Link>]
+
+
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -35,12 +39,21 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 const ResponsiveAppBar = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
 
   const cartItems = useSelector(store => store.cartReducer.items)
   const cartIconBadgeText = cartItems.length === 0 ? '' : cartItems.length
   const cartIsEmpty = cartItems.length === 0
+
+  const isLoggedIn = useSelector(store => store.user.accessToken) != null
+
+  const handleLogout = (event) => {
+    dispatch(user.deleteAccessToken(null))
+    navigate('/')
+  }
+  const loggedInSettings = [<Link to="/my-profile">MY PROFILE</Link>, <Link to="/" onClick={handleLogout}>LOG OUT</Link>]
 
   const toggleCartDrawer = () => {
     dispatch(cartReducer.actions.setMiniCartDrawerVisible(true))
@@ -132,7 +145,7 @@ const ResponsiveAppBar = () => {
                 onClick={handleCloseNavMenu}
                 component={Link}
                 to={page.url}
-                sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'Nunito', fontSize:'17px', fontWeight:'bold' }}
+                sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'Nunito', fontSize: '17px', fontWeight: 'bold' }}
               >
                 {page.display}
               </Button>
@@ -161,7 +174,12 @@ const ResponsiveAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
+              {!isLoggedIn && settings.map((setting) => (
+                <MenuItem key={setting.props.to ?? ''} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{setting}</Typography>
+                </MenuItem>
+              ))}
+              {isLoggedIn && loggedInSettings.map((setting) => (
                 <MenuItem key={setting.props.to} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>

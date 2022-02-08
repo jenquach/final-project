@@ -52,6 +52,7 @@ const Signin = () => {
   const [mode, setMode] = useState('signin')
 
   const accessToken = useSelector((store) => store.user.accessToken)
+  const errorMessage = useSelector((store) => store.user.error)
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -64,6 +65,7 @@ const Signin = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
+    dispatch(user.actions.setError(null))
 
     const options = {
       method: 'POST',
@@ -155,6 +157,7 @@ const Signin = () => {
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />
+              {errorMessage }
               <Button
                 type="submit"
                 fullWidth
