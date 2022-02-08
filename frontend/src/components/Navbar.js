@@ -13,7 +13,7 @@ import Tooltip from "@mui/material/Tooltip"
 import MenuItem from "@mui/material/MenuItem"
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag"
 import { Link } from "react-router-dom"
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux"
 import { cartReducer } from "../reducers/CartReducer"
 import Badge from "@mui/material/Badge"
 import { styled } from "@mui/material/styles"
@@ -35,10 +35,10 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     border: `2px solid ${theme.palette.background.paper}`,
     padding: '0 4px',
   },
-}));
+}))
 
 const ResponsiveAppBar = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
