@@ -134,11 +134,12 @@ const Signin = () => {
             <Avatar sx={{ m: 1 }}>
               <LockOutlinedIcon />
             </Avatar>
-            <Typography component="h1" variant="h5">
+            <Typography component="h1" variant="h5" fontFamily="nunito">
               Sign in
             </Typography>
-            <Box component="form" noValidate onSubmit={onFormSubmit} sx={{ mt: 1 }}>
+            <Box component="form" noValidate onSubmit={onFormSubmit} sx={{ mt: 1 }} fontFamily="nunito">
               <TextField
+              fontFamily="nunito"
                 margin="normal"
                 required
                 fullWidth
@@ -149,6 +150,7 @@ const Signin = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <TextField
+              fontFamily="nunito"
                 margin="normal"
                 required
                 fullWidth
@@ -161,10 +163,10 @@ const Signin = () => {
               />
               <FormControlLabel
               // onChange={(e)}
-                control={<Checkbox value="remember" color="primary" />}
+                control={<Checkbox value="remember" color="primary" fontFamily="nunito"/>}
                 label="Remember me"
               />
-              <ErrorMessage>
+              <ErrorMessage fontFamily="nunito">
               {errorMessage}
               </ErrorMessage>
               <Button
@@ -172,17 +174,18 @@ const Signin = () => {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                fontFamily="nunito"
               >
                 Sign In
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="/password" variant="body2">
+                  <Link href="/password" variant="body2" fontFamily="nunito">
                     Forgot password?
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="/signup" variant="body2">
+                  <Link href="/signup" variant="body2" fontFamily="nunito">
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
