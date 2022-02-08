@@ -18,6 +18,12 @@ import Grid from '@mui/material/Grid'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import Typography from '@mui/material/Typography'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
+import styled from 'styled-components'
+
+const ErrorMessage = styled.div`
+color: red;
+`
+
 
 const Copyright = (props) => {
   return (
@@ -158,7 +164,9 @@ const Signin = () => {
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />
-              {errorMessage }
+              <ErrorMessage>
+              {errorMessage}
+              </ErrorMessage>
               <Button
                 type="submit"
                 fullWidth

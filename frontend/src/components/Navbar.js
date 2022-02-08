@@ -24,7 +24,7 @@ import { useNavigate } from "react-router-dom"
 
 const pages = [{ display: 'All Products', url: '/products' }, { display: 'About us', url: '/about-us' }, { display: 'FAQ', url: '/faq' }]
 
-const settings = [<Link to="/signup">SIGN UP</Link>, <Link to="/signin">LOG IN</Link>]
+const settings = [<Link to="/signup">SIGN UP</Link>, <Link to="/signin">SIGN IN</Link>]
 
 
 
