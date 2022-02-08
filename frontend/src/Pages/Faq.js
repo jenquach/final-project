@@ -25,7 +25,7 @@ const FaqAccordion = () => {
 
   return (
     <AccordionWrapper>
-      <Typography variant="h5" color="#A9CDCE" textTransform="uppercase" textAlign="center">
+      <Typography variant="h5" color="#A9CDCE" textTransform="uppercase" textAlign="center" marginBottom={3} fontFamily="Nunito" fontWeight="bold">
         Frequently asked questions
       </Typography>
       <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} sx={{ maxWidth: '700px' }}>
@@ -34,10 +34,10 @@ const FaqAccordion = () => {
           aria-controls="panel2bh-content"
           id="panel2bh-header"
         >
-          <Typography sx={{ width: '66%', flexShrink: 0 }}>Is this a real e-commerce?</Typography>
+          <Typography sx={{ width: '66%', flexShrink: 0, fontFamily: 'Nunito', fontWeight:'bold' }}>Is this a real e-commerce?</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{fontFamily: 'Nunito'}}>
           No unfortunately not. This is a fictional e-commerce. But maybe one day it will be a real one? Let's hope! 
           </Typography>
         </AccordionDetails>
@@ -48,12 +48,12 @@ const FaqAccordion = () => {
           aria-controls="panel3bh-content"
           id="panel3bh-header"
         >
-          <Typography sx={{ width: '66%', flexShrink: 0 }}>
+          <Typography sx={{ width: '66%', flexShrink: 0, fontFamily: 'Nunito', fontWeight:'bold' }}>
           Cotton candy biscuit lemon drops fruitcake wafer?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{fontFamily: 'Nunito'}}>
           Pudding bonbon macaroon chupa chups candy canes caramels candy cotton candy marshmallow.
           </Typography>
         </AccordionDetails>
@@ -64,10 +64,10 @@ const FaqAccordion = () => {
           aria-controls="panel4bh-content"
           id="panel4bh-header"
         >
-          <Typography sx={{ width: '66%', flexShrink: 0 }}>Donut candy canes gingerbread lollipop tiramisu halvah?</Typography>
+          <Typography sx={{ width: '66%', flexShrink: 0, fontFamily: 'Nunito',fontWeight:'bold' }}>Donut candy canes gingerbread lollipop tiramisu halvah?</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{fontFamily: 'Nunito'}}>
           Dragée tiramisu candy lollipop chupa chups marzipan apple pie gummies candy canes. Bear claw fruitcake sesame snaps cake sweet roll.
           </Typography>
         </AccordionDetails>
@@ -78,10 +78,10 @@ const FaqAccordion = () => {
           aria-controls="panel5bh-content"
           id="panel5bh-header"
         >
-          <Typography sx={{ width: '66%', flexShrink: 0 }}>Tart danish brownie gummies soufflé liquorice jelly beans jelly beans apple pie?</Typography>
+          <Typography sx={{ width: '66%', flexShrink: 0, fontFamily: 'Nunito',fontWeight:'bold' }}>Tart danish brownie gummies soufflé liquorice jelly beans jelly beans apple pie?</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{fontFamily: 'Nunito'}}>
           Dragée tiramisu candy lollipop chupa chups marzipan apple pie gummies candy canes. Bear claw fruitcake sesame snaps cake sweet roll.
           </Typography>
         </AccordionDetails>
@@ -92,12 +92,12 @@ const FaqAccordion = () => {
           aria-controls="panel6bh-content"
           id="panel6bh-header"
         >
-          <Typography sx={{ width: '66%', flexShrink: 0 }}>
+          <Typography sx={{ width: '66%', flexShrink: 0, fontFamily: 'Nunito',fontWeight:'bold' }}>
           Cotton candy biscuit lemon drops fruitcake wafer?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{fontFamily: 'Nunito'}}>
           Pudding bonbon macaroon chupa chups candy canes caramels candy cotton candy marshmallow.
           </Typography>
         </AccordionDetails>
@@ -108,10 +108,10 @@ const FaqAccordion = () => {
           aria-controls="panel7bh-content"
           id="panel7bh-header"
         >
-          <Typography sx={{ width: '66%', flexShrink: 0 }}>Donut candy canes gingerbread lollipop tiramisu halvah?</Typography>
+          <Typography sx={{ width: '66%', flexShrink: 0, fontFamily: 'Nunito',fontWeight:'bold' }}>Donut candy canes gingerbread lollipop tiramisu halvah?</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{fontFamily: 'Nunito'}}>
           Dragée tiramisu candy lollipop chupa chups marzipan apple pie gummies candy canes. Bear claw fruitcake sesame snaps cake sweet roll.
           </Typography>
         </AccordionDetails>
@@ -122,10 +122,10 @@ const FaqAccordion = () => {
           aria-controls="panel8bh-content"
           id="panel8bh-header"
         >
-          <Typography sx={{ width: '66%', flexShrink: 0 }}>Tart danish brownie gummies soufflé liquorice jelly beans jelly beans apple pie?</Typography>
+          <Typography sx={{ width: '66%', flexShrink: 0, fontFamily: 'Nunito',fontWeight:'bold' }}>Tart danish brownie gummies soufflé liquorice jelly beans jelly beans apple pie?</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{fontFamily: 'Nunito'}}>
           Dragée tiramisu candy lollipop chupa chups marzipan apple pie gummies candy canes. Bear claw fruitcake sesame snaps cake sweet roll.
           </Typography>
         </AccordionDetails>

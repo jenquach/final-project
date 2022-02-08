@@ -1,5 +1,4 @@
 import React from "react"
-import { Button } from "@mui/material"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 
@@ -8,49 +7,54 @@ const CategoryWrapper = styled.section`
 display: grid;
 grid-template-columns: repeat(12, 1fr);
 grid-column: span 12;
+grid-gap: 10px;
 @media (min-width: 767px) {
   grid-column-start: 2;
   grid-column-end: 12;
   }
+  @media (max-width: 767px) {
+
+  }
 `
 
 const StyledLink = styled(Link)`
-color: grey;
+display: grid;
+text-align: center;
 text-decoration: none;
-font-family: 'Nunito Sans', sans-serif;
 font-weight: 700;
-text-transform: capitalize; 
-`
-
-const CategoryFilterButton = styled(Button)`
-  align-items: center;
-  background-color: #CFE8E0;
-  border-radius: 2px;
-  margin-bottom: 20px;
-  grid-column: span 2;
-  max-width: 200px; 
-  font-size: 1em;
-  font-family: 'Nunito Sans', sans-serif;
+align-items: center;
+background-color: #CFE8E0;
+padding: 10px 2px 10px 2px;
+border-radius: 2px;
+margin-bottom: 20px;
+grid-column: span 2;
+max-width: 200px; 
+font-size: 1em;
+border: none;
+color: #00838f;
+font-family: 'Short Stack', cursive;
   &:hover {
-    background-color: #A9CDCE;
-  }
-  &:focus {
     background-color: #CFE8E0;
   }
-  @media (max-width: 667px) {
-    max-width: 280px;
-}
+  &:focus {
+    background-color: #A9CDCE;
+  }
+  @media (max-width: 767) {
+
+  }
 `
+
+
 
 const CategoryFilter = () => {
   return (
     <CategoryWrapper>
-      <CategoryFilterButton component={StyledLink} to={'/products'}>All products</CategoryFilterButton>
-      <CategoryFilterButton component={StyledLink} to={'/products/Bottoms'}>Bottoms</CategoryFilterButton>
-      <CategoryFilterButton component={StyledLink} to={'/products/Tops'}>Tops</CategoryFilterButton>
-      <CategoryFilterButton component={StyledLink} to={'/products/One piece'}>One piece</CategoryFilterButton>
-      <CategoryFilterButton component={StyledLink} to={'/products/Outerwear'}>Outerwear</CategoryFilterButton>
-      <CategoryFilterButton component={StyledLink} to={'/products/Footwear'}>Footwear</CategoryFilterButton>
+      <StyledLink to={'/products'}>ALL PRODUCTS</StyledLink>
+       <StyledLink component={StyledLink} to={'/products/Bottoms'}>BOTTOMS</StyledLink>
+      <StyledLink component={StyledLink} to={'/products/Tops'}>TOPS</StyledLink>
+      <StyledLink component={StyledLink} to={'/products/One piece'}>ONE PIECE</StyledLink>
+      <StyledLink component={StyledLink} to={'/products/Outerwear'}>OUTERWEAR</StyledLink>
+      <StyledLink component={StyledLink} to={'/products/Footwear'}>FOOTWEAR</StyledLink>
     </CategoryWrapper>
   )
 }

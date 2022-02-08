@@ -64,13 +64,15 @@ const Input = styled.input`
 
 
 const CheckoutButton = styled.button`
-  margin-top: 20px;
-  padding: 5px;
+  padding: 10px;
   border: none;
   background-color: #A9CDCE;
   border-radius: 2px;
-  margin-bottom: 20px;
-  width: 100%; 
+  margin-bottom: 30px;
+  margin-top: 30px;
+  max-width: 100%; 
+  margin-right: auto;
+  margin-left: auto;
   font-size: large;
   cursor: pointer;
   grid-column: 2/3;

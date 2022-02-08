@@ -18,10 +18,8 @@ import Grid from '@mui/material/Grid'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import Typography from '@mui/material/Typography'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
-import { lightBlue, pink } from '@material-ui/core/colors'
 
-
-function Copyright(props) {
+const Copyright = (props) => {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
@@ -37,10 +35,13 @@ function Copyright(props) {
 const theme = createTheme({
   palette: {
     primary: {
-      main: lightBlue[500],
+      light:'#dbffff', 
+      main: '#8DADC3',
+      dark: '#5e7e93',
+      contrastText: '#fff',
     },
     secondary: {
-      main: pink[400],
+      main: '#5e7e93',
     }
   }
 })
@@ -76,7 +77,7 @@ const Signin = () => {
   .then((res) => res.json())
   .then((data) => {
     if (data.success) {
-      batch(() => { //instead of updating store for each dispatch it will only update ones for all with batch
+      batch(() => { //instead of updating store for each dispatch it will only update once for all with batch
         dispatch(user.actions.setUserId(data.response.userId))
         dispatch(user.actions.setEmail(data.response.email))
         dispatch(user.actions.setAccessToken(data.response.accessToken))
@@ -95,7 +96,7 @@ const Signin = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '100vh', marginTop: '30px' }}>
+      <Grid container component="dark" sx={{ height: '100vh', marginTop: '30px' }}>
         <CssBaseline />
         <Grid
           item
@@ -121,7 +122,7 @@ const Signin = () => {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'pink.main' }}>
+            <Avatar sx={{ m: 1 }}>
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
@@ -150,6 +151,7 @@ const Signin = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <FormControlLabel
+              // onChange={(e)}
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />

@@ -28,14 +28,17 @@ font-size: 1em;
 font-weight:700;
 `
 
-const StyledBuyButton = styled.button`
+const BuyButton = styled.button`
   background-color: #A9CDCE;
+  height: 40px;
   border-radius: 2px;
   margin-bottom: 20px;
-  margin-top: 10px;
   width: 80%; 
-  font-size: 1em;
-  font-family: 'Nunito Sans', sans-serif;
+  font-size: large;
+  border: none;
+  color: white;
+  font-family: 'Short Stack', cursive;
+  cursor: pointer;
   &:hover {
     background-color: #CFE8E0;
   }
@@ -47,6 +50,7 @@ const StyledBuyButton = styled.button`
     margin-top: 20px;
 }
 `
+
 
 const ProductBox = ({ product }) => {
 
@@ -68,12 +72,12 @@ const ProductBox = ({ product }) => {
         <ProductPrice>
           £{product.price}
         </ProductPrice>
-        <StyledBuyButton
+        <BuyButton
           variant="contained"
           onClick={() => handleAddToCartClick(product)}
         >
-          Buy
-        </StyledBuyButton>
+          BUY
+        </BuyButton>
       </ProductContainer>
     </>
   );

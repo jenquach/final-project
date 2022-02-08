@@ -3,11 +3,11 @@ import { cartReducer } from "../reducers/CartReducer";
 import { useDispatch, useSelector } from 'react-redux';
 import { ListItem, List, Box } from "@mui/material";
 import CartItem from "./CartItem";
-import DeleteIcon from '@mui/icons-material/Delete';
 import { API_URL } from '../utils/urls';
-import { Button } from '@mui/material';
 import styled from "styled-components"
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 
 const EmptyCartText = styled.h3`
@@ -17,44 +17,43 @@ const EmptyCartText = styled.h3`
   font-weight: 300;
 `;
 
-const StyledRemoveAllButton = styled(Button)`
+const RemoveAllButton = styled.button`
+  border: none;
+  color: #00838f;
   margin-left: 45px;
-  background-color: #A9CDCE;
+  background-color: #CFE8E0;
   border-radius: 2px;
+  padding: 10px;
   margin-top: 30px;
-  max-width: 300px; 
+  max-width: 400px; 
+  font-weight: 700;
   font-size: 1em;
   justify-content: center;
-  font-family: 'Nunito Sans', sans-serif;
-  &:hover {
-    background-color: #CFE8E0;
-  }
-  &:focus {
-    background-color: #CFE8E0;
-  }
+  font-family: 'Short Stack', cursive;
+  cursor: pointer;
   @media (max-width: 667px) {
     max-width: 280px;
 }
 `
 
-const StyledGoToCheckoutButton = styled(Button)`
-  margin-left: 45px;
-  background-color: #A9CDCE;
-  border-radius: 2px;
-  margin-top: 60px;
-  max-width: 300px; 
-  font-size: 1em;
-  justify-content: center;
-  font-family: 'Nunito Sans', sans-serif;
-  &:hover {
-    background-color: #CFE8E0;
-  }
-  &:focus {
-    background-color: #CFE8E0;
-  }
-  @media (max-width: 667px) {
-    max-width: 280px;
-}
+const GoToCheckoutButton = styled(Link)`
+display: block;
+text-align: center;
+text-decoration: none;
+font-weight: 700;
+justify-content: center;
+margin-left: auto;
+margin-right: auto;
+margin-top: 30px;
+background-color: #CFE8E0;
+padding: 10px;
+border-radius: 2px;
+margin-bottom: 20px;
+max-width: 200px; 
+font-size: 1em;
+border: none;
+color: #00838f;
+font-family: 'Short Stack', cursive;
 `
 
 
@@ -96,19 +95,17 @@ const MiniCart = () => {
         }
         {!cartIsEmpty && (
           <>
-           <StyledRemoveAllButton 
+          <RemoveAllButton 
+          onClick={() => handleClearCart()}>
+          REMOVE ALL ITEMS&nbsp;
+          <FontAwesomeIcon icon={faTrash} color="#00838f"/>
+          </RemoveAllButton> 
+          <br></br>
+         <GoToCheckoutButton 
            variant="contained" 
-           sx={{ maxWidth: "300px" }} 
-           endIcon={<DeleteIcon />} 
-           onClick={() => handleClearCart()}>
-           Remove all items
-         </StyledRemoveAllButton>
-         <StyledGoToCheckoutButton 
-           variant="contained" 
-           sx={{ maxWidth: "300px" }} 
            component={Link} to="/checkout">
-           Go to checkout
-         </StyledGoToCheckoutButton>
+           GO TO CHECKOUT
+         </GoToCheckoutButton>
          </>
         )}
         

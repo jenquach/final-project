@@ -26,7 +26,7 @@ const CategoryCard = () => {
           alt="girl with dotted top"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" fontFamily="nunito">
             TOPS
           </Typography>
         </CardContent>
@@ -41,7 +41,7 @@ const CategoryCard = () => {
         alt="trousers with playful pattern"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" component="div" fontFamily="nunito">
           BOTTOMS
         </Typography>
       </CardContent>
@@ -56,7 +56,7 @@ const CategoryCard = () => {
           alt="toddler in the forest"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" fontFamily="nunito">
             OUTERWEAR
           </Typography>
         </CardContent>

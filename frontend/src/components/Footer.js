@@ -21,8 +21,8 @@ const Footer = () => {
         sx={{
         display: "flex",
         flexDirection: { xs: "column", sm: "row" },
-        height: "50px",
-        paddingTop: "30px",
+        height: "60px",
+        paddingTop: "40px",
         paddingBottom: "20px",
         justifyContent: "space-evenly",
         textAlign: "center",
@@ -31,30 +31,30 @@ const Footer = () => {
         padding: "10px, 0",
         fontFamily: "Nunito",
         }}>
-          <Grid container spacing={2}>
+          <Grid container spacing={1}>
             <Grid item xs={12} sm={10}>
               <Box>
                 <Link href="/about-us" color="inherit" underline="none">About us</Link>
               </Box>
             </Grid>
           </Grid>
-          <Grid container spacing={2}>
+          <Grid container spacing={1}>
             <Grid item xs={12} sm={10}>
               <Box>
-                <Link href="/about-us" color="inherit" underline="none">Terms and conditions</Link>
+                <Link href="/faq" color="inherit" underline="none">FAQ</Link>
               </Box>
             </Grid>
           </Grid>
-          <Grid container spacing={2}>
+          <Grid container spacing={1}>
             <Grid item xs={12} sm={10}>
               <Box>
                 <Link href="/about-us" color="inherit" underline="none">Contact</Link>
                 <Box sx={{
                       padding: "10px",
                     }}>
-                  <MailOutlineIcon sx={{ fontSize: 20 }}/>
-                  <FacebookIcon sx={{ fontSize: 20 }}/>
-                  <InstagramIcon sx={{ fontSize: 20 }}/>
+                  <MailOutlineIcon sx={{ fontSize: 25 }}/>
+                  <FacebookIcon sx={{ fontSize: 25 }}/>
+                  <InstagramIcon sx={{ fontSize: 25 }}/>
                 </Box>
               </Box>
             </Grid>
