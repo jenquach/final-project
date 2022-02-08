@@ -51,6 +51,7 @@ router.post("/signin", async (req, res) => {
 				response: {
 					userId: user._id,
 					email: user.email,
+          name: user.name,
 					accessToken: user.accessToken,
 				},
 				success: true,

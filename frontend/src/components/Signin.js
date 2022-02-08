@@ -84,6 +84,7 @@ const Signin = () => {
         dispatch(user.actions.setEmail(data.response.email))
         dispatch(user.actions.setAccessToken(data.response.accessToken))
         dispatch(user.actions.setError(null))
+        dispatch(user.actions.setName(data.response.name))
       })
     } else {
       batch(() => {

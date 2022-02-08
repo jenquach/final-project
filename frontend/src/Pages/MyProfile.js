@@ -20,7 +20,7 @@ const ContainerWrapper = styled.div`
 const Container = styled.div`
 	ul{
 		padding: 10px;
-	},
+	}
 	li{
 		list-style-type: none;
 	}
@@ -37,6 +37,7 @@ const MyProfile = () => {
 	const accessToken = useSelector((store) => store.user.accessToken)
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
+	const name = useSelector((store ) => store.user.name)
 
 	useEffect(() => {
 		if (!accessToken) {
@@ -62,7 +63,7 @@ const MyProfile = () => {
 
 	return (
     <Wrapper>
-			<h1>Welcome &#x1F44B; {message}</h1>
+			<h1>Welcome &#x1F44B; {name}</h1>
     <ContainerWrapper>
 				<Container>
 					<ul>
