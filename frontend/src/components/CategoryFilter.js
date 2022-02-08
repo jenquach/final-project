@@ -12,13 +12,9 @@ grid-gap: 10px;
   grid-column-start: 2;
   grid-column-end: 12;
   }
-  @media (max-width: 767px) {
-
-  }
 `
 
 const StyledLink = styled(Link)`
-display: grid;
 text-align: center;
 text-decoration: none;
 font-weight: 700;
@@ -39,8 +35,13 @@ font-family: 'Short Stack', cursive;
   &:focus {
     background-color: #A9CDCE;
   }
-  @media (max-width: 767) {
+  @media (min-width: 471px) {
+    font-size: 0.8em;
+  }
 
+  @media (max-width: 470px) {
+    grid-column: span 6;
+    margin-bottom: 0px;
   }
 `
 
@@ -49,7 +50,7 @@ font-family: 'Short Stack', cursive;
 const CategoryFilter = () => {
   return (
     <CategoryWrapper>
-      <StyledLink to={'/products'}>ALL PRODUCTS</StyledLink>
+      <StyledLink to={'/products'}>ALL</StyledLink>
        <StyledLink component={StyledLink} to={'/products/Bottoms'}>BOTTOMS</StyledLink>
       <StyledLink component={StyledLink} to={'/products/Tops'}>TOPS</StyledLink>
       <StyledLink component={StyledLink} to={'/products/One piece'}>ONE PIECE</StyledLink>
