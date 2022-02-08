@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import BookPickup from "../components/BookPickup"
 
 import { API_URL } from "../utils/urls"
 import profile from "../reducers/profile"
@@ -71,7 +72,7 @@ const MyProfile = () => {
 					</ul>
 				</Container>
 					<ContentContainer>
-						{(selected === 'Pickup') && <div>Book a pickup</div>}
+						{(selected === 'Pickup') && <div><BookPickup/></div>}
             {(selected === 'Orders') && <div>Order history</div>}
             {(selected === 'EditProfile') && <div>Edit Profile</div>}
 					</ContentContainer>
