@@ -4,7 +4,7 @@ import DatePicker from "react-datepicker"
 import addMonths from '@jsbits/add-months'
 import PickupModal from "./Modal"
 
-import "react-datepicker/dist/react-datepicker.css"
+import "../assets/react-datepicker.css"
 
 const BookPickup = () => {
   const [selectedDate, setSelectedDate] = useState(new Date())
@@ -26,10 +26,7 @@ const BookPickup = () => {
         maxDate={addMonths(new Date(), 1)}
         showDisabledMonthNavigation
       />
-      <PickupModal />
-      {/* <button onClick = {() => setShowModal(true)}>Confirm</button>
-      {showModal && <Modal setShowModal={setShowModal} />}
-      <p>{JSON.stringify(formattedDate)}</p> */}
+      <PickupModal formattedDate = {formattedDate}/>
     </div>
   )
 }

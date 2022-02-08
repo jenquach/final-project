@@ -13,6 +13,12 @@ const MyProfileWrapper = styled.div`
 	font-family: 'Nunito',sans-serif;
 	margin-top: 68px;	
 	background: #fff;
+	@media (max-width: 900px){
+		margin-top: 64px;
+	}
+	@media (max-width: 600px) {
+		margin-top: 55px;
+	}
 `
 
 const TopBanner = styled.div`
@@ -31,6 +37,7 @@ const TopBanner = styled.div`
 
 const ContainerWrapper = styled.div`
 	display: flex;
+	text-align: center;
 	flex-direction: column;
 	
 `
@@ -101,7 +108,7 @@ const MyProfile = () => {
 				
 				</Container>
 					<ContentContainer>
-						{(selected === 'Pickup') && <div><h3>Book a pickup</h3></div>}
+						{(selected === 'Pickup') && <div><BookPickup/></div>}
             {(selected === 'Orders') && <div><h3>Order history</h3></div>}
             {(selected === 'EditProfile') && <div><h3>Edit Profile</h3></div>}
 					</ContentContainer>
