@@ -128,7 +128,7 @@ const Signup = () => {
           sm={8} 
           md={5} 
           component={Paper} 
-          elevation={6} 
+          elevation={0} 
           square
           sx={{
           }}>
