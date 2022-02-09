@@ -24,7 +24,7 @@ import { useNavigate } from "react-router-dom"
 
 const pages = [{ display: 'All Products', url: '/products' }, { display: 'About us', url: '/about-us' }, { display: 'FAQ', url: '/faq' }]
 
-const settings = [<Link to="/signup">SIGN UP</Link>, <Link to="/signin">SIGN IN</Link>]
+const settings = [<Link className="link" to="/signup">SIGN UP</Link>, <Link className="link" to="/signin">SIGN IN</Link>]
 
 
 
@@ -56,7 +56,7 @@ const ResponsiveAppBar = () => {
     dispatch(user.actions.setAccessToken(null))
     navigate('/')
   }
-  const loggedInSettings = [<Link to="/my-profile">MY PROFILE</Link>, <Link to="/" onClick={handleLogout}>LOG OUT</Link>]
+  const loggedInSettings = [<Link className="link" to="/my-profile">MY PROFILE</Link>, <Link className="link" to="/" onClick={handleLogout}>LOG OUT</Link>]
 
   const toggleCartDrawer = () => {
     dispatch(cartReducer.actions.setMiniCartDrawerVisible(true))
