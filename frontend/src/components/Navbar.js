@@ -17,7 +17,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { cartReducer } from "../reducers/CartReducer"
 import Badge from "@mui/material/Badge"
 import { styled } from "@mui/material/styles"
-import logo from "../assets/A_New_Fit_2.png"
+import logo from "../assets/A_New_Fit_1.png"
 import user from "../reducers/user"
 import { useNavigate } from "react-router-dom"
 
@@ -82,7 +82,7 @@ const ResponsiveAppBar = () => {
     <AppBar
       position="fixed"
       elevation={0}
-      sx={{ background: '#A9CDCE' }}
+      sx={{ background: 'white' }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -106,7 +106,7 @@ const ResponsiveAppBar = () => {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon />
+              <MenuIcon sx={{ color: '#b3975d' }} />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -148,7 +148,7 @@ const ResponsiveAppBar = () => {
                 onClick={handleCloseNavMenu}
                 component={Link}
                 to={page.url}
-                sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'Nunito', fontSize: '17px', fontWeight: 'bold' }}
+                sx={{ my: 2, color: '#b3975d', display: 'block', fontFamily: 'Nunito', fontSize: '17px', fontWeight: 'bold'}}
               >
                 {page.display}
               </Button>
@@ -158,7 +158,7 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, fontFamily: 'Nunito' }}>
-                <PersonIcon sx={{ color: '#F9F9F9' }} />
+                <PersonIcon sx={{ color: '#b3975d' }} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -195,7 +195,7 @@ const ResponsiveAppBar = () => {
                 aria-label="cart"
                 onClick={toggleCartDrawer}>
                 <StyledBadge badgeContent={cartIconBadgeText}>
-                  <ShoppingBagIcon sx={{ color: '#F9F9F9' }} />
+                  <ShoppingBagIcon sx={{ color: '#b3975d' }} />
                 </StyledBadge>
               </IconButton>
             )}
@@ -203,7 +203,7 @@ const ResponsiveAppBar = () => {
               <IconButton
                 aria-label="cart"
                 onClick={toggleCartDrawer}>
-                <ShoppingBagIcon sx={{ color: '#F9F9F9' }} />
+                <ShoppingBagIcon sx={{ color: '#b3975d' }} />
               </IconButton>
             )}
 
