@@ -34,7 +34,20 @@ const reducer = combineReducers({
   cartReducer: cartReducer.reducer
 })
 
-const store = configureStore({ reducer })
+// set up for local store 
+const preloadedStateJSON = localStorage.getItem('ANewFitReduxState')
+let preloadedState = {}
+
+if (preloadedStateJSON) {
+  preloadedState = JSON.parse(preloadedStateJSON)
+}
+
+const store = configureStore({ reducer, preloadedState })
+
+//Store the state in localstorage, when Redux state changes
+store.subscribe(() => {
+  localStorage.setItem('ANewFitReduxState', JSON.stringify(store.getState()))
+})
 
 function App() {
 

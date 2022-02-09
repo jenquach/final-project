@@ -7,13 +7,13 @@ const indexRouter = require('./routers/index')//require('./db/mongoose')
 const userRouter = require('./routers/user')
 const orderRouter = require('./routers/order')
 
-const productData = require('./data/products.json') 
+const productData = require('./data/products.json')
 const Product = require("./models/product");
 
 require('./mongoose-settings') //Node.js can use this module to manipulate MongoDB databases
 
 //comment in this when you run the app for the first time
-process.env.RESET_PRODUCT_DB=true
+process.env.RESET_PRODUCT_DB = true
 
 
 // Defines the port the app will run on. Defaults to 8080, but can be 
@@ -24,7 +24,7 @@ const port = process.env.PORT || 8080
 const app = express()
 
 // // Add middlewares to enable cors and json body parsing
- app.use(cors())
+app.use(cors())
 app.use(express.json())
 app.use(indexRouter)
 app.use(cartRouter)
@@ -39,7 +39,7 @@ app.listen(port, () => {
 
 
 
-if (process.env.RESET_PRODUCT_DB) { 
+if (process.env.RESET_PRODUCT_DB) {
   const seedDatabase = async () => { //this is an asyncronous function
     await Product.deleteMany({}) //first it does this part
 

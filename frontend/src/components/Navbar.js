@@ -50,7 +50,10 @@ const ResponsiveAppBar = () => {
   const isLoggedIn = useSelector(store => store.user.accessToken) != null
 
   const handleLogout = (event) => {
-    dispatch(user.deleteAccessToken(null))
+    dispatch(user.actions.setUserId(null))
+    dispatch(user.actions.setName(null))
+    dispatch(user.actions.setEmail(null))
+    dispatch(user.actions.setAccessToken(null))
     navigate('/')
   }
   const loggedInSettings = [<Link to="/my-profile">MY PROFILE</Link>, <Link to="/" onClick={handleLogout}>LOG OUT</Link>]

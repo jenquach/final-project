@@ -52,9 +52,7 @@ const Container = styled.div`
 			:focus{
 				text-decoration: underline;
 			}
-		}	
-	},	
-		
+		}			
 `
 const ContentContainer = styled.div`
 	display: flex;
@@ -96,7 +94,7 @@ const MyProfile = () => {
 	return (
     <MyProfileWrapper>
 			<TopBanner>
-				<h1>Welcome {message}!</h1>
+				<h1>Welcome {name}!</h1>
 			</TopBanner>
 			
     <ContainerWrapper>

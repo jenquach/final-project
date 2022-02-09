@@ -39,8 +39,8 @@ export const Loader = () => {
 
   return (
     <LoadingOverlay>
-			<LoadingSpinner />
-		</LoadingOverlay>
+      <LoadingSpinner />
+    </LoadingOverlay>
   )
 }
 
