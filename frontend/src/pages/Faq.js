@@ -8,7 +8,7 @@ import styled from "styled-components"
 
 const AccordionWrapper = styled.div`
 background: #f0f0f0;
-height: 100vh;
+min-height: 100vh;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -77,20 +77,6 @@ const FaqAccordion = () => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel5bh-content"
           id="panel5bh-header"
-        >
-          <Typography sx={{ width: '66%', flexShrink: 0, fontFamily: 'Nunito', fontWeight:'bold' }}>Tart danish brownie gummies soufflé liquorice jelly beans jelly beans apple pie?</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography sx={{fontFamily: 'Nunito'}}>
-          Dragée tiramisu candy lollipop chupa chups marzipan apple pie gummies candy canes. Bear claw fruitcake sesame snaps cake sweet roll.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion expanded={expanded === 'panel6'} onChange={handleChange('panel6')} sx={{ maxWidth: '700px' }}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel6bh-content"
-          id="panel6bh-header"
         >
           <Typography sx={{ width: '66%', flexShrink: 0, fontFamily: 'Nunito', fontWeight:'bold' }}>
           Cotton candy biscuit lemon drops fruitcake wafer?
