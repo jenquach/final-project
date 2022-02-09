@@ -66,7 +66,7 @@ const { orderId } = useParams()
           .then((json) => {
             setOrder(json)
           })
-      }, [setOrder])
+      }, [setOrder, orderId])
     
 
     return (

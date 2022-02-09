@@ -61,13 +61,14 @@ margin-bottom: 10px;
 `
 const CheckoutCartItem = (props) => {
   const [product, setProduct] = useState(null)
+  const itemId = props.itemId;
   useEffect(() => {
-    fetch(API_URL('product/' + props.itemId)) //option is needed otherwise is going to be getMetod
+    fetch(API_URL('product/' + itemId)) //option is needed otherwise is going to be getMetod
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
       });
-  }, []);
+  }, [itemId]);
 
   return (
     <>

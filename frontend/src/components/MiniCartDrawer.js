@@ -14,15 +14,15 @@ width: 500px;
 
 const MiniCartDrawer = () => {
   const dispatch = useDispatch()
-  useEffect(() => { //here we generate a unique cartID if it doesn't already exist - save to localStorage
 
-    const cartId = localStorage.getItem("cartId")
+  useEffect(() => { //here we generate a unique cartID if it doesn't already exist - save to localStorage
+    let cartId = localStorage.getItem("cartId")
     if (!cartId) {
       cartId = uuidv4()
       localStorage.setItem("cartId", cartId);
     }
     dispatch(cartReducer.actions.setCartId(cartId))
-  }, []);
+  }, [dispatch]);
 
   const ShowCartDrawer = useSelector(store => store.cartReducer.cartIsOpen);
 
@@ -37,20 +37,20 @@ const MiniCartDrawer = () => {
     if (ShowCartDrawer === true) {
       dispatch(fetchCart())
     }
-  }, [ShowCartDrawer]);
+  }, [ShowCartDrawer, dispatch]);
 
   return (
     <DrawerSection>
-    <SwipeableDrawer
-     style={{ 'maxWidth': '200px'}}
-      open={ShowCartDrawer}
-      anchor={'right'}
-      onClose={toggle(false)}
-      onOpen={toggle(true)}
-    >
-      <MiniCart>
-      </MiniCart>
-    </SwipeableDrawer>
+      <SwipeableDrawer
+        style={{ 'maxWidth': '200px' }}
+        open={ShowCartDrawer}
+        anchor={'right'}
+        onClose={toggle(false)}
+        onOpen={toggle(true)}
+      >
+        <MiniCart>
+        </MiniCart>
+      </SwipeableDrawer>
     </DrawerSection>
 
   )

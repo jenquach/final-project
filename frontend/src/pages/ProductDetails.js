@@ -122,7 +122,7 @@ const ProductDetails = () => {
           setProductImage(json.img1)
         })
       .finally(() => setLoading(false))
-  }, [setProduct, setProductImage])
+  }, [setProduct, setProductImage, productId])
 
 
   const BackToAllProducts = () => {
