@@ -19,7 +19,7 @@ text-align: center;
 text-decoration: none;
 font-weight: 700;
 align-items: center;
-background-color: #CFE8E0;
+background-color: white;
 padding: 10px 2px 10px 2px;
 border-radius: 2px;
 margin-bottom: 20px;
@@ -27,13 +27,13 @@ grid-column: span 2;
 max-width: 200px; 
 font-size: 1em;
 border: none;
-color: #00838f;
+color: #b3975d;
 font-family: 'Short Stack', cursive;
   &:hover {
-    background-color: #CFE8E0;
+    background-color: #DFE0DF;
   }
   &:focus {
-    background-color: #A9CDCE;
+    background-color: #DFE0DF;
   }
   @media (min-width: 471px) {
     font-size: 0.8em;
