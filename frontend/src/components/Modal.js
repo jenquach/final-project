@@ -49,15 +49,12 @@ const PickupModal = ({ formattedDate }) => {
         open={showModal}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
+        aria-describedby="modal-modal-description">
         <Box sx={style}>
-          <Typography id="modal-modal-description" variant="h6" component="h2" fontFamily= 'Nunito'
->
+          <Typography id="modal-modal-description" variant="h6" component="h2" fontFamily='Nunito'>
             Thank you for using our service!
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }} fontFamily= 'Nunito'
->
+          <Typography id="modal-modal-description" sx={{ mt: 2 }} fontFamily='Nunito'>
             Confirmed pick up by Bring at {formattedDate}. Please leave bags outside your door before 4pm.
           </Typography>
         </Box>

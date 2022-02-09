@@ -38,15 +38,17 @@ const CartItem = (props) => {
   const [product, setProduct] = useState(null)
   const cartId = useSelector(store => store.cartReducer.cartId)
 
+  const itemId = props.itemId;
+
   const dispatch = useDispatch()
 
   useEffect(() => {
-    fetch(API_URL('product/' + props.itemId)) //option is needed otherwise is going to be getMetod
+    fetch(API_URL('product/' + itemId)) //option is needed otherwise is going to be getMetod
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
       });
-  }, [setProduct]);
+  }, [setProduct, itemId]);
 
   const handleRemoveItem = (event) => {
     const options = {

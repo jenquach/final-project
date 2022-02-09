@@ -53,6 +53,7 @@ max-width: 200px;
 font-size: 1em;
 border: none;
 color: #00838f;
+cursor: pointer;
 font-family: 'Short Stack', cursive;
 `
 

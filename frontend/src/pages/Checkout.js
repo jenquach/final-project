@@ -32,7 +32,7 @@ const Checkout = () => {
   useEffect(() => {
     dispatch(fetchCart())
     dispatch(cartReducer.actions.setMiniCartDrawerVisible(false))
-  }, []);
+  }, [dispatch]);
 
   const cartItems = useSelector(store => store.cartReducer.items)
   const cartId = useSelector(store => store.cartReducer.cartId)
