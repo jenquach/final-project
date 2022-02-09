@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import BookPickup from "../components/BookPickup"
-
 import { API_URL } from "../utils/urls"
+import BookPickup from "../components/BookPickup"
 import profile from "../reducers/profile"
 
 import styled from "styled-components"
@@ -34,13 +33,12 @@ const TopBanner = styled.div`
 	}
 `
 
-
 const ContainerWrapper = styled.div`
 	display: flex;
 	text-align: center;
-	flex-direction: column;
-	
+	flex-direction: column;	
 `
+
 const Container = styled.div`
 	display: flex;
 	justify-content: center;
@@ -58,16 +56,15 @@ const ContentContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	margin-top: 30px;
-
 `
 
 const MyProfile = () => {
 	const [selected, setSelected] = useState('Pickup')
-	const message = useSelector((store) => store.user.email)
 	const accessToken = useSelector((store) => store.user.accessToken)
+	const name = useSelector((store ) => store.user.name)
+
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
-	const name = useSelector((store ) => store.user.name)
 
 	useEffect(() => {
 		if (!accessToken) {
@@ -95,15 +92,12 @@ const MyProfile = () => {
     <MyProfileWrapper>
 			<TopBanner>
 				<h1>Welcome {name}!</h1>
-			</TopBanner>
-			
+			</TopBanner>	
     <ContainerWrapper>
 				<Container>
-					
 						<a onClick={() => setSelected('Pickup')}>Book a pick-up</a>
 						<a onClick={() => setSelected('Orders')}>Order history</a>
 						<a onClick={() => setSelected('EditProfile')}>Edit profile</a>
-				
 				</Container>
 					<ContentContainer>
 						{(selected === 'Pickup') && <div><BookPickup/></div>}
