@@ -1,7 +1,6 @@
 import React from "react"
 import CategoryCard from "../components/CategoryCard"
 import styled from "styled-components"
-import img from "../assets/toddler_choosing_clothes.jpg"
 import Ticker from "../components/Ticker"
 
 const StartPageWrapper = styled.section`
@@ -11,7 +10,7 @@ const StartPageWrapper = styled.section`
 `
 const HeroImg = styled.div`
   position: relative;
-  background-image: url(${img});
+  background-image: url("https://res.cloudinary.com/denrrpqab/image/upload/v1644411003/Webshop%20product%20img/startpage_img/toddler_choosing_clothes_ozs1c8.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: cover;
