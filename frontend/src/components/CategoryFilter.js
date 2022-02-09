@@ -42,6 +42,7 @@ font-family: 'Short Stack', cursive;
   @media (max-width: 470px) {
     grid-column: span 6;
     margin-bottom: 0px;
+    color:#b3975d;
   }
 `
 
