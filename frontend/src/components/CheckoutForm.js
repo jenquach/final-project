@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { API_URL } from '../utils/urls';
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { cartReducer } from '../reducers/CartReducer';
 
 const FormWrapper = styled.div`
 display: grid;
@@ -95,6 +97,7 @@ const CheckoutForm = (props) => {
 
 let navigate = useNavigate();
 
+const dispatch = useDispatch()
   const cartId = props.cartId;
   const [isPosting, setIsPosting] = useState(false);
   const [name, setName] = useState('');
@@ -129,6 +132,7 @@ let navigate = useNavigate();
       .then((res) => res.text())
       .then((data) => {
         setIsPosting(false);
+        dispatch(cartReducer.actions.setItems([]))
         navigate('/orders/' + data);
       });
   }

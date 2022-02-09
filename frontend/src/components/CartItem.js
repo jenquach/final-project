@@ -46,7 +46,7 @@ const CartItem = (props) => {
       .then((data) => {
         setProduct(data);
       });
-  }, []);
+  }, [setProduct]);
 
   const handleRemoveItem = (event) => {
     const options = {

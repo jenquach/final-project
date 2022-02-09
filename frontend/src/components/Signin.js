@@ -104,7 +104,7 @@ const Signin = () => {
 }
 
   return (
-    <ThemeProvider theme={theme} elevation={0}>
+    <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh', marginTop: '30px' }}>
         <CssBaseline />
         <Grid
