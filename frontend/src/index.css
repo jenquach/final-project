@@ -20,7 +20,5 @@ textarea:focus, input:focus, input, textarea{
 }
 
 a:link {
-  color: black;
   text-decoration: none;
-  
 }
