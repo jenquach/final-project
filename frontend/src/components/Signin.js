@@ -40,14 +40,13 @@ const Copyright = (props) => {
 
 const theme = createTheme({
   palette: {
-    primary: {
-      light:"#dbffff", 
-      main: "#202124",
-      dark: "#5e7e93",
-      contrastText: "#fff",
+    primary: { 
+      main: '#202124',
+      dark: '#37373D',
+      contrastText: '#fff',
     },
     secondary: {
-      main: "#5e7e93",
+      main: '#37373D',
     }
   }
 })
