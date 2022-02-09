@@ -1,7 +1,7 @@
 import React from "react"
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
-import Link from "@mui/material/Link"
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 import { Typography } from "@mui/material"
 import MailOutlineIcon from "@mui/icons-material/MailOutline"
@@ -12,6 +12,11 @@ import InstagramIcon from "@mui/icons-material/Instagram"
 const FooterWrapper = styled.section`
 background: white;
 font-weight: bold;
+`
+const NavLink = styled(Link)`
+color: black;
+text-decoration: none;
+cursor: pointer;
 `
 
 const Footer = () => {
@@ -34,21 +39,21 @@ const Footer = () => {
           <Grid container spacing={1}>
             <Grid item xs={12} sm={10}>
               <Box>
-                <Link href="/about-us" color="inherit" underline="none">About us</Link>
+                <NavLink to="/about-us" color="inherit" underline="none">About us</NavLink>
               </Box>
             </Grid>
           </Grid>
           <Grid container spacing={1}>
             <Grid item xs={12} sm={10}>
               <Box>
-                <Link href="/faq" color="inherit" underline="none">FAQ</Link>
+                <NavLink to="/faq" color="inherit" underline="none">FAQ</NavLink>
               </Box>
             </Grid>
           </Grid>
           <Grid container spacing={1}>
             <Grid item xs={12} sm={10}>
               <Box>
-                <Link href="/about-us" color="inherit" underline="none">Contact</Link>
+                <NavLink to="/about-us" color="inherit" underline="none">Contact</NavLink>
                 <Box sx={{
                       padding: "10px",
                     }}>

@@ -72,8 +72,8 @@ function App() {
             <Route path="/orders/:orderId" element={<OrderConfirmed />} />
           </Routes>
         </Wrapper>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </Provider>
   )
 }
