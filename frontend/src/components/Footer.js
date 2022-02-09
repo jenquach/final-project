@@ -10,7 +10,7 @@ import InstagramIcon from "@mui/icons-material/Instagram"
 
 
 const FooterWrapper = styled.section`
-background: #A9CDCE;
+background: white;
 font-weight: bold;
 `
 
@@ -62,7 +62,8 @@ const Footer = () => {
       </Box>
       <Box
         sx={{
-        backgroundColor: "#CFE8E0",
+        backgroundColor: "white",
+        borderTop: "1px solid lightgrey",
         height: "60px",
         display: "flex",
         justifyContent: "center",

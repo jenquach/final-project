@@ -25,7 +25,7 @@ const FaqAccordion = () => {
 
   return (
     <AccordionWrapper>
-      <Typography variant="h5" color="#A9CDCE" textTransform="uppercase" textAlign="center" marginBottom={3} fontFamily="Nunito" fontWeight="bold">
+      <Typography variant="h5" color="black" textTransform="uppercase" textAlign="center" marginBottom={3} fontFamily="Nunito" fontWeight="bold">
         Frequently asked questions
       </Typography>
       <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} sx={{ maxWidth: '700px' }}>

@@ -80,7 +80,7 @@ const CartItem = (props) => {
             </div>
             <TrashButton
             onClick={() => handleRemoveItem(product)}>
-              <FontAwesomeIcon icon={faTrash} color="#A9CDCE"/>
+              <FontAwesomeIcon icon={faTrash} color="#b3975d"/>
           </TrashButton>       
           </>
         )}

@@ -17,7 +17,8 @@ import { useDispatch, useSelector } from "react-redux"
 import { cartReducer } from "../reducers/CartReducer"
 import Badge from "@mui/material/Badge"
 import { styled } from "@mui/material/styles"
-import logo from "../assets/A_New_Fit_1.png"
+/* import logo from "../assets/A_New_Fit_1.png" */
+import logo from "../assets/A_New_Fit_gold.png"
 import user from "../reducers/user"
 import { useNavigate } from "react-router-dom"
 

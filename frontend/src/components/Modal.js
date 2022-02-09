@@ -18,7 +18,7 @@ const style = {
 };
 
 const ConfirmButton = styled.button`
-background-color: #A9CDCE;
+background-color: #b3975d;
 height: 40px;
 border-radius: 2px;
 margin-top: 15px;
@@ -30,10 +30,10 @@ color: white;
 font-family: 'Short Stack', cursive;
 cursor: pointer;
 &:hover {
-  background-color: #CFE8E0;
+  background-color: #90763E;
 }
 &:focus {
-  background-color: #CFE8E0;
+  background-color: #90763E;
 }
 `
 

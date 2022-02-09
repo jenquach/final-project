@@ -63,7 +63,8 @@ const Input = styled.input`
 const CheckoutButton = styled.button`
   padding: 10px;
   border: none;
-  background-color: #A9CDCE;
+  color: white;
+  background-color: #b3975d;
   border-radius: 2px;
   margin-bottom: 30px;
   margin-top: 30px;
@@ -76,10 +77,10 @@ const CheckoutButton = styled.button`
   font-size: 1em;
   font-family: 'Nunito Sans', sans-serif;
   &:hover {
-    background-color: #CFE8E0;
+    background-color: #90763E;
   }
   &:focus {
-    background-color: #CFE8E0;
+    background-color: #90763E;
   }
   @media (max-width: 667px) {
     max-width: 100%;

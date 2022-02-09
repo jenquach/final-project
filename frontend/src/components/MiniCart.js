@@ -19,9 +19,9 @@ const EmptyCartText = styled.h3`
 
 const RemoveAllButton = styled.button`
   border: none;
-  color: #00838f;
+  color: white;
   margin-left: 45px;
-  background-color: #CFE8E0;
+  background-color: #b3975d;
   border-radius: 2px;
   padding: 10px;
   margin-top: 30px;
@@ -45,14 +45,14 @@ justify-content: center;
 margin-left: auto;
 margin-right: auto;
 margin-top: 30px;
-background-color: #CFE8E0;
+background-color: #b3975d;
 padding: 10px;
 border-radius: 2px;
 margin-bottom: 20px;
 max-width: 200px; 
 font-size: 1em;
 border: none;
-color: #00838f;
+color: white;
 cursor: pointer;
 font-family: 'Short Stack', cursive;
 `
@@ -99,7 +99,7 @@ const MiniCart = () => {
           <RemoveAllButton 
           onClick={() => handleClearCart()}>
           REMOVE ALL ITEMS&nbsp;
-          <FontAwesomeIcon icon={faTrash} color="#00838f"/>
+          <FontAwesomeIcon icon={faTrash} color="white"/>
           </RemoveAllButton> 
           <br></br>
          <GoToCheckoutButton 
