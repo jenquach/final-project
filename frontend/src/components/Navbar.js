@@ -157,8 +157,8 @@ const ResponsiveAppBar = () => {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, fontFamily: 'Nunito' }}>
-                <PersonIcon sx={{ color: '#b3975d' }} />
+              <IconButton fontFamily="Nunito" onClick={handleOpenUserMenu} sx={{ p: 0, fontFamily: 'Nunito' }}>
+                <PersonIcon fontFamily="Nunito" sx={{ color: '#b3975d' }} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -179,12 +179,12 @@ const ResponsiveAppBar = () => {
             >
               {!isLoggedIn && settings.map((setting) => (
                 <MenuItem key={setting.props.to ?? ''} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography fontFamily="Nunito" textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
               {isLoggedIn && loggedInSettings.map((setting) => (
                 <MenuItem key={setting.props.to} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography fontFamily="Nunito" textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
             </Menu>

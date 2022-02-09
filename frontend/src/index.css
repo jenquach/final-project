@@ -18,3 +18,9 @@ textarea:focus, input:focus, input, textarea{
     outline: none;
     text-align: left !important;
 }
+
+a:link {
+  color: black;
+  text-decoration: none;
+
+}
