@@ -55,7 +55,7 @@ const theme = createTheme({
 const Signin = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [mode, setMode] = useState('signin')
+  const [mode] = useState('signin')
 
   const accessToken = useSelector((store) => store.user.accessToken)
   const errorMessage = useSelector((store) => store.user.error)
