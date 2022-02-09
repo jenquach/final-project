@@ -14,7 +14,7 @@ grid-column: span 12;
   grid-column-end: 12;
   }
 `
-const Form = styled.div`
+const Form = styled.form`
 display: grid;
 grid-column: span 12;
 text-align: center;
@@ -109,7 +109,9 @@ const dispatch = useDispatch()
   const [phone, setPhone] = useState('');
 
 
-  const onHandleConfirmCheckout = () => {
+  const onHandleConfirmCheckout = (e) => {
+    e.preventDefault();
+    
     setIsPosting(true);
 
     let data = {
@@ -140,7 +142,7 @@ const dispatch = useDispatch()
   return (
     <>
       <FormWrapper>
-        <Form>
+        <Form onSubmit={onHandleConfirmCheckout}>
           <Label>
             <FormHeader> Add shipping information below</FormHeader>
             <Input type="text"
@@ -183,12 +185,12 @@ const dispatch = useDispatch()
               placeholder="Phone"
               name="phone" />
           </Label>
+
+          <Row>
+        <CheckoutButton type='submit' disabled={isPosting}>Confirm order</CheckoutButton>
+      </Row>
         </Form>
       </FormWrapper>
-
-      <Row>
-        <CheckoutButton disabled={isPosting} onClick={onHandleConfirmCheckout} >Confirm order</CheckoutButton>
-      </Row>
     </>
   )
 }
