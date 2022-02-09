@@ -76,7 +76,7 @@ const Ticker = (props) => {
             end={props.end}>
           </CountUp>
           <h4>
-            So far you have helped raised this amount to women's shelters
+            So far you have helped raise this amount towards women's shelters
           </h4>
         </div>
         <Banner><h3>A NEW FIT </h3><h4>Let your pre-loved baby and children’s clothes find a new fit and love. We let your used clothes find new friends.</h4></Banner>
