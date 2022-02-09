@@ -44,7 +44,7 @@ const Container = styled.div`
 	justify-content: center;
 	align-items: center;
 	border-bottom: 1px solid;
-		a{
+		span{
 			cursor: pointer;
 			margin: 15px 30px;
 			:focus{
@@ -61,7 +61,7 @@ const ContentContainer = styled.div`
 const MyProfile = () => {
 	const [selected, setSelected] = useState('Pickup')
 	const accessToken = useSelector((store) => store.user.accessToken)
-	const name = useSelector((store ) => store.user.name)
+	const name = useSelector((store) => store.user.name)
 
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
@@ -89,22 +89,22 @@ const MyProfile = () => {
 	}, [accessToken, dispatch])
 
 	return (
-    <MyProfileWrapper>
+		<MyProfileWrapper>
 			<TopBanner>
 				<h1>Welcome {name}!</h1>
-			</TopBanner>	
-    <ContainerWrapper>
+			</TopBanner>
+			<ContainerWrapper>
 				<Container>
-						<a onClick={() => setSelected('Pickup')}>Book a pick-up</a>
-						<a onClick={() => setSelected('Orders')}>Order history</a>
-						<a onClick={() => setSelected('EditProfile')}>Edit profile</a>
+					<span onClick={() => setSelected('Pickup')}>Book a pick-up</span>
+					<span  onClick={() => setSelected('Orders')}>Order history</span>
+					<span  onClick={() => setSelected('EditProfile')}>Edit profile</span>
 				</Container>
-					<ContentContainer>
-						{(selected === 'Pickup') && <div><BookPickup/></div>}
-            {(selected === 'Orders') && <div><h3>Order history</h3></div>}
-            {(selected === 'EditProfile') && <div><h3>Edit Profile</h3></div>}
-					</ContentContainer>
-    	</ContainerWrapper>
+				<ContentContainer>
+					{(selected === 'Pickup') && <div><BookPickup /></div>}
+					{(selected === 'Orders') && <div><h3>Order history</h3></div>}
+					{(selected === 'EditProfile') && <div><h3>Edit Profile</h3></div>}
+				</ContentContainer>
+			</ContainerWrapper>
 		</MyProfileWrapper>
 	)
 }

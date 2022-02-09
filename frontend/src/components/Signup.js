@@ -53,7 +53,7 @@ const Signup = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [mode, setMode] = useState('signup')
+  const [mode] = useState('signup')
 
   const accessToken = useSelector((store) => store.user.accessToken)
   const errorMessage = useSelector((store) => store.user.error)
