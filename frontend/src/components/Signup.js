@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from 'react'
-import { useSelector, useDispatch, batch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from "react"
+import { useSelector, useDispatch, batch } from "react-redux"
+import { useNavigate } from "react-router-dom"
 
-import { API_URL } from '../utils/urls'
-import user from '../reducers/user'
+import { API_URL } from "../utils/urls"
+import user from "../reducers/user"
 
-import Avatar from '@mui/material/Avatar'
-import Button from '@mui/material/Button'
-import CssBaseline from '@mui/material/CssBaseline'
-import TextField from '@mui/material/TextField'
-import Link from '@mui/material/Link'
-import Paper from '@mui/material/Paper'
-import Box from '@mui/material/Box'
-import Grid from '@mui/material/Grid'
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
-import Typography from '@mui/material/Typography'
-import { createTheme, ThemeProvider } from '@mui/material/styles'
-import styled from 'styled-components'
+import Avatar from "@mui/material/Avatar"
+import Button from "@mui/material/Button"
+import CssBaseline from "@mui/material/CssBaseline"
+import TextField from "@mui/material/TextField"
+import Link from "@mui/material/Link"
+import Paper from "@mui/material/Paper"
+import Box from "@mui/material/Box"
+import Grid from "@mui/material/Grid"
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined"
+import Typography from "@mui/material/Typography"
+import { createTheme, ThemeProvider } from "@mui/material/styles"
+import styled from "styled-components"
 
 const ErrorMessageSignUp = styled.div`
 color:red;
@@ -39,7 +39,7 @@ const theme = createTheme({
   palette: {
     primary: {
       light:'#dbffff', 
-      main: '#8DADC3',
+      main: '#202124',
       dark: '#5e7e93',
       contrastText: '#fff',
     },

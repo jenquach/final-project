@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from 'react'
-import { useSelector, useDispatch, batch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from "react"
+import { useSelector, useDispatch, batch } from "react-redux"
+import { useNavigate } from "react-router-dom"
 
-import { API_URL } from '../utils/urls'
-import user from '../reducers/user'
+import { API_URL } from "../utils/urls"
+import user from "../reducers/user"
 
-import Avatar from '@mui/material/Avatar'
-import Button from '@mui/material/Button'
-import CssBaseline from '@mui/material/CssBaseline'
-import TextField from '@mui/material/TextField'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import Checkbox from '@mui/material/Checkbox'
-import Link from '@mui/material/Link'
-import Paper from '@mui/material/Paper'
-import Box from '@mui/material/Box'
-import Grid from '@mui/material/Grid'
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
-import Typography from '@mui/material/Typography'
-import { createTheme, ThemeProvider } from '@mui/material/styles'
-import styled from 'styled-components'
+import Avatar from "@mui/material/Avatar"
+import Button from "@mui/material/Button"
+import CssBaseline from "@mui/material/CssBaseline"
+import TextField from "@mui/material/TextField"
+// import FormControlLabel from "@mui/material/FormControlLabel"
+// import Checkbox from "@mui/material/Checkbox"
+import Link from "@mui/material/Link"
+import Paper from "@mui/material/Paper"
+import Box from "@mui/material/Box"
+import Grid from "@mui/material/Grid"
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined"
+import Typography from "@mui/material/Typography"
+import { createTheme, ThemeProvider } from "@mui/material/styles"
+import styled from "styled-components"
 
 const ErrorMessage = styled.div`
 color: red;
@@ -41,13 +41,13 @@ const Copyright = (props) => {
 const theme = createTheme({
   palette: {
     primary: {
-      light:'#dbffff', 
-      main: '#8DADC3',
-      dark: '#5e7e93',
-      contrastText: '#fff',
+      light:"#dbffff", 
+      main: "#202124",
+      dark: "#5e7e93",
+      contrastText: "#fff",
     },
     secondary: {
-      main: '#5e7e93',
+      main: "#5e7e93",
     }
   }
 })
@@ -65,18 +65,18 @@ const Signin = () => {
 
   useEffect(() => {
     if (accessToken) {
-      navigate('/my-profile')
+      navigate("/my-profile")
     }
   }, [accessToken, navigate])
 
   const onFormSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     dispatch(user.actions.setError(null))
 
     const options = {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({ email, password })
     }
@@ -105,7 +105,7 @@ const Signin = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '100vh', marginTop: '30px' }}>
+      <Grid container component="main" sx={{ height: "100vh", marginTop: "30px" }}>
         <CssBaseline />
         <Grid
           item
@@ -113,12 +113,12 @@ const Signin = () => {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://res.cloudinary.com/denrrpqab/image/upload/v1644065894/kids_playing_kl1evn.jpg)',
-            backgroundRepeat: 'no-repeat',
+            backgroundImage: "url(https://res.cloudinary.com/denrrpqab/image/upload/v1644065894/kids_playing_kl1evn.jpg)",
+            backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
-              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+              t.palette.mode === "light" ? t.palette.grey[50] : t.palette.grey[900],
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={0} square>
@@ -126,9 +126,9 @@ const Signin = () => {
             sx={{
               my: 8,
               mx: 4,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
             }}
           >
             <Avatar sx={{ m: 1 }}>
@@ -161,11 +161,10 @@ const Signin = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <FormControlLabel
-              // onChange={(e)}
+              {/* <FormControlLabel
                 control={<Checkbox value="remember" color="primary" fontFamily="nunito"/>}
                 label="Remember me"
-              />
+              /> */}
               <ErrorMessage fontFamily="nunito">
               {errorMessage}
               </ErrorMessage>
@@ -180,9 +179,9 @@ const Signin = () => {
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="/password" variant="body2" fontFamily="nunito">
+                  {/* <Link href="/password" variant="body2" fontFamily="nunito">
                     Forgot password?
-                  </Link>
+                  </Link> */}
                 </Grid>
                 <Grid item>
                   <Link href="/signup" variant="body2" fontFamily="nunito">
