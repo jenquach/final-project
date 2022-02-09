@@ -14,11 +14,11 @@ const BookPickup = () => {
 
   const formattedDate = moment(selectedDate).format('YYYY-MM-DD')
 
-  const onChange = (date) => {setSelectedDate(date)}
+  const onChange = (date) => { setSelectedDate(date) }
 
   return (
     <div>
-    <h3>Book a pickup!</h3>
+      <h3>Book a pickup!</h3>
       <DatePicker
         value={formattedDate}
         onChange={onChange}
@@ -26,7 +26,7 @@ const BookPickup = () => {
         maxDate={addMonths(new Date(), 1)}
         showDisabledMonthNavigation
       />
-      <PickupModal formattedDate = {formattedDate}/>
+      <PickupModal formattedDate={formattedDate} />
     </div>
   )
 }

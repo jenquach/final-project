@@ -52,9 +52,7 @@ const Container = styled.div`
 			:focus{
 				text-decoration: underline;
 			}
-		}	
-	},	
-		
+		}			
 `
 const ContentContainer = styled.div`
 	display: flex;

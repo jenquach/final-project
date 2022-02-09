@@ -45,8 +45,6 @@ font-family: 'Short Stack', cursive;
   }
 `
 
-
-
 const CategoryFilter = () => {
   return (
     <CategoryWrapper>

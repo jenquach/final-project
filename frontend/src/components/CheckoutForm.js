@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { API_URL } from '../utils/urls';
 import { useNavigate } from "react-router-dom";
 
-
 const FormWrapper = styled.div`
 display: grid;
 grid-template-columns: repeat(12, 1fr);
@@ -22,7 +21,6 @@ text-align: center;
   grid-column-end: 10;
   }
 `
-
 const FormHeader = styled.span`
 margin-top: 30px;
 text-align: center;
@@ -30,7 +28,6 @@ max-width: 100%;
 font-size: large;
 font-family: 'Nunito', sans-serif;
 `
-
 const Label = styled.label`
 display: grid;
 grid-column: span 12;
@@ -40,7 +37,6 @@ text-align: center;
   grid-column-end: 8;
   }
 `
-
 const Input = styled.input`
   max-width: 100%;
   margin: 20px 0 0 0;
@@ -61,7 +57,6 @@ const Input = styled.input`
       color: grey;
 }
 `;
-
 
 const CheckoutButton = styled.button`
   padding: 10px;
@@ -98,7 +93,7 @@ align-items: center;
 
 const CheckoutForm = (props) => {
 
-  let navigate = useNavigate();
+let navigate = useNavigate();
 
   const cartId = props.cartId;
   const [isPosting, setIsPosting] = useState(false);
