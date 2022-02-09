@@ -23,13 +23,13 @@ text-align: center;
 
 const ProductPrice = styled.span`
 padding-left: 10px;
-color: #A9CDCE;
+color: #b3975d;
 font-size: 1em;
 font-weight:700;
 `
 
 const BuyButton = styled.button`
-  background-color: #A9CDCE;
+  background-color: #b3975d;
   height: 40px;
   border-radius: 2px;
   margin-top: 15px;
@@ -41,10 +41,10 @@ const BuyButton = styled.button`
   font-family: 'Short Stack', cursive;
   cursor: pointer;
   &:hover {
-    background-color: #CFE8E0;
+    background-color: #90763E;
   }
   &:focus {
-    background-color: #CFE8E0;
+    background-color: #90763E;
   }
   @media (max-width: 667px) {
     max-width: 100%;

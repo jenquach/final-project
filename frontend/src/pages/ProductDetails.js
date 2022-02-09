@@ -62,7 +62,7 @@ const ButtonContainer = styled.div`
   flex-direction: column;
 `
 const BuyButton = styled.button`
-  background-color: #A9CDCE;
+  background-color: #b3975d;
   height: 40px;
   border-radius: 2px;
   margin-bottom: 20px;
@@ -73,10 +73,10 @@ const BuyButton = styled.button`
   font-family: 'Short Stack', cursive;
   cursor: pointer;
   &:hover {
-    background-color: #CFE8E0;
+    background-color: #90763E;
   }
   &:focus {
-    background-color: #CFE8E0;
+    background-color: #90763E;
   }
   @media (max-width: 667px) {
     max-width: 280px;
@@ -144,10 +144,10 @@ const ProductDetails = () => {
             <Typography variant="h5" color="text.secondary" component="div" fontFamily="nunito">
               {product.category}
             </Typography>
-            <Typography component="div" variant="h5" color="#A9CDCE" textTransform="uppercase" fontWeight="bold" fontFamily="nunito">
+            <Typography component="div" variant="h5" color="#b3975d" textTransform="uppercase" fontWeight="bold" fontFamily="nunito">
               {product.productName}
             </Typography>
-            <Typography variant="h6" color="#A9CDCE" component="div" marginBottom={2} fontWeight="bold" fontFamily="nunito">
+            <Typography variant="h6" color="#b3975d" component="div" marginBottom={2} fontWeight="bold" fontFamily="nunito">
               £{product.price}.00
             </Typography>
             <Typography variant="subtitle1" color="text.secondary" component="div" fontFamily="nunito">
