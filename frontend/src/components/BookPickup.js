@@ -1,17 +1,14 @@
 import React, { useState } from "react"
 import moment from "moment"
 import DatePicker from "react-datepicker"
-import addMonths from '@jsbits/add-months'
+import addMonths from "@jsbits/add-months"
 import PickupModal from "./Modal"
 
 import "../assets/react-datepicker.css"
 
 const BookPickup = () => {
   const [selectedDate, setSelectedDate] = useState(new Date())
-
-  // const [showModal, setShowModal] = useState(false)
-  // const [hideModal, setHideModal] = useState(true)
-
+  
   const formattedDate = moment(selectedDate).format('YYYY-MM-DD')
 
   const onChange = (date) => { setSelectedDate(date) }

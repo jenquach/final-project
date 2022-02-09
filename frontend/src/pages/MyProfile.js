@@ -8,7 +8,7 @@ import profile from "../reducers/profile"
 import styled from "styled-components"
 
 const MyProfileWrapper = styled.div`
-	min-height: 20vh;
+	min-height: 100vh;
 	font-family: 'Nunito',sans-serif;
 	margin-top: 68px;	
 	background: #fff;
