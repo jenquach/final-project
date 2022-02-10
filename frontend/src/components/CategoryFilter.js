@@ -37,6 +37,7 @@ font-family: 'Short Stack', cursive;
   }
   @media (min-width: 471px) {
     font-size: 0.8em;
+    padding-top: 8px;
   }
 
   @media (max-width: 470px) {
