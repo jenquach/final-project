@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const cartSchema = new mongoose.Schema({
     cartId: {
         type: String,
-        unique: true, //not allowed users with same email
+        unique: true,
         required: true, //should be required
     },
     items: [{
