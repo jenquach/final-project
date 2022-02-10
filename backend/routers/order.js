@@ -30,7 +30,7 @@ router.post("/order", async (req, res) => {
     return
   }
 
-  const cart = await Cart.findOne({ cartId }); //here we fint ONE cart with a specific ID
+  const cart = await Cart.findOne({ cartId }); //here we find ONE cart with a specific ID
   if (cart === null) {
     res.status(404).send("no cart found"); //if there's no cartId in headers send 404 message
     return

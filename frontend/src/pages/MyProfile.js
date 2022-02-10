@@ -59,54 +59,54 @@ const ContentContainer = styled.div`
 `
 
 const MyProfile = () => {
-	const [selected, setSelected] = useState('Pickup')
-	const accessToken = useSelector((store) => store.user.accessToken)
-	const name = useSelector((store) => store.user.name)
+  const [selected, setSelected] = useState('Pickup')
+  const accessToken = useSelector((store) => store.user.accessToken)
+  const name = useSelector((store) => store.user.name)
 
-	const dispatch = useDispatch()
-	const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
-	useEffect(() => {
-		if (!accessToken) {
-			navigate('/signin')
-		}
-	}, [accessToken, navigate])
+  useEffect(() => {
+    if (!accessToken) {
+      navigate('/signin')
+    }
+  }, [accessToken, navigate])
 
-	useEffect(() => {
-		const options = {
-			method: 'GET',
-			headers: {
-				Authorization: accessToken,
-			},
-		}
+  useEffect(() => {
+    const options = {
+      method: 'GET',
+      headers: {
+        Authorization: accessToken,
+      },
+    }
 
-		fetch(API_URL('my-profile'), options)
-			.then((res) => res.text())
-			.then((data) => {
-				dispatch(profile.actions.setMessage(data.response))
-				dispatch(profile.actions.setError(null))
-			})
-	}, [accessToken, dispatch])
+    fetch(API_URL('my-profile'), options)
+      .then((res) => res.text())
+      .then((data) => {
+        dispatch(profile.actions.setMessage(data.response))
+        dispatch(profile.actions.setError(null))
+      })
+  }, [accessToken, dispatch])
 
-	return (
-		<MyProfileWrapper>
-			<TopBanner>
-				<h1>Welcome {name}!</h1>
-			</TopBanner>
-			<ContainerWrapper>
-				<Container>
-					<span onClick={() => setSelected('Pickup')}>Book a pick-up</span>
-					<span  onClick={() => setSelected('Orders')}>Order history</span>
-					<span  onClick={() => setSelected('EditProfile')}>Edit profile</span>
-				</Container>
-				<ContentContainer>
-					{(selected === 'Pickup') && <div><BookPickup /></div>}
-					{(selected === 'Orders') && <div><h3>Order history</h3></div>}
-					{(selected === 'EditProfile') && <div><h3>Edit Profile</h3></div>}
-				</ContentContainer>
-			</ContainerWrapper>
-		</MyProfileWrapper>
-	)
+  return (
+    <MyProfileWrapper>
+      <TopBanner>
+        <h1>Welcome {name}!</h1>
+      </TopBanner>
+      <ContainerWrapper>
+        <Container>
+          <span onClick={() => setSelected('Pickup')}>Book a pick-up</span>
+          <span onClick={() => setSelected('Orders')}>Order history</span>
+          <span onClick={() => setSelected('EditProfile')}>Edit profile</span>
+        </Container>
+        <ContentContainer>
+          {(selected === 'Pickup') && <div><BookPickup /></div>}
+          {(selected === 'Orders') && <div><h3>Order history</h3></div>}
+          {(selected === 'EditProfile') && <div><h3>Edit Profile</h3></div>}
+        </ContentContainer>
+      </ContainerWrapper>
+    </MyProfileWrapper>
+  )
 }
 
 export default MyProfile
