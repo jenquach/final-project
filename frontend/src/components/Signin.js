@@ -9,8 +9,6 @@ import Avatar from "@mui/material/Avatar"
 import Button from "@mui/material/Button"
 import CssBaseline from "@mui/material/CssBaseline"
 import TextField from "@mui/material/TextField"
-// import FormControlLabel from "@mui/material/FormControlLabel"
-// import Checkbox from "@mui/material/Checkbox"
 import Link from "@mui/material/Link"
 import Paper from "@mui/material/Paper"
 import Box from "@mui/material/Box"
@@ -23,7 +21,6 @@ import styled from "styled-components"
 const ErrorMessage = styled.div`
 color: red;
 `
-
 
 const Copyright = (props) => {
   return (
@@ -40,7 +37,7 @@ const Copyright = (props) => {
 
 const theme = createTheme({
   palette: {
-    primary: { 
+    primary: {
       main: '#202124',
       dark: '#37373D',
       contrastText: '#fff',
@@ -57,8 +54,8 @@ const Signin = () => {
   const [mode] = useState('signin')
 
   const accessToken = useSelector((store) => store.user.accessToken)
-  let [errorMessage, setErrorMessage] = useState('') 
-  
+  let [errorMessage, setErrorMessage] = useState('')
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -70,7 +67,7 @@ const Signin = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault()
-    
+
     setErrorMessage('')
 
     const options = {
@@ -80,28 +77,28 @@ const Signin = () => {
       },
       body: JSON.stringify({ email, password })
     }
-  
-  fetch(API_URL(mode), options)
-  .then((res) => res.json())
-  .then((data) => {
-    if (data.success) {
-      batch(() => { //instead of updating store for each dispatch it will only update once for all with batch
-        dispatch(user.actions.setUserId(data.response.userId))
-        dispatch(user.actions.setEmail(data.response.email))
-        dispatch(user.actions.setAccessToken(data.response.accessToken))
-        setErrorMessage('')
-        dispatch(user.actions.setName(data.response.name))
+
+    fetch(API_URL(mode), options)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          batch(() => { //instead of updating store for each dispatch it will only update once for all with batch
+            dispatch(user.actions.setUserId(data.response.userId))
+            dispatch(user.actions.setEmail(data.response.email))
+            dispatch(user.actions.setAccessToken(data.response.accessToken))
+            setErrorMessage('')
+            dispatch(user.actions.setName(data.response.name))
+          })
+        } else {
+          batch(() => {
+            dispatch(user.actions.setUserId(null))
+            dispatch(user.actions.setEmail(null))
+            dispatch(user.actions.setAccessToken(null))
+            setErrorMessage(data.response)
+          })
+        }
       })
-    } else {
-      batch(() => {
-        dispatch(user.actions.setUserId(null))
-        dispatch(user.actions.setEmail(null))
-        dispatch(user.actions.setAccessToken(null))
-        setErrorMessage(data.response)
-      })
-    }
-  })
-}
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -139,7 +136,7 @@ const Signin = () => {
             </Typography>
             <Box component="form" noValidate onSubmit={onFormSubmit} sx={{ mt: 1 }} fontFamily="nunito">
               <TextField
-              fontFamily="nunito"
+                fontFamily="nunito"
                 margin="normal"
                 required
                 fullWidth
@@ -150,7 +147,7 @@ const Signin = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <TextField
-              fontFamily="nunito"
+                fontFamily="nunito"
                 margin="normal"
                 required
                 fullWidth
@@ -161,12 +158,8 @@ const Signin = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              {/* <FormControlLabel
-                control={<Checkbox value="remember" color="primary" fontFamily="nunito"/>}
-                label="Remember me"
-              /> */}
               <ErrorMessage fontFamily="nunito">
-              {errorMessage}
+                {errorMessage}
               </ErrorMessage>
               <Button
                 type="submit"
@@ -179,9 +172,6 @@ const Signin = () => {
               </Button>
               <Grid container>
                 <Grid item xs>
-                  {/* <Link href="/password" variant="body2" fontFamily="nunito">
-                    Forgot password?
-                  </Link> */}
                 </Grid>
                 <Grid item>
                   <Link href="/signup" variant="body2" fontFamily="nunito">

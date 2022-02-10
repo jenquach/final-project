@@ -21,7 +21,6 @@ import styled from "styled-components"
 const ErrorMessageSignUp = styled.div`
 color:red;
 `
-
 const Copyright = (props) => {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -55,7 +54,7 @@ const Signup = () => {
   const [mode] = useState('signup')
 
   const accessToken = useSelector((store) => store.user.accessToken)
-  let [errorMessage, setErrorMessage] = useState('') 
+  let [errorMessage, setErrorMessage] = useState('')
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -78,30 +77,30 @@ const Signup = () => {
       },
       body: JSON.stringify({ name, email, password })
     }
-  
-  fetch(API_URL(mode), options)
-  .then((res) => res.json())
-  .then((data) => {
 
-    if (data.success) {
-      batch(() => { //instead of updating store for each dispatch it will only update ones for all with batch
-        dispatch(user.actions.setUserId(data.response.userId))
-        dispatch(user.actions.setName(data.response.name))
-        dispatch(user.actions.setEmail(data.response.email))
-        dispatch(user.actions.setAccessToken(data.response.accessToken))
-        setErrorMessage('')
+    fetch(API_URL(mode), options)
+      .then((res) => res.json())
+      .then((data) => {
+
+        if (data.success) {
+          batch(() => { //instead of updating store for each dispatch it will only update ones for all with batch
+            dispatch(user.actions.setUserId(data.response.userId))
+            dispatch(user.actions.setName(data.response.name))
+            dispatch(user.actions.setEmail(data.response.email))
+            dispatch(user.actions.setAccessToken(data.response.accessToken))
+            setErrorMessage('')
+          })
+        } else {
+          batch(() => {
+            dispatch(user.actions.setUserId(null))
+            dispatch(user.actions.setName(null))
+            dispatch(user.actions.setEmail(null))
+            dispatch(user.actions.setAccessToken(null))
+            setErrorMessage(data.response)
+          })
+        }
       })
-    } else {
-      batch(() => {
-        dispatch(user.actions.setUserId(null))
-        dispatch(user.actions.setName(null))
-        dispatch(user.actions.setEmail(null))
-        dispatch(user.actions.setAccessToken(null))
-        setErrorMessage(data.response)
-      })
-    }
-  })
-}
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -121,13 +120,13 @@ const Signup = () => {
             backgroundPosition: 'center',
           }}
         />
-        <Grid 
-          item 
-          xs={12} 
-          sm={8} 
-          md={5} 
-          component={Paper} 
-          elevation={0} 
+        <Grid
+          item
+          xs={12}
+          sm={8}
+          md={5}
+          component={Paper}
+          elevation={0}
           square
           sx={{
           }}>
@@ -148,7 +147,7 @@ const Signup = () => {
             </Typography>
             <Box component="form" noValidate onSubmit={onFormSubmit} sx={{ mt: 1 }}>
               <TextField
-              fontFamily="nunito"
+                fontFamily="nunito"
                 margin="normal"
                 required
                 fullWidth
@@ -159,7 +158,7 @@ const Signup = () => {
                 onChange={(e) => setName(e.target.value)}
               />
               <TextField
-              fontFamily="nunito"
+                fontFamily="nunito"
                 margin="normal"
                 required
                 fullWidth
@@ -170,7 +169,7 @@ const Signup = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <TextField
-              fontFamily="nunito"
+                fontFamily="nunito"
                 margin="normal"
                 required
                 fullWidth
@@ -181,11 +180,11 @@ const Signup = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-                <ErrorMessageSignUp fontFamily="nunito">
-                 {errorMessage }
-                 </ErrorMessageSignUp>
+              <ErrorMessageSignUp fontFamily="nunito">
+                {errorMessage}
+              </ErrorMessageSignUp>
               <Button
-              fontFamily="nunito"
+                fontFamily="nunito"
                 type="submit"
                 fullWidth
                 variant="contained"
