@@ -20,7 +20,7 @@ const TextContainer = styled.div`
 }
 
 @media (max-width: 667px) {
-  padding: 80px 10px 30px 10px;
+  padding: 30px 10px 30px 10px;
 }
 @media (min-width: 1440px) {
   padding: 0 80px 30px 80px;

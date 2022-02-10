@@ -13,7 +13,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-padding-top: 30px;
+padding-top: 50px;
 `
 
 const FaqAccordion = () => {
