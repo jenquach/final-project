@@ -13,7 +13,7 @@ const cartSchema = new mongoose.Schema({
         }
     }]
 }, {
-    timestamps: true
+    timestamps: true //when you write a document to mongo - mongo will make their own time stamp which is shown in 
 })
 
 const Cart = mongoose.model('Cart', cartSchema)
