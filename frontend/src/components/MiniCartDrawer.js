@@ -10,8 +10,6 @@ const DrawerSection = styled.div`
 width: 500px;
 `
 
-
-
 const MiniCartDrawer = () => {
   const dispatch = useDispatch()
 
@@ -27,7 +25,6 @@ const MiniCartDrawer = () => {
   const ShowCartDrawer = useSelector(store => store.cartReducer.cartIsOpen);
 
   const toggle = (open) => (event) => {
-
     if (open === false) {
       dispatch(cartReducer.actions.setMiniCartDrawerVisible(false))
     }
@@ -55,6 +52,5 @@ const MiniCartDrawer = () => {
 
   )
 }
-
 
 export default MiniCartDrawer

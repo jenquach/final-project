@@ -57,12 +57,10 @@ const ProductBox = ({ product }) => {
 
   const dispatch = useDispatch();
   const cartId = useSelector(store => store.cartReducer.cartId)
-
   const handleAddToCartClick = (product) => addToCart(dispatch, cartId, product);
 
   return (
     <>
-
       <ProductContainer>
         <Link to={`/product/${product.productId}`}>
           <HoverImage src={product.img1} hoverSrc={product.img2} style={{ width: '100%' }} alt="product" />

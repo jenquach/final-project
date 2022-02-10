@@ -57,7 +57,6 @@ cursor: pointer;
 font-family: 'Short Stack', cursive;
 `
 
-
 const MiniCart = () => {
   const dispatch = useDispatch()
   const cartItems = useSelector(store => store.cartReducer.items)
@@ -66,7 +65,6 @@ const MiniCart = () => {
 
 
   const handleClearCart = () => {
-    //TODO: move to cartReducer.js
     const options = {
       method: 'POST',
       headers: {
@@ -84,16 +82,13 @@ const MiniCart = () => {
   return (
     <Box
     height="30%"
-    width={300}
-            >
+    width={300}>
       <List>
         {!cartIsEmpty && cartItems.map((item) =>
         (
           <ListItem key={item.itemId}>
             <CartItem itemId={item.itemId}></CartItem>
-          </ListItem>
-        ))
-        }
+          </ListItem>))}
         {!cartIsEmpty && (
           <>
           <RemoveAllButton 
@@ -109,12 +104,10 @@ const MiniCart = () => {
          </GoToCheckoutButton>
          </>
         )}
-        
         {cartIsEmpty && (
           <EmptyCartText>Your cart is empty</EmptyCartText>
         )}
       </List>
-
     </Box>
   )
 }

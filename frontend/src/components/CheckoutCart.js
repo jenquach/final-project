@@ -84,7 +84,6 @@ const CheckoutCartItem = (props) => {
   )
 }
 
-
 const CheckoutCart = (props) => {
 
   return (

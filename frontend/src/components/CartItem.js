@@ -33,13 +33,10 @@ background-color: transparent;
   cursor: pointer;
 `
 
-
 const CartItem = (props) => {
   const [product, setProduct] = useState(null)
   const cartId = useSelector(store => store.cartReducer.cartId)
-
   const itemId = props.itemId;
-
   const dispatch = useDispatch()
 
   useEffect(() => {

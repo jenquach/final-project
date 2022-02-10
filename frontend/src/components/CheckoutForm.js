@@ -111,7 +111,7 @@ const dispatch = useDispatch()
 
   const onHandleConfirmCheckout = (e) => {
     e.preventDefault();
-    
+
     setIsPosting(true);
 
     let data = {
@@ -139,6 +139,7 @@ const dispatch = useDispatch()
         navigate('/orders/' + data);
       });
   }
+
   return (
     <>
       <FormWrapper>
@@ -185,7 +186,6 @@ const dispatch = useDispatch()
               placeholder="Phone"
               name="phone" />
           </Label>
-
           <Row>
         <CheckoutButton type='submit' disabled={isPosting}>Confirm order</CheckoutButton>
       </Row>

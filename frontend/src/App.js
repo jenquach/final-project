@@ -23,7 +23,6 @@ import FaqAccordion from "./pages/Faq"
 import Checkout from "./pages/Checkout"
 import OrderConfirmed from "./pages/OrderConfirmed"
 
-
 const Wrapper = styled.div`
   min-height: 100vh;
 `

@@ -8,9 +8,7 @@ import "../assets/react-datepicker.css"
 
 const BookPickup = () => {
   const [selectedDate, setSelectedDate] = useState(new Date())
-  
   const formattedDate = moment(selectedDate).format('YYYY-MM-DD')
-
   const onChange = (date) => { setSelectedDate(date) }
 
   return (

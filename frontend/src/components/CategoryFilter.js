@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 
-
 const CategoryWrapper = styled.section`
 display: grid;
 grid-template-columns: repeat(12, 1fr);

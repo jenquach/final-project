@@ -12,8 +12,7 @@ router.get("/cart", async (req, res) => {
     return
   }
   try {
-    const cart = await Cart.findOne({ cartId }); //here we fint ONE cart with a specific ID
-    console.log(cart)
+    const cart = await Cart.findOne({ cartId }); //here we find ONE cart with a specific ID
 
     res.status(200).send(cart);
   } catch (error) {
