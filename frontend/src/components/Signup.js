@@ -55,7 +55,7 @@ const Signup = () => {
   const [mode] = useState('signup')
 
   const accessToken = useSelector((store) => store.user.accessToken)
-  const errorMessage = useSelector((store) => store.user.error)
+  let [errorMessage, setErrorMessage] = useState('') 
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -69,7 +69,7 @@ const Signup = () => {
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    dispatch(user.actions.setError(null))
+    setErrorMessage('')
 
     const options = {
       method: 'POST',
@@ -89,7 +89,7 @@ const Signup = () => {
         dispatch(user.actions.setName(data.response.name))
         dispatch(user.actions.setEmail(data.response.email))
         dispatch(user.actions.setAccessToken(data.response.accessToken))
-        dispatch(user.actions.setError(null))
+        setErrorMessage('')
       })
     } else {
       batch(() => {
@@ -97,7 +97,7 @@ const Signup = () => {
         dispatch(user.actions.setName(null))
         dispatch(user.actions.setEmail(null))
         dispatch(user.actions.setAccessToken(null))
-        dispatch(user.actions.setError(data.response))
+        setErrorMessage(data.response)
       })
     }
   })
