@@ -59,6 +59,7 @@ const Signin = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
+  //checks if user is authorized, otherwise sends user to login page
   useEffect(() => {
     if (accessToken) {
       navigate("/my-profile")

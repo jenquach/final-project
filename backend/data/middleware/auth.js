@@ -1,6 +1,6 @@
 const User = require("../../models/user")
 
-//Authentication
+//check if access token was sent with the request
 const authenticateUser = async (req, res, next) => { 
 	const accessToken = req.header("Authorization")
 

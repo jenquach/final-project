@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt")
 
 const router = new express.Router()
 
-//Sign up
+//endpoint for sign up
 router.post("/signup", async (req, res) => {
   const { name, email, password } = req.body
 
@@ -39,7 +39,7 @@ router.post("/signup", async (req, res) => {
   }
 })
 
-//Sign in
+//endpoint for sign in
 router.post("/signin", async (req, res) => {
   const { email, password } = req.body
 
@@ -67,7 +67,7 @@ router.post("/signin", async (req, res) => {
   }
 })
 
-//My profile
+//endpoint for my profile
 router.get("/my-profile", authenticateUser)
 router.get("/my-profile", (req, res) => {
   const { name } = req.body

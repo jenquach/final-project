@@ -16,14 +16,11 @@ require('./mongoose-settings') //Node.js can use this module to manipulate Mongo
 process.env.RESET_PRODUCT_DB = true
 
 
-// Defines the port the app will run on. Defaults to 8080, but can be 
-// overridden when starting the server. For example:
-//
-//   PORT=9000 npm start
+//defines the port the app will run on
 const port = process.env.PORT || 8080
 const app = express()
 
-// // Add middlewares to enable cors and json body parsing
+//add middlewares to enable cors and json body parsing
 app.use(cors())
 app.use(express.json())
 app.use(indexRouter)
