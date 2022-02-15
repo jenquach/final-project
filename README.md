@@ -31,3 +31,5 @@ The website is responsive and tested in Chrome, Firefox and Safari.
 ## View it live
 A NEW FIT
 https://anewfit.netlify.app/
+
+API https://final-project--api.herokuapp.com
